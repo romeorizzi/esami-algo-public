@@ -1,0 +1,57 @@
+\renewcommand{\nomebreve}{easyfall}
+\renewcommand{\titolo}{Tutti gi\`u per terra}
+
+\introduzione{}
+
+  Sul pavimento \`e disposta una sequanza di $n$ domini, essi sono cos\`\i\ incastrati che ciascuno di loro pu\`o cadere solo verso destra.  
+  Per ogni $i=1,\ldots n$,
+  il domino~$i$ ha altezza $h_i\in \mathbf{N}\setminus \{0\}$ e, se cade,
+  cadranno tutti i domini di indice~$j$, con~$j \in [i,i+h_i[$.
+  I domini di altezza~$1$ sono pertanto i soli che possono cadere da soli.  
+
+  Pierino ha $k$ palline per la sua cerbottana.
+  Con ciascuna pallina pu\`o provocare la caduta di un domino a sua scelta.
+  Specificare il massimo numero di domini di cui pu\`o provocare la caduta
+  per ogni valore di $k$.\\
+
+
+\sezionetesto{Dati di input}
+La prima riga del file \verb'input.txt' contiene un numero intero e positivo $n$.
+La seconda riga offre una sequenza di $n$ numeri interi separati da spazio:
+l'$i$-esimo di questi numeri riporta l'altezza del domino $i$-esimo, come indicizzati da sinistra verso destra.
+
+\sezionetesto{Dati di output}
+Nel file \verb'output.txt' si scriva un unica riga contenente $n$ numeri separati da spazio:
+il $k$-esimo di questi numeri indica il massimo numero di tessere di domino
+che si possa far cadere impiegando al pi\`u $k$ palline.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+6
+
+1 2 1 1 1 2
+}{2 3 4 5 6 6}
+\esempio{
+5
+
+3 1 1 2 1
+}{3 5 5 5 5}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 1\,000\,000$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $n \leq 10$ e tessere alte~$1$ oppure~$2$.
+    \item \textbf{Subtask 3 [20 punti]:} $n \leq 100$ e tessere alte~$1$ oppure~$2$.
+    \item \textbf{Subtask 4 [20 punti]:} $n \leq 1000$ e tessere alte~$1$ oppure~$2$.
+    \item \textbf{Subtask 5 [20 punti]:} tessere alte~$1$ oppure~$2$.
+    \item \textbf{Subtask 6 [20 punti]:} nessuna restrizione.
+  \end{itemize}
+  

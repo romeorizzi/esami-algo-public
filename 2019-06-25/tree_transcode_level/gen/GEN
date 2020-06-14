@@ -1,0 +1,92 @@
+# 	N		S
+
+# Subtask 1: esempio del testo
+#ST: 0
+#COPY: att/input0.txt
+#COPY: att/input1.txt
+
+# Subtask 2: massimo 1 figlio, input encoding of type 1
+#ST: 10
+      8 1 1 174771
+     10 1 1 174772
+     50 1 1 174773
+    100 1 1 174774
+    500 1 1 174775
+   1000 1 1 174776
+
+# Subtask 3: massimo 2 figli, input encoding of type 1
+#ST: 10
+      8 1 2 174771
+     10 1 2 174772
+     50 1 2 174773
+    100 1 2 174774
+    500 1 2 174775
+   1000 1 2 174776
+
+# Subtask 4: n<=10, input encoding of type 1
+#ST: 10
+      1 1 5 174776
+      2 1 5 174777
+      3 1 5 174778
+      4 1 5 174779
+      5 1 5 174772
+      6 1 5 174773
+      8 1 5 174774
+     10 1 5 174775
+
+# Subtask 5: n<=1000, input encoding of type 1
+#ST: 10
+     10 1 5 174772
+     50 1 5 174773
+    100 1 5 174774
+    500 1 5 174775
+   1000 1 5 174776
+
+# Subtask 6: n<=1000000, input encoding of type 1
+#ST: 10
+     10000 1 5 174772
+    100000 1 5 174774
+   1000000 1 5 174776
+
+# Subtask 7: massimo 1 figlio, input encoding of type 2
+#ST: 10
+      8 2 1 174771
+     10 2 1 174772
+     50 2 1 174773
+    100 2 1 174774
+    500 2 1 174775
+   1000 2 1 174776
+
+# Subtask 8: massimo 2 figli, input encoding of type 2
+#ST: 10
+      8 2 2 174771
+     10 2 2 174772
+     50 2 2 174773
+    100 2 2 174774
+    500 2 2 174775
+   1000 2 2 174776
+
+# Subtask 9: n<=10, input encoding of type 2
+#ST: 10
+      1 2 5 174776
+      2 2 5 174777
+      3 2 5 174778
+      4 2 5 174779
+      5 2 5 174772
+      6 2 5 174773
+      8 2 5 174774
+     10 2 5 174775
+
+# Subtask 10: n<=1000, input encoding of type 2
+#ST: 10
+     10 2 5 174772
+     50 2 5 174773
+    100 2 5 174774
+    500 2 5 174775
+   1000 2 5 174776
+
+# Subtask 11: n<=1000000, input encoding of type 2
+#ST: 10
+     10000 2 5 174772
+    100000 2 5 174774
+   1000000 2 5 174776

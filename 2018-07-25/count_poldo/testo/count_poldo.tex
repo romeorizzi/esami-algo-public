@@ -1,0 +1,96 @@
+\renewcommand{\nomebreve}{count\_poldo}
+\renewcommand{\titolo}{Contare le sottosequenze crescenti}
+
+\introduzione{}
+
+Si riceve in input una sequenza $S$ di $N$ numeri interi $x_0,\dots,x_{N-1}$.
+Contare quante sono le sottosequenze non vuote di $S$ strettamente crescenti.
+
+Si chiede di restituire il numero di tali sottosequenze modulo $1024$.
+
+Una sottosequenza di $S$ si ottiene quando si selezionino alcuni degli elementi di $S$ come elementi da tenere, e si nascondano gli altri elementi. La sottosequenza è essa stessa una sequenza in quanto viene mantenuto l'ordine tra gli elementi conservati. La sottosequenza è non vuota se almeno un elemento è stato selezionato e mantenuto. La sottosequenza è identificata dagli indici degli elementi selezionati, non dal loro valore. (Vedi esempi.) Pertanto, due diverse sottosequenze possono risultare uguali quando viste come sequenze, ma noi le dobbiamo conteggiare entrambe. 
+
+\section*{Dati di input}
+La prima riga del file \verb'input.txt' contiene il numero $N$: la lunghezza della sequenza.
+Le successive $N$ righe contengono, ciascuna, un numero della sequenza.
+L'$i$-esimo elemento della sequenza è quello nella riga $i+1$.
+
+\section*{Dati di output}
+Nel file \verb'output.txt' si scriva un unica riga contenente
+il numero delle sottosequenze non vuote e crescenti, modulo $1024$.
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+4
+
+5
+
+1
+
+1
+
+3
+}{6}
+
+La sequenza $5, 1, 1, 3$ ammette $6$ sottosequenze crescenti non vuote. Esse sono:
+\begin{enumerate}
+  \item[$S_1 =$] $\underline{\mathbf{5}}, 1, 1, 3$
+  \item[$S_2 =$] $5, \underline{\mathbf{1}}, 1, 3$
+  \item[$S_3 =$] $5, \underline{\mathbf{1}}, 1, \underline{\mathbf{3}}$
+  \item[$S_4 =$] $5, 1, \underline{\mathbf{1}}, 3$
+  \item[$S_5 =$] $5, 1, \underline{\mathbf{1}}, \underline{\mathbf{3}}$
+  \item[$S_6 =$] $5, 1, 1, \underline{\mathbf{3}}$
+\end{enumerate}
+
+Si noti come $S_3$ ed $S_5$ risultino eguali quando considerate come sequenze.
+(Lo stesso vale anche per $S_2$ ed $S_4$).
+
+\esempio{
+11
+
+100
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+}{0}
+
+Ci sono esattamente 1024 sottosequenze crescenti.
+Modulo 1024, la risposta corretta è perciò 0.
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \leq N \leq 100\,000$.
+  \item $1 \leq x_i \leq 1\,000\,000$.
+\end{itemize}
+  
+\section*{Subtask}
+\begin{itemize}
+  \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+  \item \textbf{Subtask 2 [10 punti]:} $N \leq 20$, la sequenza è una permutazione di $0, \ldots, N-1$.
+  \item \textbf{Subtask 3 [10 punti]:} $N \leq 20$.
+  \item \textbf{Subtask 4 [10 punti]:} $N \leq 500$, la sequenza è una permutazione di $0, \ldots, N-1$.
+  \item \textbf{Subtask 5 [10 punti]:} $N \leq 5\,000$, la sequenza è una permutazione di $0, \ldots, N-1$.
+  \item \textbf{Subtask 6 [10 punti]:} $N \leq 5\,000$, gli elementi della sequenza sono tutti distinti.
+  \item \textbf{Subtask 7 [20 punti]:} $N \leq 100\,000$, $0 \leq x_i \leq 10$.
+  \item \textbf{Subtask 8 [20 punti]:} $N \leq 100\,000$, la sequenza è una permutazione di $0, \ldots, N-1$.
+  \item \textbf{Subtask 9 [10 punti]:} $N \leq 100\,000$, nessuna restrizione.
+\end{itemize}

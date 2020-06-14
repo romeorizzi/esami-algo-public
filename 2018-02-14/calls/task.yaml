@@ -1,0 +1,5 @@
+memory_limit: 256
+name: calls
+time_limit: 1.0
+title: Conta le chiamate
+token_mode: infinite

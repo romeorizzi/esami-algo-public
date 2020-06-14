@@ -1,0 +1,49 @@
+\renewcommand{\nomebreve}{piastrelle1xk}
+\renewcommand{\titolo}{Piastrelle da uno per kappa}
+
+\introduzione{}
+
+Dobbiamo piastrellare una griglia rettangolare di $k\times n$ celle quadrate
+con delle piastrelle rettangolari da $1\times k$ quadretti. Le piastrelle possono essere ruotate ma devono ricoprire l'intera griglia senza sovrapporsi. 
+
+Scrivere un programma che, dati $n$ e $k$, computi il numero di possibili soluzioni.\\
+
+
+\sezionetesto{Dati di input}
+La prima ed unica riga del file \verb'input.txt' contiene i due numeri naturali $n$ e $k$, in questo ordine, e separati da spazio.
+
+\sezionetesto{Dati di output}
+Nel file \verb'output.txt' si scriva solamente il numero di possibili tilings
+di $n$ rettangoli $1\times k$ entro un rettangolo $k\times n$.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+4 2
+}{5}
+\esempio{
+4 3
+}{3}
+\esempio{
+5 3
+}{4}
+
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $0 \le n \le 1\,000\,000$, $2 \le k \le 1\,000\,000$.
+  \item si garantisce che per tutte le istanze di nostro interesse il numero di soluzioni non ecceda il migliardo e possa quindi essere rappresentato senza problemi entro una variabile di tipo {\tt int}.  
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [10 punti]:} $n \leq 7$, $k=2$.
+    \item \textbf{Subtask 2 [20 punti]:} $n \leq 30$, $k=2$.
+    \item \textbf{Subtask 3 [20 punti]:} $n \leq 30$, $k=3$.
+    \item \textbf{Subtask 4 [20 punti]:} $n \leq 30$.
+    \item \textbf{Subtask 5 [30 punti]:} nessuna restrizione.
+  \end{itemize}
+  

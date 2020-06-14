@@ -1,0 +1,101 @@
+\renewcommand{\nomebreve}{online\_budget}
+\renewcommand{\titolo}{Histories of a budget mantained non-negative online}
+
+\introduzione{}
+
+Si consideri il seguente processo.
+All'inizio del processo disponiamo di un budget di $B_0$ monete, con $B_0$ un numero naturale.
+Siamo chiamati ad affrontare $n$ periodi, con $n \geq 1$.
+All'inizio di ciascuno di questi periodi affrontiamo una spesa di $y_i$ monete, dove~$y_i\geq 0$ è un numero intero stabilito da noi col solo vincolo di non rendere mai negativo
+il budget in cassa, che durante il periodo~$i$ è dato da:
+\[
+   B'_{i} := B_{i-1}  - y_{i} \mbox{ per ogni $i=1,\ldots, n$.}
+\]  
+Nel periodo~$i$ ci vengono poi consegnate $x_i$ monete, dove~$x_i$ è un numero naturale specificato nell'input. Queste~$x_i$ monete potranno essere contabilizzate nel budget per il periodo successivo, che è dato da:
+
+\[
+   B_{i} := B'_{i} + x_{i} \mbox{ per ogni $i=1,\ldots, n$.}
+\]
+
+Quindi $B_n$ rappresenta quanto rimane in cassa alla fine del processo e può essere strettamente positivo o anche nullo, ma mai negativo.
+
+Dovete stabilire quante sono le storie/scelte possibili, ossia i possibili vettori di spesa  $(y_1, \ldots, y_n)$. Tuttavia, poichè tale numero $S$ potrebbe facilmente essere così grande da mandare in overflow i tipi numerici standard, vi chiediamo di consegnare il resto della divisione di $S$ per $1\,000\,000\,007$.
+
+
+\sezionetesto{Dati di input}
+L'input deve avvenire da stdin.
+La prima riga contiene gli interi positivi $n$ e $B_0$, in questo ordine e separati da spazio.
+La seconda riga offre la sequenza degli $n$ numeri $x_1, \ldots, x_n$, tutti interi nell'intervallo $[0, 10]$, riportati nell'ordine e separati da spazi.
+
+\sezionetesto{Dati di output}
+L'output deve avvenire su stdout, dove và scritto un unico numero intero:
+il resto della divisione di $S$ per $1\,000\,000\,007$,
+dove $S$ è il numero dei possibili vettori di spesa $(y_1, \ldots, y_n)$
+che rispettano la condizione di non rendere mai negativo il budget in cassa, su nessuno degli $n$ periodi.
+
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{
+1 0
+
+5
+}{
+1}
+Spiegazione: di necessità dovremo scegliere $y_1 = 0$.\\
+
+\esempio{
+1 5
+
+0
+}{
+6}
+Spiegazione: le possibili scelte sono $y_1 = 0$, $y_1 = 1$, $y_1 = 2$, $y_1 = 3$, $y_1 = 4$, oppure $y_1 = 5$.\\
+
+\esempio{
+3 2
+
+0 0 0
+}{
+10}
+
+\esempio{
+3 0
+
+2 0 1
+}{
+6}
+
+\esempio{
+3 1
+
+2 0 1
+}{
+16}
+
+
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 50$.
+  \item $x_i$ è un naturale in $[0, 10]$ per ogni $i=1,\ldots, n$.
+  \item $0 \le B_0 \le 200$.
+\end{itemize}
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 1 [1 punti]:} $n=1$ e $B_0 = 0$.
+    \item \textbf{Subtask 2 [2 punti]:} $n=1$ e $x_1 = 0$.
+    \item \textbf{Subtask 3 [3 punti]:} $n=1$.
+    \item \textbf{Subtask 4 [4 punti]:} $n=2$ e $B_0 = 0$.
+    \item \textbf{Subtask 5 [5 punti]:} $n=2$ e $x_1 = 0$.
+    \item \textbf{Subtask 6 [10 punti]:} $n=2$.
+    \item \textbf{Subtask 7 [15 punti]:} $n \leq 5$, $B_0 \leq 10$, $x_i = 0$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 8 [15 punti]:} $n \leq 6$, $B_0 = 0$, $x_i = 1$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 9 [12 punti]:} $n \leq 10$, $B_0 \leq 10$, $x_i = 0$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 10 [13 punti]:} $n \le 50$, $B_0 \leq 200$, $x_i = 0$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 11 [20 punti]:} $n \le 50$, $B_0 \leq 200$, $x_i \in [0, 10]$ per ogni $i=1,\ldots, n$.
+  \end{itemize}
+  

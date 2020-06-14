@@ -1,0 +1,5 @@
+memory_limit: 256
+name: pushed_rightwards
+time_limit: 1.0
+title: Pushed towards the right border
+token_mode: infinite

@@ -1,0 +1,8 @@
+Muovi il disco 1 dal piolo B al piolo C
+Muovi il disco 2 dal piolo A al piolo B
+Muovi il disco 1 dal piolo C al piolo B
+Muovi il disco 3 dal piolo C al piolo A
+Muovi il disco 1 dal piolo B al piolo C
+Muovi il disco 2 dal piolo B al piolo A
+Muovi il disco 1 dal piolo C al piolo A
+

@@ -1,0 +1,1 @@
+/home/romeo/corsi/Algoritmi/esami-algo-private/2018-09-26/hanoi_tower_reset/input/input0.txt

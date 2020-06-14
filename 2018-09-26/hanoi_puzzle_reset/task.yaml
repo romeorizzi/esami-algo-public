@@ -1,0 +1,5 @@
+memory_limit: 256
+name: hanoi_puzzle_reset
+time_limit: 1.0
+title: Revert the Hanoi puzzle back to its initial configuration
+token_mode: infinite

@@ -1,0 +1,11 @@
+name: online_budget_opt
+title: Optimal management of a never negative budget
+time_limit: 5.0
+memory_limit: 512
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+

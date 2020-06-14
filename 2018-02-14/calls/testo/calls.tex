@@ -1,0 +1,65 @@
+\renewcommand{\nomebreve}{calls}
+\renewcommand{\titolo}{Conta le chiamate}
+
+\introduzione{}
+
+Questo esercizio ti chiede di scrivere una versione accellerata
+del seguente programma che trovi nella cartella att:
+\begin{verbatim}
+#include <cstdio>
+#include <cassert>
+
+int tot = 0;
+
+void f(int a, int b, int c) {
+  tot = (tot+1)%1024;
+  if(a>b) {
+    f(a-1, b, c/2+1);
+    f(a-1, b, c/2);
+    f(a-5, b+5, c+1);
+  }
+}
+
+int main() {
+  #ifdef EVAL
+      assert( freopen("input.txt", "r", stdin) );
+      assert( freopen("output.txt", "w", stdout) );
+  #endif
+
+  int a, b, c;
+  scanf("%d%d%d", &a, &b, &c);
+  f(a,b,c);
+  printf("%d\n", tot);
+  return 0;
+}
+\end{verbatim}
+
+Nota che il programma restituisce in output il numero di chiamate della funzione ricorsiva $f$, reso modulo $1024$ per evitare ogni possibile overflow.
+
+\sezionetesto{Dati di input}
+La prima e sola riga del file \verb'input.txt' contiene i numeri interi e positivi $a$, $b$, $c$ separati da spazi.
+Quando EVAL \`e definito tali parametri vengono letti da standard input invece che da file.
+
+\sezionetesto{Dati di output}
+Nel file \verb'output.txt' si scriva un'unica riga contenente un solo numero intero.
+Quando EVAL \`e definito tale numero viene scritto su standard output invece che su file.\\
+
+
+Devi scrivere un programma equivalente, nel senso che rispetti le stesse specifiche input/output,
+ma termini in tempo utile.\\
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+\item $0 \leq a,b,c \leq 100\,000\,000$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} $a \leq 25$.
+    \item \textbf{Subtask 2 [20 punti]:} $a \leq 85$.
+    \item \textbf{Subtask 3 [20 punti]:} $a \leq 1000$.
+    \item \textbf{Subtask 4 [30 punti]:} $90\,000 \leq a,b \leq 100\,000$.
+    \item \textbf{Subtask 5 [30 punti]:} $a \leq 200\,000$.
+  \end{itemize}
+  

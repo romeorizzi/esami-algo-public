@@ -1,0 +1,71 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# N     L       S
+
+# Subtask 1: Esempi
+#ST: 0
+#COPY: testo/mst.input0.txt
+
+# Subtask 3: N<=10, M<=20
+#ST: 15
+4       01038   0   0
+5       01038   0   1
+6       01018   0   2
+7       01018   0   3
+8       01038   0   4
+9       01038   0   5
+10      01018   0   6
+
+# Subtask 4: M=N
+#ST: 20
+#COPY: gen/input_mn_1.txt
+#COPY: gen/input_mn_2.txt
+
+# Subtask 2: Tutti gli archi hanno lo stesso peso
+#ST: 15
+100     00183   1   2
+200     00225   1   3
+430     00723   1   4
+745     00083   1   5
+943     00324   1   6
+1034    00735   1   7
+1453    00262   1   8
+2469    00843   1   9
+3843    01034   1  10
+4934    00834   1  11
+5943    00034   1  12
+6674    00134   1  13
+7485    00831   1  14
+8434    01084   1  15
+9183    00183   1  16
+9483    00082   1  17
+9943    00123   1  18
+10000   00234   1  19
+
+
+# Subtask 5: Tutto il resto
+#ST: 50
+100     00183   0   2
+200     00225   0   3
+430     00723   0   4
+745     00083   0   5
+943     00324   0   6
+1034    00735   0   7
+1453    00262   0   8
+2469    00843   0   9
+3843    01034   0  10
+4934    00834   0  11
+5943    00034   0  12
+6674    00134   0  13
+7485    00831   0  14
+8434    01084   0  15
+9183    00183   0  16
+9483    00082   0  17
+9943    00123   0  18
+10000   00234   0  19

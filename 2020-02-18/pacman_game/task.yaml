@@ -1,0 +1,10 @@
+name: pacman_game
+title: Un pacman contro due fantasmi
+time_limit: 20.0
+memory_limit: 1024
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all

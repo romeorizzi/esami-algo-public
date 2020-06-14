@@ -1,0 +1,10 @@
+name: offline_LCA
+title: Verifica offline di minimo antenato comune
+time_limit: 5.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all

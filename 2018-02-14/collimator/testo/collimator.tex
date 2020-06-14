@@ -1,0 +1,66 @@
+\renewcommand{\nomebreve}{collimator}
+\renewcommand{\titolo}{Collimatore a foglia per radioterapia}
+
+\introduzione{}
+Ci viene fornito un vettore $rad[1..n]$ di $n$ numeri naturali.
+Per ogni coppia di naturali $a$ e $b$, con $1\leq a \leq b \leq n$,
+risulta definito il \emph{vettore intervallo} $L_{a,b}[1..n]$ con
+\[
+L_{a,b}[i] = \left\{
+               \begin{array}{ll}
+                 1 & \mbox{se $a\leq i \leq b$,}\\
+                 0 & \mbox{altrimenti.}
+               \end{array}
+            \right.
+\]
+
+\`E sempre possibile trovare dei moltiplicatori $\lambda_{a,b}$           
+ tali che $rad = \sum_{a,b} \lambda_{a,b} L_{a,b}$.
+ Di fatto esiste una soluzione che impiega al pi\`u $n$ moltiplicatori non nulli, dato che $rad = \sum_{a=1}^n rad[a] L_{a,a}$.
+            
+  Allo scopo di ridurre i tempi delle sedute, per medico e paziente, trova una soluzione nella quale i valori $\lambda_{a,b} > 0$ siano nel minor numero possibile.\\
+
+
+\sezionetesto{Dati di input}
+La prima riga del file \verb'input.txt' contiene un numero intero e positivo $n$.
+La seconda riga offre una sequenza di $n$ numeri interi separati da spazio:
+l'$i$-esimo di questi numeri riporta il valore $rad[i]$.
+
+\sezionetesto{Dati di output}
+Nell'unica riga del file \verb'output.txt' si scriva un'unico numero:
+il minimo numero di moltiplicatori non nulli che ti consentano di ottenere $rad$
+come combinazione lineare intera dei vettori $L_{a,b}$.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+6
+
+1 2 1 5 1 2
+}{4}
+\esempio{
+5
+
+1 3 6 4 1
+}{4}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 1\,000\,000$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $rad[0]=rad[n]=0$ e $|rad[i]-rad[j]|\leq |i-j|$ per ogni $i,j \leq n \leq 1000$.
+    \item \textbf{Subtask 3 [10 punti]:} $rad[0]=rad[n]=0$ e $|rad[i]-rad[j]|\leq |i-j|$ per ogni $i,j \leq n \leq 100\,000$.
+    \item \textbf{Subtask 4 [10 punti]:} $rad[0]=rad[n]=0$ e $|rad[i]-rad[j]|\leq |i-j|$ per ogni $i,j$.
+    \item \textbf{Subtask 5 [10 punti]:} $n \leq 20$.
+    \item \textbf{Subtask 6 [10 punti]:} $n \leq 100$.
+    \item \textbf{Subtask 7 [10 punti]:} $n \leq 1000$.
+    \item \textbf{Subtask 8 [10 punti]:} $n \leq 50000$.
+    \item \textbf{Subtask 8 [20 punti]:} nessuna restrizione.
+  \end{itemize}
+  

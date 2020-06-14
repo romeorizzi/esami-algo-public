@@ -1,0 +1,13 @@
+Come ottenere la stringa html per l'ancora mailto partendo dal template desiderato per la mail espresso in chiaro.
+
+SPAZIO = %20
+A_CAPO = %0d%0A
+, = %2c
+. = %2e
+- = %2d
+{ = %7b
+} = %7d
+ulteriori simboli: https://www.bettiolo.com/tools/Utilit%C3%A0%20per%20il%20programmatore%20Web/URL%20Encoding%20-%20Lista%20caratteri.asp?Title=URL+Encoding+-+Lista+caratteri
+
+
+

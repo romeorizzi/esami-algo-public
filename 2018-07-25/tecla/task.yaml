@@ -1,0 +1,7 @@
+name: tecla
+title: La ragnatela di Tecla
+infile: input.txt
+outfile: output.txt
+memlimit: 64
+timeout: 3
+token_mode: infinite

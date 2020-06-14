@@ -1,0 +1,122 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\gdef\this@inputfilename{input}
+\gdef\this@outputfilename{output}
+\makeatother
+
+\begin{wrapfigure}[9]{r}{0.4\textwidth}
+  \vspace{-25pt}
+  \begin{center}
+        \includegraphics[width=0.9\linewidth]{cats.jpg}
+  \end{center}
+  \vspace{-20pt}
+  \caption{A pretty cute cat. Lovely!}
+\end{wrapfigure}
+
+In realtà questo problema è una versione riadattata e semplificata, con testo in italiano, di quanto alla gara online OIS2019 delle olimpiadi di informatica a squadre. Confido che come quì rivista risulti adatta al presente appello.
+
+Si consideri una fila ordinata di $N_f$ fanciulle, ognuna rappresentata da un numero naturale che esprime il suo amore per i gatti. Ad esempio, $N_f = 5$
+e la sequenza sia
+
+\[
+   F_0 = 0, {\bf F_1 = 90}, F_2 = 20, {\bf F_3 = 50}, F_4=100.
+\]
+
+Analogamente, $N_m$ maschietti sono messi in fila, ognuno rappresentato da un numero naturale che esprime il suo amore per i gatti. Ad esempio, $N_m = 2$
+e la sequenza sia
+
+\[
+   M_0 = 50, M_1=50.
+\]
+
+Da entrambe le sequenze, viene chiesto di estrarre una sottosequenza, e le due sottosequenze debbono avere la stessa lunghezza, sia essa $N$.
+Ad esempio, se si tengono entrambi gli $N=2$ maschietti,
+si ottiene la sottosequenza
+
+\[
+   M'_0 = 50, M'_1=50
+\]
+
+del tutto uguale alla sequenza di maschietti originaria, mentre se dalla sequenza delle fanciulle si tengono solo gli $N=2$ valori in neretto, otteniamo
+
+\[
+   F'_0 = {\bf F_1 = 90}, F'_1 = {\bf F_3 = 50}
+\]
+
+La cosa importante è che quando si prende una sottosequenza non venga alterato l'ordine degli elementi tenuti (nozione di sottosequenza).
+
+A questo punto le due sottosequenze vengono allineate ed il maschietto $M'_i$ dialoga di gatti con la fanciulla $F'_i$. La conversazione risulta tanto più interessante quanto più il loro amore per i gatti differisca; il valore della conversazione è dato da $|M'_i - F'_i|$ per ogni $i=1,\ldots, N$.
+Il tuo compito è pertanto quello di estrarre le due sottosequenze in modo da massimizzare il funzionale
+
+\[
+   \sum_{i=0}^{N-1} |M'_i - F'_i| .
+\]
+
+Per le due sottosequenze proposte sopra il valore del funzionale ammonterebbe a $|M'_0 - F'_0| + |M'_1 - F'_1| = 40 +0 = 40$. Tuttavia la scelta migliore sarebbe allineare
+
+\[
+   M'_0 = 50, M'_2=50
+\]
+contro
+\[
+   F'_0 = F_0 = 0, F'_1=F_4=100
+\]
+totalizzando $|M'_0 - F'_0| + |M'_1 - F'_1| = 50+50 = 100$. 
+
+
+\begin{warning}
+Tra gli attachments di questo problema puoi trovare un template file \texttt{cats.*} che contiene un'implementazione di esempio incompleta.
+\end{warning}
+
+\InputFile
+La prima linea contiene gli interi $N_m$ e $N_f$. La seconda linea contiene gli $N_m$ interi $M_i$. La terza gli $N_f$ interi $F_i$.
+
+\OutputFile
+Occorre scrivere una sola linea contenente un intero: il massimo valore ottenibile con un'opportuna scelta di sottosequenze. 
+
+% Assunzioni
+\Constraints
+\begin{itemize}[nolistsep, itemsep=2mm]
+	\item $1 \le N_m, N_f \le 1000$.
+	\item $0 \le M_i \le 100$ per ogni $i=0\ldots N_m-1$.
+	\item $0 \le F_i \le 100$ per ogni $i=0\ldots N_f-1$.
+        \item Se utile a massimizzare il valore dell'allineamento, puoi rimuovere elementi da entrambe le sequenze.
+\end{itemize}
+
+\Scoring
+Il tuo programma verrà testato su diversi casi di test raggruppati in subtasks.
+Ti aggiudichi i punti di un subtask quando il tuo programma risolve correttamente ed entro i tempi tutti i test case di quel subtask.
+
+\OISubtask{0}{1}{Examples.}
+
+\OISubtask{20}{1}{Tutti i valori sono uguali nella sequenza dei maschi: $M_0 = M_1 = \ldots = M_{N_m-1}$.}
+
+\OISubtask{20}{2}{Entrambe le sequenze sono ordinate ($M_i \le M_{i+1}$ per ogni $i=0\ldots N_m-2$ e $F_i \le F_{i+1}$ per ogni $i=0\ldots N_f-2$) e $M_{N_m-1} \le F_{0}$.}
+
+\OISubtask{20}{2}{Rispetto ai maschietti le fanciulle sono delle gattare ($M_i \le F_j$ per ogni $i=0\ldots N_m-2$ e $j=0\ldots N_f-2$.}
+
+\OISubtask{20}{2}{$N_m, N_f \le 10$.}
+
+\OISubtask{20}{4}{No additional limitations.}
+
+% Esempi
+
+
+\Examples
+\begin{example}
+\exmpfile{cats.input0.txt}{cats.output0.txt}%
+\exmpfile{cats.input1.txt}{cats.output1.txt}%
+\exmpfile{cats.input2.txt}{cats.output2.txt}%
+\end{example}
+
+
+\Explanation
+Nel \textbf{primo caso di esempio}, se non rimuoviamo alcun elemento e teniamo le intere sequenze ($N=3$) si totalizza il valore $50 + 60 + 20 = 130$. Vi è tuttavia un'ozione migliore: escludere l'ultimo maschietto e la prima fanciulla per ottenere $70 + 70 = 140$. Questa scelta è ottima. Si noti che in questo caso conviene quindi adottare una soluzione con $N = 2 < \min\{N_m,N_f\}$.
+
+Nel \textbf{secondo caso di esempio} la scelta migliore consiste nell'escludere la seconda fanciulla per ottenere $100 + 90 + 90 = 280$.
+
+Il \textbf{terzo esempio} è quello discusso nel testo. La scelta migliore conduce a titalizzare $100$ come visto più sopra.

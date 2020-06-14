@@ -1,0 +1,57 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS verranno rinumerati da 0, ma non esternamente):
+#ST: 0
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+#COPY: att/input3.txt
+#COPY: att/input4.txt
+#COPY: att/input5.txt
+#COPY: att/input6.txt
+#COPY: att/input7.txt
+
+# generator parameters: 
+# t, N, n, seed
+# dove N è il numero di dischi e n è il numero di dimensioni diverse per i dischi
+# t indica il task type: t=0 devi solo dire il numero di mosse, t=1 devi listarle.
+
+# Subtask 2 [10 punti]: t=1 (listare le mosse), N <= 10, dischi tutti diversi. Da input8 a input10:
+#ST: 10
+1  8  8  111
+1  9  9  112
+1 10 10  113
+
+# Subtask 3 [10 punti]: t=1 (listare le mosse), N <= 15, dischi tutti diversi. Da input11 a input13:
+#ST: 10
+1 12 12  111
+1 14 14  112
+1 15 15  113
+
+# Subtask 4 [20 punti]: t=1 (listare le mosse), N <= 100000, numero mosse <= 100000. Da input14 a input16:
+#ST: 20
+1  1000 11  111
+1  5000 10  112
+1 10000  9  113
+
+# Subtask 5 [10 punti]: t=1 (contare le mosse), N <= 10, dischi tutti diversi. Da input17 a input19:
+#ST: 10
+0  8  8  111
+0  9  9  112
+0 10 10  113
+
+# Subtask 6 [10 punti]: t=1 (contare le mosse), N <= 16, dischi tutti diversi. Da input20 a input22:
+#ST: 10
+0 14 14  111
+0 15 15  112
+0 16 16  113
+
+# Subtask 7 [20 punti]: t=1 (contare le mosse), N <= 100000, numero mosse <= 1000000. Da input23 a input25:
+#ST: 20
+0  10000 15  111
+0  50000 13  112
+0 100000 12  113
+
+# Subtask 8 [20 punti]: t=1 (contare le mosse), N <= 100000, numero mosse <= 1000000000. Da input26 a input28:
+#ST: 20
+0  10000 19  111
+0  50000 20  112
+0 100000 21  113
+

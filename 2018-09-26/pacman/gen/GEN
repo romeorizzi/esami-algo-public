@@ -1,0 +1,47 @@
+#ST: 0
+#COPY: att/esempio0.txt
+#COPY: att/esempio1.txt
+#COPY: att/esempio2.txt
+#COPY: att/esempio3.txt
+#COPY: att/esempio4.txt
+#COPY: att/esempio5.txt
+#COPY: att/esempio6.txt
+#COPY: att/esempio7.txt
+#COPY: att/esempio8.txt
+#COPY: att/esempio9.txt
+#COPY: att/esempio10.txt
+
+#ST: 10
+10 10 0.2 0 0 1
+10 10 0.2 0 0 2
+10 10 0.2 0 0 3
+
+#ST: 10
+10 10 0.1 0.1 0 1
+10 10 0.1 0.1 0 2
+10 10 0.1 0.1 0 3
+
+#ST: 10
+500 500 0.2 0 0 1
+500 500 0.2 0 0 2
+500 500 0.2 0 0 3
+
+#ST: 10
+500 500 0.1 0.1 0 1
+500 500 0.1 0.1 0 2
+500 500 0.1 0.1 0 3
+
+#ST: 20
+10 10 0.1 0.1 0.1 1
+10 10 0.1 0.1 0.1 2
+10 10 0.1 0.1 0.1 3
+
+#ST: 20
+100 100 0.1 0.1 0.1 1
+100 100 0.1 0.1 0.1 2
+100 100 0.1 0.1 0.1 3
+
+#ST: 20
+500 500 0.1 0.1 0.1 1
+500 500 0.1 0.1 0.1 2
+500 500 0.1 0.1 0.1 3

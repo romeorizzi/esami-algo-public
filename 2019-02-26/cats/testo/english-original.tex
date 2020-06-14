@@ -1,0 +1,77 @@
+\usepackage{xcolor}
+\usepackage{afterpage}
+\usepackage{pifont,mdframed}
+\usepackage[bottom]{footmisc}
+
+\makeatletter
+\gdef\this@inputfilename{input}
+\gdef\this@outputfilename{output}
+\makeatother
+
+\begin{wrapfigure}[9]{r}{0.4\textwidth}
+  \vspace{-25pt}
+  \begin{center}
+        \includegraphics[width=0.9\linewidth]{cats.jpg}
+  \end{center}
+  \vspace{-20pt}
+  \caption{A pretty cute cat. Lovely!}
+\end{wrapfigure}
+
+Edoardo has finally built the new OIS building and he is ready to have a grand opening with a party. Being a lover of cats, Edoardo foresees that the small talk among his friends will revolve entirely on how cute these pets are.
+
+He sees an opportunity: knowing that not everyone loves cats in the same manner, he might pair friends with different opinions on the subject so that who loves them most can try to persuade the other person.
+
+This is not going to be easy. Edoardo, with a pragmatic approach, makes his friends line up along two lines: the left one with $N_m$ male friends and the right one with $N_f$ female friends. Then, he asks each one to express with a grade between 0 and 100 how much they love cats ($M_i$ and $F_i$ represent, respectively, the vote of the $i$-th male and of the $i$-th female in their lines).
+
+Now Edoardo excludes some friends, getting them out of their lines, in order to reach a situation where the two lines ($M'$ and $F'$) are both of $N$ friends and the quantity
+$$Q = |M'_0 - F'_0| + |M'_1 - F'_1| + \ldots + |M'_{N-1} - F'_{N-1}|$$
+is the \emph{maximum} possibile. What is the maximum value of $Q$ that he can reach?
+
+\begin{warning}
+Among the attachments of this task you may find a template file \texttt{cats.*} with a sample incomplete implementation.
+\end{warning}
+
+\InputFile
+The first line contains integers $N_m$ and $N_f$. The second line contains $N_m$ integers $M_i$. The third line contains $N_f$ integers $F_i$.
+
+\OutputFile
+You need to write a single line with an integer: the maximum $Q$ that Edoardo can obtain. 
+
+% Assunzioni
+\Constraints
+\begin{itemize}[nolistsep, itemsep=2mm]
+	\item $1 \le N_m, N_f \le 1000$.
+	\item $0 \le M_i \le 100$ for each $i=0\ldots N_m-1$.
+	\item $0 \le F_i \le 100$ for each $i=0\ldots N_f-1$.
+	\item Edoardo never changes the position of his friends in their lines. When the $i$-th is excluded from a line, every friend in that line at position $i+1, i+2, \ldots$ moves one position left. It is never allowed to leave a ``hole'' in the line.
+        \item Edoardo can exclude any number (0 included) of males and females at his sole discretion to maximize $Q$.
+\end{itemize}
+
+\Scoring
+Your program will be tested against several test cases grouped in subtasks.
+In order to obtain the score of a subtask, your program needs to correctly solve all of its test cases.
+
+\OISubtask{0}{1}{Examples.}
+
+\OISubtask{20}{1}{Every male friend expressed the same vote: $M_0 = M_1 = \ldots = M_{N_m-1}$.}
+
+\OISubtask{20}{1}{Votes are non-decreasing: $M_i \le M_{i+1}$ for each $i=0\ldots N_m-2$ and $F_i \le F_{i+1}$ for each $i=0\ldots N_f-2$.}
+
+\OISubtask{25}{2}{$N_m, N_f \le 10$.}
+
+\OISubtask{35}{3}{No additional limitations.}
+
+% Esempi
+
+
+\Examples
+\begin{example}
+\exmpfile{cats.input0.txt}{cats.output0.txt}%
+\exmpfile{cats.input1.txt}{cats.output1.txt}%
+\end{example}
+
+
+\Explanation
+In the \textbf{first sample case}, if Edoardo leaves the friends as they already are, he gets $Q = 50 + 60 + 20 = 130$. There is a better move: to exclude the last male and the first female to get $Q = 70 + 70 = 140$. There is no better strategy.
+
+In the \textbf{second sample case} the best strategy is to exclude the second female to obtain $Q = 100 + 90 + 90 = 280$.

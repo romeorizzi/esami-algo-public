@@ -1,0 +1,125 @@
+\renewcommand{\nomebreve}{online\_budget\_opt}
+\renewcommand{\titolo}{Optimal management of a never negative budget}
+
+\introduzione{}
+
+Questo secondo esercizio dell'appello è calato nella stessa contestualizzazione del primo.
+Anche qui consideriamo il seguente processo.
+All'inizio del processo disponiamo di un budget di $B_0$ monete, con $B_0$ un numero naturale.
+Siamo chiamati ad affrontare $n$ periodi, con $n \geq 1$.
+dove~$y_i\geq 0$ è un numero intero stabilito da noi col solo vincolo di non rendere mai negativo
+il budget in cassa, che durante il periodo~$i$ è dato da:
+\[
+   B'_{i} := B_{i-1}  - y_{i} \mbox{ per ogni $i=1,\ldots, n$.}
+\]  
+Nel periodo~$i$ ci vengono poi consegnate $x_i$ monete, dove~$x_i$ è un numero naturale specificato nell'input. Queste~$x_i$ monete potranno essere contabilizzate nel budget per il periodo successivo, che è dato da:
+
+\[
+   B_{i} := B'_{i} + x_{i} \mbox{ per ogni $i=1,\ldots, n$.}
+\]
+
+Quindi $B_n$ rappresenta quanto rimane in cassa alla fine del processo e può essere strettamente positivo o anche nullo, ma mai negativo.
+
+In questo secondo esercizio viene fornita in input una seconda sequenza di numeri naturali $q_1, \ldots, q_n$ col sequente significato:
+quando nel periodo~$i$ affrontiamo una spesa di $y_i$ monete
+è per acquisire $q_i y_i$ gemme.  
+
+Il vostro obiettivo è ora quello di riuscire ad acquistare il massimo pssibile numero di gemme, complessivamente sugli $n$ periodi.
+In alcuni testcase (di tipo $t=1$) vi chiediamo di specificare questo numero.
+In altri ($t=2$), vi chiediamo di specificare una sequenza di scelte, ossia un vettore di spesa  $(y_1, \ldots, y_n)$, che massimizzi in numero di gemme acquisite entro il termine del processo. 
+
+\sezionetesto{Dati di input}
+L'input deve avvenire da stdin.
+La prima riga contiene gli interi positivi $n$, $B_0$ e $t$, in questo ordine e separati da spazio.
+La seconda riga offre la sequenza degli $n$ numeri $x_1, \ldots, x_n$, tutti interi nell'intervallo $[0, 10]$, riportati nell'ordine e separati da spazi.
+La terza riga offre la sequenza degli $n$ numeri naturali $q_1, \ldots, q_n$, riportati nell'ordine e separati da spazi.
+
+\sezionetesto{Dati di output}
+L'output deve avvenire su stdout.
+Se $t=1$ allora l'output consiste di un sigolo numero: il massimo numero di gemme acquisibili su tutto il processo.
+Altrimenti, se $t=2$, allora chiediamo di specificare una sequenza $y_1, \ldots, y_n$ che porti all'acquisizione di tale massimo numero di gemme.
+
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{
+1 0 1
+
+5
+
+14
+}{
+0}
+Spiegazione: di necessità dovremo scegliere $y_1 = 0$.\\
+
+\esempio{
+1 5 1
+
+0
+
+3
+}{
+15}
+Spiegazione: con $y_1 = 5$ tutte e $5$ le monete vengono spese per acquisire $3\cdot 5 = 15$ gemme.\\
+
+\esempio{
+1 5 2
+
+0
+
+3
+}{
+5}
+Spiegazione: la soluzione ottima è la stessa ma questa volta in output riportiamo il certificato (la soluzione stessa) invece che il valore ottimo per la funzione obiettivo.\\
+
+\esempio{
+3 2 1
+
+0 0 0
+
+1 3 2
+}{
+6}
+
+\esempio{
+3 0 1
+
+2 0 1
+
+1 3 2
+}{
+6}
+
+\esempio{
+3 1 2
+
+2 0 1
+
+3 1 2
+}{
+1 0 2}
+
+
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 100\,000$.
+  \item $x_i$ è un naturale in $[0, 10]$ per ogni $i=1,\ldots, n$.
+  \item il valore dell'ottimo è rappresentabile in una variabile {\tt long int} del C/c++.
+  \item $0 \le B_0 \le 100\,000$.
+\end{itemize}
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 1 [12 punti]:} $t=1$, $n \leq 5$, $B_0 = 0$, $x_i = 1$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 2 [12 punti]:} $t=2$, $n \leq 5$, $B_0 = 0$, $x_i = 1$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 3 [13 punti]:} $t=1$, $n \leq 50$.
+    \item \textbf{Subtask 4 [13 punti]:} $t=2$, $n \leq 50$.
+    \item \textbf{Subtask 5 [10 punti]:} $t=1$, $n \leq 100\,000$, $x_i = 0$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 6 [10 punti]:} $t=2$, $n \leq 100\,000$, $x_i = 0$ per ogni $i=1,\ldots, n$.
+    \item \textbf{Subtask 7 [15 punti]:} $t=1$, $n \leq 100\,000$.
+    \item \textbf{Subtask 8 [15 punti]:} $t=2$, $n \leq 100\,000$.      
+  \end{itemize}
+  

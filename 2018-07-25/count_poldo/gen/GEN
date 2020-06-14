@@ -1,0 +1,27 @@
+#ST: 0
+#COPY: att/input0.txt
+#COPY: att/input1.txt
+
+#ST: 10
+20 permutation 1
+
+#ST: 10
+20 any 100000 1
+
+#ST: 10
+500 permutation 1
+
+#ST: 10
+5000 permutation 1
+
+#ST: 10
+5000 distinct 100000 1
+
+#ST: 20
+100000 any 10 1
+
+#ST: 20
+100000 permutation 1
+
+#ST: 10
+100000 any 100000 1

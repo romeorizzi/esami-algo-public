@@ -1,0 +1,5 @@
+memory_limit: 256
+name: count_poldo
+time_limit: 1.0
+title: Contare le sottosequenze crescenti
+token_mode: infinite

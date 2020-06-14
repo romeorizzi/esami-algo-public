@@ -1,0 +1,86 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS verranno rinumerati da 0, ma non esternamente):
+#ST: 0
+#COPY: att/input0.txt
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+#COPY: att/input3.txt
+#COPY: att/input4.txt
+#COPY: att/input5.txt
+#COPY: att/input6.txt
+#COPY: att/input7.txt
+#COPY: att/input8.txt
+#COPY: att/input9.txt
+#COPY: att/input10.txt
+#COPY: att/input11.txt
+
+# generator parameters: 
+# M, N, wall_p, ghost_p, pill_p, seed
+
+# Subtask 2 [10 punti]: senza fantasmi nè pillolazzi, $M,N \le 10$. Da input12 a input14:
+#ST: 10
+10 10 0.2 0 0 1
+10 10 0.3 0 0 2
+10 10 0.3 0 0 3
+
+# Subtask 3 [10 punti]: senza fantasmi nè muri, $M,N \le 10$. Da input15 a input17:
+#ST: 10
+10 10 0 0 0.3 1
+10 10 0 0 0.5 2
+10 10 0 0 0.7 3
+
+# Subtask 4 [10 punti]: senza pillolazzi, $M,N \le 10$. Da input18 a input22:
+#ST: 10
+10 10 0.1 0.2 0 1
+10 10 0.2 0.1 0 2
+10 10 0   0.2 0 3
+10 10 0   0.3 0 4
+10 10 0   0.3 0 5
+
+# Subtask 5 [10 punti]: senza fantasmi, $M,N \le 10$. Da input23 a input25:
+#ST: 10
+10 10 0.2 0 0.3 1
+10 10 0.3 0 0.3 2
+10 10 0.3 0 0.3 3
+
+# Subtask 6 [10 punti]: $M,N \le 10$. Da input26 a input31:
+#ST: 10
+10 10 0.1 0.2 0.4 1
+10 10 0.2 0.1 0.4 2
+10 10 0.2 0.2 0.4 3
+10 10 0   0.2 0.5 1
+10 10 0   0.3 0.5 2
+10 10 0   0.4 0.5 3
+
+# Subtask 7 [10 punti]: senza fantasmi nè pillolazzi, $M,N \le 200$. Da input32 a input35:
+#ST: 10
+ 50  50 0.3 0 0 1
+100 100 0.3 0 0 1
+100 100 0.2 0 0 2
+100 100 0.2 0 0 3
+
+# Subtask 8 [10 punti]: senza pillolazzi, $M,N \le 200$. Da input36 a input41:
+#ST: 10
+ 50  50 0.1 0.1 0 1
+100 100 0.1 0.2 0 1
+100 100 0.2 0.1 0 2
+100 100 0   0.2 0 3
+100 100 0   0.3 0 4
+100 100 0   0.4 0 5
+
+# Subtask 9 [10 punti]: senza fantasmi, $M,N \le 200$. Da input42 a input45:
+#ST: 10
+ 50  50 0.1 0 0.3 1
+100 100 0.2 0 0.3 1
+100 100 0.3 0 0.3 2
+100 100 0.3 0 0.3 3
+
+# Subtask 10 [20 punti]: $M,N \le 200$. Da input46 a input52:
+#ST: 20
+ 50  50 0.1 0.2 0.4 1
+100 100 0.2 0.1 0.4 1
+100 100 0.2 0.2 0.4 2
+100 100 0.1 0.2 0.4 3
+100 100 0   0.2 0.5 1
+100 100 0   0.3 0.5 2
+100 100 0   0.3 0.5 3
+

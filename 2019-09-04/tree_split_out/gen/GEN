@@ -1,0 +1,81 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS verranno rinumerati da 0, ma non esternamente):
+#ST: 0
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+#COPY: att/input3.txt
+#COPY: att/input4.txt
+#COPY: att/input5.txt
+#COPY: att/input6.txt
+#COPY: att/input7.txt
+#COPY: att/input8.txt
+#COPY: att/input9.txt
+#COPY: att/input10.txt
+#COPY: att/input11.txt
+#COPY: att/input12.txt
+#COPY: att/input13.txt
+#COPY: att/input14.txt
+#COPY: att/input15.txt
+
+# Codifica 3 
+# Subtask 2 [10 punti]: Codifica 3, N ≤ 10.
+#ST: 10
+     10 3 1 7771
+     10 3 2 7772
+     10 3 5 7773
+     10 3 5 7774
+
+# Subtask 3 [10 punti]: Codifica 3, N ≤ 1000.
+#ST: 10
+     50 3 5 7773
+    100 3 5 7774
+    500 3 5 7775
+   1000 3 5 7776
+
+# Subtask 4 [10 punti]: Codifica 3, N ≤ 300 000.
+#ST: 10
+     10000 3 5 74772
+    100000 3 5 74774
+    300000 3 5 74776
+
+# Codifica 2 
+# Subtask 5 [11 punti]: Codifica 2, N ≤ 10.
+#ST: 11
+     10 2 1 7771
+     10 2 2 7772
+     10 2 5 7773
+     10 2 5 7774
+
+# Subtask 6 [11 punti]: Codifica 2, N ≤ 1000.
+#ST: 11
+     50 2 5 7773
+    100 2 5 7774
+    500 2 5 7775
+   1000 2 5 7776
+
+# Subtask 7 [12 punti]: Codifica 2, N ≤ 300 000.
+#ST: 12
+     10000 2 5 74772
+    100000 2 5 74774
+    300000 2 5 74776
+
+
+# Codifica 1 
+# Subtask 8 [12 punti]: Codifica 1, N ≤ 10.
+#ST: 12
+     10 1 1 7771
+     10 1 2 7772
+     10 1 5 7773
+     10 1 5 7774
+
+# Subtask 9 [12 punti]: Codifica 1, N ≤ 1000.
+#ST: 12
+     50 1 5 7773
+    100 1 5 7774
+    500 1 5 7775
+   1000 1 5 7776
+
+# Subtask 10 [12 punti]: Codifica 1, N ≤ 300 000.
+#ST: 12
+     10000 1 5 74772
+    100000 1 5 74774
+    300000 1 5 74776

@@ -1,0 +1,5 @@
+sposta il disco 1 dal peg A al peg B
+sposta il disco 1 dal peg B al peg C
+sposta il disco 2 dal peg A al peg B
+sposta il disco 1 dal peg C al peg A
+sposta il disco 1 dal peg A al peg B

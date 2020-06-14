@@ -1,0 +1,67 @@
+#ST: 0
+ZCOPY "io/snjeguljica.in.-1.gz"
+ZCOPY "io/snjeguljica.in.-2.gz"
+
+# num_nani, num_mosse, num_query, num_intervals_start, seed
+# zero mosse:
+#ST: 20
+100000 0 100000     10 777
+100000 0 100000    100 7771
+100000 0 100000   1000 77712
+100000 0 100000  10000 77713
+100000 0 100000  50000 77714
+
+# massimo 100 nani e massimo 1000 query
+#ST: 20
+100 100000 1000 10 1777
+100 100000 1000 30 17771
+100 100000 1000 50 177712
+100 100000 1000 50 1777123
+
+# massimo 100 nani e massimo 1000 spostamenti
+#ST: 20
+100 1000 100000 10 21777
+100 1000 100000 30 127771
+100 1000 100000 50 2177712
+100 1000 100000 50 217713
+
+# full:
+#ST: 20
+100000 100000 100000     10 5677
+100000 100000 100000    100 56771
+100000 100000 100000   1000 567712
+100000 100000 100000  10000 567713
+100000 100000 100000  10000 567713
+100000 100000 100000  50000 567714
+
+# Ed ora le 10 istanze originali, a 2 punti ciascuna
+#ST: 2
+ZCOPY "io/snjeguljica.in.1.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.2.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.3.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.4.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.5.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.6.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.7.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.8.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.9.gz"
+
+#ST: 2
+ZCOPY "io/snjeguljica.in.10.gz"
+

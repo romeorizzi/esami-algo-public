@@ -1,0 +1,40 @@
+#ST: 0
+#COPY: att/input0.txt
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+
+#ST: 40
+#COPY: gen/input3.txt
+#COPY: gen/input4.txt
+#COPY: gen/input5.txt
+#COPY: gen/input6.txt
+#COPY: gen/input7.txt
+#COPY: gen/input8.txt
+#COPY: gen/input9.txt
+
+#ST: 40
+#COPY: gen/input10.txt
+#COPY: gen/input11.txt
+#COPY: gen/input11.txt
+#COPY: gen/input13.txt
+#COPY: gen/input14.txt
+#COPY: gen/input15.txt
+#COPY: gen/input16.txt
+#COPY: gen/input17.txt
+#COPY: gen/input18.txt
+#COPY: gen/input19.txt
+#COPY: gen/input20.txt
+
+#ST: 10
+#COPY: gen/input21.txt
+#COPY: gen/input22.txt
+#COPY: gen/input23.txt
+#COPY: gen/input24.txt
+#COPY: gen/input25.txt
+
+#ST: 10
+#COPY: gen/input26.txt
+#COPY: gen/input27.txt
+#COPY: gen/input28.txt
+#COPY: gen/input29.txt
+#COPY: gen/input30.txt

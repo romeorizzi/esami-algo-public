@@ -1,0 +1,5 @@
+memory_limit: 256
+name: attract
+time_limit: 1.0
+title: Portare le pecore all'ovile
+token_mode: infinite

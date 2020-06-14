@@ -1,0 +1,5 @@
+memory_limit: 256
+name: pacman
+time_limit: 3.0
+title: Percorsi tra pillole e fantasmi
+token_mode: infinite

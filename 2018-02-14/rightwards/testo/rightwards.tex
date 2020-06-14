@@ -1,0 +1,77 @@
+\renewcommand{\nomebreve}{rightwards}
+\renewcommand{\titolo}{Procedi verso destra}
+
+\introduzione{}
+
+Data una matrice $val[1..M][1..N]$ di numeri naturali,
+scegliete una qualsisi cella della sua prima colonna (la colonna pi\`u a sinistra) da cui partire
+e quindi,
+per $t=1,\ldots, N-1$,
+eseguite un passo che vi porti dalla cella corrente $(x,t)$
+ad una delle celle limotrofe della colonna successiva;
+esse sono le seguenti:
+\begin{itemize}
+   \item la cella $(x,t+1)$ alla sua immediata destra;
+   \item la cella $(x-1, t+1)$ ove esistente (ossia quando $x\geq 1$);
+   \item la cella $(x+1, t+1)$ ove esistente (ossia quando $x\leq M$).
+\end{itemize}     
+Determinare la massima somma dei valori incontrati su un tale cammino.\\
+
+
+\sezionetesto{Dati di input}
+La prima riga del file \verb'input.txt' contiene, separati da spazio, i due interi positivi $M$ ed $N$, come nell'ordine. Essi rappresentano il numero di righe ed il numero di colonne della matrice $val$.
+Le successive $M$ righe del file riportanto la matrice:
+nella riga $i+1$ si trovano gli $N$ valori della riga $i$-esima della matrice, separati da spazi.
+Si veda l'esempio.
+
+\sezionetesto{Dati di output}
+Nel file \verb'output.txt' si scriva un'unica riga contenente
+un unico numero naturale: il massimo valore per la somma delle entries
+incontrate su un cammino come descritto nel testo.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+4 5
+
+6 1 1 1 1
+
+1 1 1 1 1
+
+1 5 1 1 1
+
+2 1 2 1 1
+}{11}
+
+
+\esempio{
+4 6
+
+6 1 1 1 4 1
+
+3 1 1 1 1 1
+
+1 5 1 1 1 2
+
+1 1 2 1 1 1
+}{15}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le M,N \le 500$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [1 punti]:} tutti i valori della matrice uguali ad $1$.
+    \item \textbf{Subtask 3 [2 punti]:} $M=1$.
+    \item \textbf{Subtask 4 [4 punti]:} $N=1$.
+    \item \textbf{Subtask 5 [8 punti]:} $N=2$.
+    \item \textbf{Subtask 6 [16 punti]:} $M=2$.
+    \item \textbf{Subtask 7 [32 punti]:} $M,N \leq 10$.
+    \item \textbf{Subtask 8 [37 punti]:} nessuna restrizione.
+  \end{itemize}
+  

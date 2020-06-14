@@ -1,0 +1,51 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS verranno rinumerati da 0, ma non esternamente):
+#ST: 0
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+#COPY: att/input3.txt
+#COPY: att/input4.txt
+#COPY: att/input5.txt
+#COPY: att/input6.txt
+#COPY: att/input7.txt
+#COPY: att/input8.txt
+#COPY: att/input9.txt
+
+# NOTICE: all instances are hand made, or custom made (PSPACE-hard problem)
+# M N ghosts_move Wall-price  T
+
+# Subtask 2 [20 punti]: fantasmi congelati, nessuna gemma, M,N ≤ 30, Wall-price > 0, T ≤ 20.
+#ST: 20
+#COPY: puzzles/input10.txt
+#COPY: puzzles/input11.txt
+#COPY: puzzles/input12.txt
+#COPY: puzzles/input13.txt
+
+# Subtask 3 [20 punti]: fantasmi congelati, nessuna gemma, M,N ≤ 10, T ≤ 100.
+#ST: 20
+#COPY: puzzles/input14.txt
+#COPY: puzzles/input15.txt
+#COPY: puzzles/input16.txt
+
+# Subtask 4 [20 punti]: fantasmi congelati, al massimo 10 celle contengono gemme, M,N ≤ 10, T ≤ 10.
+#ST: 20
+#COPY: puzzles/input17.txt
+#COPY: puzzles/input18.txt
+#COPY: puzzles/input19.txt
+
+# Subtask 5 [20 punti]: nessuna gemma, M,N ≤ 5.
+#ST: 20
+#COPY: puzzles/input20.txt
+#COPY: puzzles/input21.txt
+#COPY: puzzles/input22.txt
+
+# Subtask 6 [20 punti]: M,N ≤ 4, T ≤ 10.
+#ST: 20
+#COPY: puzzles/input23.txt
+#COPY: puzzles/input24.txt
+#COPY: puzzles/input25.txt
+#COPY: puzzles/input26.txt
+#COPY: puzzles/input27.txt
+#COPY: puzzles/input28.txt
+#COPY: puzzles/input29.txt
+#COPY: puzzles/input30.txt
+

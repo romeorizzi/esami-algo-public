@@ -1,0 +1,161 @@
+% Template per generare
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{sfmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{graphs,arrows.meta}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{enumitem}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+  \noindent\begin{minipage}{\textwidth}
+    \begin{tabular}{|p{11cm}|p{5cm}|}
+      \hline
+      \textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+      \hline
+      \tt \small #1 &
+      \tt \small #2 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{.}
+\newcommand{\nome}{Chi si ferma \`e perduto}
+\newcommand{\nomebreve}{dontstop}
+
+\begin{document}
+
+
+  % Intestazione
+  \noindent{\Large \gara}
+  \vspace{0.5cm}
+
+  \noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+  \vspace{0.2cm}\\
+
+  % Descrizione del task
+  \section*{Descrizione del problema}
+
+  \noindent
+  Due giocatori si alternano nello spostare una pedina da un nodo ad un altro di un grafo diretto. Nei turni pari (dispari), il giocatore $P$ (il giocatore $D$) guarda in quale nodo del grafo si trovi la pedina, e guarda quali archi escano da quel nodo ed in quali nodi tali archi portino. Se non esce alcun arco, allora il giocatore di turno non pu\`o muovere la pedina e perde, altrimenti sceglie lungo quale arco uscente muovere la pedina e riconsegna all'avversario la situazione di gioco con la pedina collocata nel nodo verso cui porta l'arco scelto.
+La cosa che nessuno dei due vuole nel modo pi\`u assoluto \`e perdere, dopodich\`e entrambi i giocatori vorrebbero far perdere l'avversario, cosa che considerano vittoria. Il gioco pu\`o proseguire indefinitivamente, ma, se un giocatore riesce a far perdere l'avversario \`e questa la direzione in cui andr\`a a remare.\\
+
+Scrivi una procedura che stabilisca, per ogni possibile nodo di partenza per la pedina, l'esito della partita ove entrambi i giocatori giochino ottimamente.
+I nodi sono numerati da $0$ a $N-1$.
+Per ogni nodo $u$, il valore $\texttt{esito}[u]$ denota l'esito di una partita, ottimamente giocata da entrambi i giocatori, che abbia preso avvio con la pedina collocata sul nodo $u$, e vale:
+\begin{itemize}
+  \item[$+1$] se il giocatore che muove per primo ha una strategia vincente,
+  \item[$-1$] se il giocatore che muove per secondo ha una strategia vincente,
+  \item[$0$] se entrambi i giocatori hanno una strategia che consente loro di non perdere mai.
+\end{itemize}
+Dovrai calcolare e stampare $\texttt{esito}[u]$ per ciascun nodo $u = 0,\dots,N-1$.
+
+\section*{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+    \item $1 \le N \le 100\,000$, $1 \le M \le 1\,000\,000$.
+    \item non vi sono archi ripetuti (ma è possibile avere archi in entrambe le direzioni fra due nodi).
+\end{itemize}
+
+\section*{Dati di input}
+Ogni riga del file \verb'input.txt' contiene due numeri separati da spazio.  
+L'ordine tra i due numeri \`e importante:
+nella prima riga troviamo prima $N$ e poi $M$, e le successive $M$ righe contengono gli archi del grafo diretto.
+Nello specifico, la riga $1+i$, per $i=0,\dots,M-1$, contiene due numeri $u_i$ e $v_i$ che denotano un arco da $u_i$ a $v_i$.
+
+\section*{Dati di output}
+Nel file \verb'output.txt' si scriva un unica riga contenente gli $N$ numeri $\texttt{esito}[u]$, per $u = 0,\dots,N-1$, cos\`\i\ ordinati sull'indice $u$ e separati da spazio.
+
+% Esempi
+\section*{Esempio di input/output}
+
+\esempio{
+8 11
+
+0 1
+
+2 0
+
+1 2
+
+1 3
+
+2 3
+
+3 4
+
+5 3
+
+5 4
+
+4 6
+
+6 5
+
+6 7
+}{
+0 0 0 1 -1 1 1 -1
+
+}
+
+Il file di esempio fa riferimento al seguente grafo.
+Il valore $\texttt{esito}[u]$ è riportato in prossimità di ciascun nodo $u$.
+
+\begin{center}
+    \begin{tikzpicture}[x=20mm,y=12mm,>={Stealth[length=3mm,width=3mm]}]
+        \graph[
+            no placement,
+            nodes={circle,draw,very thick,minimum size=5mm,every label/.style={font=\small}},
+            edges={very thick},
+        ] {
+            0 [x=0, y=0,label={        left:$ 0$}];
+            1 [x=1,y=+1,label={  above left:$ 0$}];
+            2 [x=1,y=-1,label={  below left:$ 0$}];
+            3 [x=2, y=0,label={       above:$+1$}];
+            4 [x=3,y=+1,label={ above right:$-1$}];
+            5 [x=3,y=-1,label={ below right:$+1$}];
+            6 [x=4, y=0,label={       above:$+1$}];
+            7 [x=5, y=0,label={       right:$-1$}];
+
+            0 -> 1;
+            2 -> 0;
+            1 -> 2;
+            1 -> 3;
+            2 -> 3;
+            3 -> 4;
+            5 -> 3;
+            5 -> 4;
+            4 -> 6;
+            6 -> 5;
+            6 -> 7;
+        };
+    \end{tikzpicture}
+\end{center}
+
+\section*{Subtask}
+\begin{itemize}
+    \item \textbf{Subtask 0 [\phantom{1}0 punti]:} casi di esempio.
+    \item \textbf{Subtask 1 [20 punti]:} $N \le 10$, il grafo è aciclico.
+    \item \textbf{Subtask 2 [20 punti]:} $N \le 10$.
+    \item \textbf{Subtask 2 [30 punti]:} $N \le 1\,000$.
+    \item \textbf{Subtask 2 [30 punti]:} nessuna limitazione specifica.
+\end{itemize}
+
+\end{document}

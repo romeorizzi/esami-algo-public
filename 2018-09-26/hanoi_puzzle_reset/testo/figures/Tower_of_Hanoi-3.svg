@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Tower of Hanoi state graph for the 3-disk case.  R. A. Nonenmacher  21-Jun-2008  -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" 
+      id="Layer_1" 
+      xmlns="&ns_svg;" 
+      xmlns:xlink="&ns_xlink;" 
+      width="660" 
+      height="560"
+	    viewBox="0 0 660 560" 
+	    overflow="visible" 
+	    enable-background="new 0 0 660 560" 
+	    xml:space="preserve">
+	 
+<line fill="none" stroke="#000000" x1="284.5" y1="97.7"  x2="370.9" y2="97.7"/>
+<line fill="none" stroke="#000000" x1="327.7" y1="25.7"  x2="630.1" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="327.7" y1="25.7"  x2="25.3"  y2="529.7"/>
+<line fill="none" stroke="#000000" x1="25.3"  y1="529.7" x2="630.1" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="198.1" y1="241.7" x2="457.3" y2="241.7"/>
+<line fill="none" stroke="#000000" x1="370.9" y1="529.7" x2="500.5" y2="313.7"/>
+<line fill="none" stroke="#000000" x1="154.9" y1="313.7" x2="284.5" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="457.3" y1="385.7" x2="543.7" y2="385.7"/>
+<line fill="none" stroke="#000000" x1="111.7" y1="385.7" x2="198.1" y2="385.7"/>
+<line fill="none" stroke="#000000" x1="414.1" y1="169.7" x2="370.9" y2="241.7"/>
+<line fill="none" stroke="#000000" x1="241.3" y1="169.7" x2="284.5" y2="241.7"/>
+<line fill="none" stroke="#000000" x1="414.1" y1="457.7" x2="457.3" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="586.9" y1="457.7" x2="543.7" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="241.3" y1="457.7" x2="198.1" y2="529.7"/>
+<line fill="none" stroke="#000000" x1="68.5"  y1="457.7" x2="111.7" y2="529.7"/>
+
+<circle fill="#AABBEE" stroke="#000000" cx="25.5"  cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="68.3"  cy="457.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="111.5" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="111.9" cy="385.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="154.7" cy="313.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="197.9" cy="241.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="198.3" cy="385.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="198.3" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="241.1" cy="169.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="241.1" cy="457.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="284.3" cy="241.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="284.3" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="284.5" cy="97.7"  r="25"/>
+<circle fill="#AABBEE" stroke="#000000" cx="327.9" cy="25.5"  r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="371.1" cy="241.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="371.1" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="371.1" cy="97.5"  r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="413.9" cy="457.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="414.3" cy="169.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="457.5" cy="241.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="457.5" cy="385.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="457.5" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="500.7" cy="313.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="543.5" cy="385.9" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="543.5" cy="529.5" r="25"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="586.7" cy="457.5" r="25"/>
+<circle fill="#AABBEE" stroke="#000000" cx="629.9" cy="529.5" r="25"/>
+
+<text transform="matrix(1 0 0 1   7.3 536.9)" font-family="'LucidaConsole'" font-size="21">bbb</text>
+<text transform="matrix(1 0 0 1  50.5 464.9)" font-family="'LucidaConsole'" font-size="21">abb</text>
+<text transform="matrix(1 0 0 1  93.7 392.9)" font-family="'LucidaConsole'" font-size="21">acb</text>
+<text transform="matrix(1 0 0 1  93.7 536.9)" font-family="'LucidaConsole'" font-size="21">cbb</text>
+<text transform="matrix(1 0 0 1 136.9 320.9)" font-family="'LucidaConsole'" font-size="21">ccb</text>
+<text transform="matrix(1 0 0 1 180.1 248.9)" font-family="'LucidaConsole'" font-size="21">cca</text>
+<text transform="matrix(1 0 0 1 180.1 392.9)" font-family="'LucidaConsole'" font-size="21">bcb</text>
+<text transform="matrix(1 0 0 1 180.1 536.9)" font-family="'LucidaConsole'" font-size="21">cab</text>
+<text transform="matrix(1 0 0 1 223.3 176.9)" font-family="'LucidaConsole'" font-size="21">bca</text>
+<text transform="matrix(1 0 0 1 223.3 464.9)" font-family="'LucidaConsole'" font-size="21">bab</text>
+<text transform="matrix(1 0 0 1 266.5 104.9)" font-family="'LucidaConsole'" font-size="21">baa</text>
+<text transform="matrix(1 0 0 1 266.5 248.9)" font-family="'LucidaConsole'" font-size="21">aca</text>
+<text transform="matrix(1 0 0 1 266.5 536.9)" font-family="'LucidaConsole'" font-size="21">aab</text>
+<text transform="matrix(1 0 0 1 309.7  32.9)" font-family="'LucidaConsole'" font-size="21">aaa</text>
+<text transform="matrix(1 0 0 1 352.9 104.9)" font-family="'LucidaConsole'" font-size="21">caa</text>
+<text transform="matrix(1 0 0 1 352.9 248.9)" font-family="'LucidaConsole'" font-size="21">aba</text>
+<text transform="matrix(1 0 0 1 352.9 536.9)" font-family="'LucidaConsole'" font-size="21">aac</text>
+<text transform="matrix(1 0 0 1 396.1 176.9)" font-family="'LucidaConsole'" font-size="21">cba</text>
+<text transform="matrix(1 0 0 1 396.1 464.9)" font-family="'LucidaConsole'" font-size="21">cac</text>
+<text transform="matrix(1 0 0 1 439.3 248.9)" font-family="'LucidaConsole'" font-size="21">bba</text>
+<text transform="matrix(1 0 0 1 439.3 392.9)" font-family="'LucidaConsole'" font-size="21">cbc</text>
+<text transform="matrix(1 0 0 1 439.3 536.9)" font-family="'LucidaConsole'" font-size="21">bac</text>
+<text transform="matrix(1 0 0 1 482.5 320.9)" font-family="'LucidaConsole'" font-size="21">bbc</text>
+<text transform="matrix(1 0 0 1 525.7 392.9)" font-family="'LucidaConsole'" font-size="21">abc</text>
+<text transform="matrix(1 0 0 1 525.7 536.9)" font-family="'LucidaConsole'" font-size="21">bcc</text>
+<text transform="matrix(1 0 0 1 568.9 464.9)" font-family="'LucidaConsole'" font-size="21">acc</text>
+<text transform="matrix(1 0 0 1 612.1 536.9)" font-family="'LucidaConsole'" font-size="21">ccc</text>
+
+</svg>

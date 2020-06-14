@@ -1,0 +1,67 @@
+\renewcommand{\nomebreve}{attract}
+\renewcommand{\titolo}{Portare le pecore all'ovile}
+
+\introduzione
+
+Tu sei il pastore ed il tuo compito è portare la percora all'ovile.
+Gli $n$ nodi di un grafo diretto sono numerati da $0$ ad $n-1$,
+col nodo $0$ che rappresenta l'ovile.
+I nodi sono di due tipi:
+\begin{itemize}
+\item[$V_0$] quando una pecora sosta su un nodo $v\in V_0$
+  il pastore può trattenerla su quel nodo
+  oppure scegliere un qualsiasi arco $(v,z)$ con coda in $v$
+  e condurre la pecora in $z$ facendola transitare lungo l'arco $(v,z)$;
+\item[$V_1$] quando una pecora sosta su un nodo $v\in V_1$
+  allora è lei che sceglie un qualsiasi arco $(v,z)$ con coda in $v$
+  e si sposta in $z$ transitando lungo l'arco $(v,z)$. La pecora non può scegliere di stazionare sul nodo $v$, deve compiere un passo.
+\end{itemize}
+
+Assumiamo che $0\in V_0$, ossia una volta che la pecora è all'ovile non scappa più. Assumiamo inoltre che per ogni nodo $v\in V_1$ esista almeno un arco uscente da $v$ (cioè con coda in $v$).
+Per ogni nodo $v$ del grafo devi stabilire se sei in grado di portare all'ovile una pecora che incominci in $v$ il suo percorso.
+Ti chiediamo di labellare con $-1$ quei nodi dove una pecora avversa andrebbe smarrita, su ogni altro nodo $v$ riporta il più piccolo numero naturale $d_v$
+tale che sia sempre possibile portare la pecora da $v$ a $0$ in al più $d_v$ passi.
+
+\section*{Dati di input}
+Il file \verb'input.txt' è composto da $M+1$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga~$1$: gli interi $n$ ed $m$, il numero di nodi e di archi del grafo in input.
+\item Riga~$2$: fornisce $n$ valori $x_0, x_1, \ldots, x_{n-1}$  separati da spazi. Si tratta di $n$ valori booleani ($0$ oppure $1$) associati ai nodi. Il nodo $i$ è controllato dal pastore se $x_i=0$. Se invece $x_i=1$ allora il nodo $i$ è controllato dalla pecora. In pratica, $i\in V_{x_{i}}$.
+\item Riga~$i$, con $i=3\ldots m+2$: due interi separati da spazio $u$, $v$; dove $u$ e $v$ identificano la coda e la testa dell'arco $i$-esimo.
+\end{itemize}
+
+
+\section*{Dati di output}
+Il file \verb'output.txt' consta di un'unica riga contenente
+$n$ numeri interi  $d_0, d_1, \ldots, d_{n-1}$ separati da spazi.
+L'intero $d_i$ vale $-1$ se una pecora inizialmente posta sul nodo~$i$ riesce ad evitare indefinitivamente di visitare l'ovile, quasiasi siano le scelte spese dal pastore. Altrimenti, l'intero $d_i$ è il più piccolo valore tale che il pastore riesce a condurre la pecora all'ovile entro al più $d_i$ passi.  
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse copie input/output tra cui la seguente.
+\vspace{0.5cm}
+
+\esempio{
+\input{esempio1.input.txt}
+}{\input{esempio1.output.txt}}
+
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \leq n \leq 200\,000$.
+  \item $1 \leq m \leq 500\,000$.
+\end{itemize}
+  
+\section*{Subtask}
+\begin{itemize}
+  \item \textbf{Subtask 1 [0 punti]:} casi di esempio forniti alla pagina del problema, partendo dall'esempio sopra.
+  \item \textbf{Subtask 2 [10 punti]:} $|V_1| = 0$, $V_0 = V$, $n \leq 1000$.
+  \item \textbf{Subtask 3 [15 punti]:} $|V_1| = 0$, $V_0 = V$.
+  \item \textbf{Subtask 4 [10 punti]:} $|V_0| = 1$, $V_1 = V\setminus \{0\}$, $n \leq 1000$.
+  \item \textbf{Subtask 5 [15 punti]:} $|V_0| = 1$, $V_1 = V\setminus \{0\}$.
+  \item \textbf{Subtask 6 [25 punti]:} $n \leq 1000$.
+  \item \textbf{Subtask 7 [25 punti]:} nessuna restrizione.
+\end{itemize}

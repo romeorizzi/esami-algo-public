@@ -1,0 +1,9 @@
+infile: ''
+memory_limit: 512
+name: mst
+outfile: ''
+time_limit: 1.0
+title: Minimum spanning tree
+token_mode: disabled
+public_testcases: all
+correttore: "cor/correttore"

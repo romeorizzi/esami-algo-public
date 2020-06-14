@@ -1,0 +1,187 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{sfmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{listings}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{enumitem}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempioA}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{7cm}|p{9cm}|}
+	\hline
+      \textbf{\file{input (da stdin)}} & \textbf{\file{output (su stdout)}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+\newcommand{\esempioB}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{9cm}|p{7cm}|}
+	\hline
+      \textbf{\file{input (da stdin)}} & \textbf{\file{output (su stdout)}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{Esame Algoritmi 2020-02-18}
+\newcommand{\nome}{Verifica offline di minimo antenato comune}
+\newcommand{\nomebreve}{offline\_LCA}
+
+\begin{document}
+% Intestazione
+\noindent{\Large \gara}
+\vspace{0.5cm}
+
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+
+% Descrizione breve del problema
+\section*{Descrizione breve del problema}
+
+Lavoriamo con alberi orientati (dove da ogni nodo è presente un unico percorso verso la radice). Una foresta è un insieme di tali alberi senza nodi in comune.
+Il tuo primo obiettivo sarà stabilire quanti siano gli alberi nella foresta. Ti verrà chiesto poi, come secondo livello di difficoltà, di decidere se un nodo è antenato di un altro. Infine, per un insieme di triple $(u,v,w)$ assegnate a tè tutte in bella partenza, dovrai stabilire quando $w$ sia il minimo antenato comune (lowest common ancestor) tra $u$ e $v$.
+
+% Maggiori dettagli
+\section*{Maggiori dettagli}
+
+Ricevi in input una foresta i cui $N$ nodi sono numerati da $0$ ad $N-1$.
+Ogni nodo $v$ dichiara il padre $p[v]$, se ne ha uno;
+in caso contrario $p[v]=-1$.
+Quando $p[v]\neq -1$ l'arco $(v,p[v])$ è presente nella foresta e $v$ e $p[v]$ appartengono sicuramente allo stesso albero della stessa.
+Un nodo $x$ è antenato di $v$ se $x=v$ oppure se $p[v]\neq -1$ e $x$ è antenato di $p[v]$. In formula, $A(v) := \{v\} \cup A(p[v])$, dove $A(-1) = \emptyset$.
+Questa formula definisce l'insieme degli antenati (ancestors) di ogni nodo, in quanto viene garantito che la relazione ``padre di'' sia aciclica ossia che la sua chiusura transitiva non contenga la coppia $(v,v)$ per nessun nodo $v$.
+
+Denotiamo con $CA(u,v) := A(u)\cap A(v)$ l'insieme degli antenati comuni (common ancestors) di $u$ e di $v$.
+La profondità (depth) di un nodo $v$ è data da $d(v) := |A(v)|$.
+Il minimo antenato comune (lowest common ancestors) di $u$ e $v$
+è definito da $LCA(u,v) := \arg\max_{w\in CA(u,v)} d(w)$ quando $u$ e $v$ appartengono ad uno stesso albero della foresta; altrimenti poniamo $LCA(u,v) := -1$.
+
+% Input
+\section*{Dati di input}
+
+La prima riga contiene due numeri naturali separati da spazio:
+il numero di nodi $N$ ed il numero di query $Q$.
+La seconda riga contiene $N$ numeri interi nell'intervallo $[-1,N-1]$, separati da spazio.
+L'$i$-esimo di questi numeri è il nome di $p[i-1]$, oppure $-1$ se il nodo $i-1$ non ha padre.
+Seguono $Q$ righe, ciascuna specifica una diversa query cui devo rispondere, e posso leggerle tutte prima di cominciare a fornire delle risposte.
+Ciascuna query è specificata fornendo tre numeri, $u$, $v$ e $w$ separati da spazio. La domanda posta con la query $Q(u,v,w)$ è se valga o meno che $w=LCA(u,v)$.
+Questo formato consente di mettere a cappello comune, come caso particolare, alcuni tipi di domande più semplici:
+\begin{description}
+  \item[$Q(u,v,w=-1)$] per chiedere se $u$ e $v$ siano in alberi diversi;
+  \item[$Q(u,v,w=v)$] per chiedere se $v$ sia un antenato di $u$.
+\end{description}
+
+
+% Output
+\section*{Dati di output}
+
+L'output deve avvenire su stdout.
+Nella prima riga si scriva il numero di alberi che compongono la foresta.
+Seguono $Q$ righe, dove nella $i$-esima di queste righe si scrive la risposta alla query $i$-esima nell'input: $1$ se $w=LCA(u,v)$ e $0$ altrimenti.
+
+% Esempi
+\section*{Esempio di input/output}
+
+\esempioB{10 7
+
+7 6 7 0 2 0 -1 -1 1 2
+
+3 4 -1
+
+3 1 -1
+
+5 7 7
+
+7 5 5
+
+4 9 0
+
+4 9 7
+
+4 9 2
+}{2
+
+0
+
+1
+
+1
+
+0
+
+0
+
+0
+
+1}
+
+{\bf Spiegazione:}
+La foresta ricevuta in input è la sequente:
+\begin{verbatim}
+          7       6
+         / \      |
+        0   2     1
+       / \  |\    |
+      3   5 4 9   8
+\end{verbatim}
+Il primo $2$ nell'output dice che la foresta consta di due alberi. Ed ecco le motivazioni delle seguenti risposte:\\
+$Q(3,4,-1)=0$ perchè i nodi $3$ e $4$ sono ricompresi nello stesso albero.\\
+$Q(3 1 -1)=1$ perchè i nodi $3$ e $1$ non sono ricompresi nello stesso albero.\\
+$Q(5,7,7)=1$ perchè $5$ è un discendente di $7$.\\ 
+$Q(7,5,5)=0$ perchè $7$ non è un discendente di $5$.\\
+$Q(4,9,0)=0$ perchè $4$ non è un discendente di $0$ (e per altro nemmeno $9$ lo è).\\
+$Q(4,9,7)=0$ perchè, anche se $4$ e $9$ sono entrambi discendenti di $7$, tuttavia sono anche entrambi discendenti di $2$, che è un discendente stretto di $7$.\\
+$Q(4,9,2)=1$ perchè $2$ è quel discendente comune a $4$ e $9$ che di più sotto non ce ne è.\\ 
+
+
+
+%Assunzioni
+%\section*{Assunzioni}
+%\begin{itemize}[nolistsep, noitemsep]
+%\item dove $n$ \`e il numero di nodi dell'albero,
+%      vale sempre che $1 \le n \le 300\,000 $;
+%\item tempo limite: un secondo.
+%\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+
+\begin{itemize}
+\item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i tre casi sopra.
+\item \textbf{Subtask 2 [5 punti]:} contare gli alberi: $Q=0$, $N \le 500$.
+\item \textbf{Subtask 3 [7 punti]:} contare gli alberi: $Q=0$, $N \le 300\,000$.
+\item \textbf{Subtask 4 [4 punti]:} stabilire se $u$ e $v$ in alberi diversi ($w=-1$ in ogni query), $Q,N \le 500$.
+\item \textbf{Subtask 5 [10 punti]:} stabilire se $u$ e $v$ in alberi diversi ($w=-1$ in ogni query), $Q,N \le 200\,000$.
+\item \textbf{Subtask 6 [7 punti]:} stabilire se $v$ è ancestor di $u$ ($w=v$ in ogni query), $Q,N \le 1\,000$.
+\item \textbf{Subtask 7 [15 punti]:} stabilire se $v$ è ancestor di $u$ ($w=v$ in ogni query), $Q,N \le 100\,000$.
+\item \textbf{Subtask 8 [12 punti]:} verifica offline degli LCA, $Q,N \le 500$.
+\item \textbf{Subtask 9 [40 punti]:} verifica offline degli LCA, $Q,N \le 100\,000$.
+\end{itemize}
+
+
+\end{document}

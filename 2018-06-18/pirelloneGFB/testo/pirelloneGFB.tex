@@ -1,0 +1,142 @@
+\renewcommand{\nomebreve}{pirelloneGFB}
+\renewcommand{\titolo}{Luci della Ribalta al Pirellone}
+
+\introduzione{}
+
+In questo revival, il Pirellone è una matrice di $M$ righe ed $N$ colonne,
+ed ogni cella di questa matrice è un numero naturale nell'intervallo $[0,B)$.
+(Quindi, nelle istanze con $B=2$, la matrice è rimasta binaria come nel problema che abbiamo già conosciuto, mentre, quando $B>2$,
+per le nuove lampade alogene negli uffici sono ora possibili più livelli di intensità invece che solo acceso/spento).
+  
+Il custode ha a disposizione $M$ interruttori di riga ed $N$
+interruttori di colonna.  Ogni volta che il custode agisce
+su un interruttore di riga o colonna ciascuna cella $P_{i,j}$ di quella riga o colonna subisce la trasformazione:
+\[
+   P_{i,j} \mapsto (P_{i,j}+1) .mod. B.
+\]
+Ad esempio, nel caso di $B=2$ (matrice $0/1$, ossia acceso/spento)
+tutte le luci accese di quella riga o colonna si spengono ma, allo stesso tempo, quelle spente si accendono!
+
+Aiuta il custode a decidere quante volte agire su ciascuno degli $M+N$
+interruttori in modo da portare allo stato di spento ($0$) tutte le luci dalle finestre del Pirellone (rappresentate dalle celle della matrice). Data la configurazione iniziale di luci, il custode
+deve verificare se sia possibile spegnere le luci con gli interruttori
+di riga e colonna e, in tal caso, deve specificare anche quante volte agire su ciascun interruttore.
+
+
+\sezionetesto{Dati di input}
+  
+Il file \verb'input.txt' contiene nella prima riga gli interi
+$M$, $N$ e $B$ nell'ordine e separati da spazi.
+
+Ognuna delle successive $M$ righe contiene una sequenza di $N$ valori naturali presi dall'intervallo $[0,B)$, e separati da uno spazio.
+La sequenza contenuta nell'$i$-esima di tali righe rappresenta lo stato
+delle luci nell'$i$-esima riga (piano) del Pirellone. In
+particolare, il $j$-esimo valore della riga indica lo stato della luce nel $j$-esimo ufficio a quel piano del palazzo.
+  Poichè $B \leq 10$ in tutte le istanze, questi numeri sono tutti di una sola cifra. La riga non contiene altri caratteri.
+
+
+
+\sezionetesto{Dati di output}
+  
+Il file \verb'output.txt' deve contenere due linee per indicare
+su quali interruttori deve agire il custode.
+
+La prima linea contiene una sequenza di $M$ numeri naturali nell'intervallo $[0,B)$ separati da uno spazio, per rappresentare quante volte il custode deve agire su ciascuno degli $M$ interruttori di riga.
+
+Analogamente, la seconda linea contiene una sequenza di $N$
+numeri naturali nell'intervallo $[0,B)$ separati da uno spazio.
+Il  $j$-esimo valore della sequenza indica quante volte
+il custode deve agire sull'interruttore che agisce sulla $j$-esima colonna incrementando di uno tutte le intensità tranne per le luci di intensità massima che vengono invece spente.
+
+Nel caso in cui non sia possibile spegnere tutte le luci del Pirellone
+con gli interruttori speciali, tutti gli $M+N$ valori delle due linee in
+\texttt{output.txt} devono essere settati a $0$.
+
+  \section*{Assunzioni}
+  \begin{itemize}
+  
+    \item $ 1 \leq M, N \leq 5000$
+    \item  inizialmente il Pirellone ha almeno una luce accesa
+  \end{itemize}
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+5 5 2
+
+1 0 1 1 0
+
+0 1 0 0 1
+
+1 0 1 1 0
+
+0 1 0 0 1
+
+0 1 0 0 1
+}{
+1 0 1 0 0
+
+0 1 0 0 1
+}
+
+\esempio{
+4 5 2
+
+1 0 1 1 0
+
+0 1 1 0 1
+
+1 0 1 1 0
+
+0 1 0 0 1
+}
+{
+0 0 0 0
+
+0 0 0 0 0
+}
+
+\esempio{
+8 10 3
+
+1 1 1 0 0 0 2 0 0 0
+
+2 2 2 1 1 1 0 1 1 1
+
+0 0 0 2 2 2 1 2 2 2
+
+1 1 1 0 0 0 2 0 0 0
+
+1 1 1 0 0 0 2 0 0 0
+
+2 2 2 1 1 1 0 1 1 1
+
+0 0 0 2 2 2 1 2 2 2
+
+1 1 1 0 0 0 2 0 0 0
+}
+{
+0 2 1 0 0 2 1 0
+
+2 2 2 0 0 0 1 0 0 0
+}
+
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 1 [3 punti]:} $B=2,3$, $M = 1$.
+    \item \textbf{Subtask 2 [10 punti]:} $B=2,3$, $M,N \leq 10$.
+    \item \textbf{Subtask 3 [12 punti]:} $B=2$, $M,N \leq 20$.
+    \item \textbf{Subtask 4 [15 punti]:} $B=2$, $M,N \leq 500$ (come nella gara oii-2005, Milano).
+    \item \textbf{Subtask 5 [30 punti]:} $B=3$, $M,N \leq 500$.
+    \item \textbf{Subtask 6 [14 punti]:} $M,N \leq 500$.
+    \item \textbf{Subtask 7 [4 punti]:} $B=2$, $M,N \leq 5000$.
+    \item \textbf{Subtask 8 [5 punti]:} $B=3$, $M,N \leq 5000$.
+    \item \textbf{Subtask 9 [7 punti]:} nessuna restrizionei, $M,N \leq 5000$.
+  \end{itemize}
+  
+
+
+\end{document}

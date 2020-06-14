@@ -1,0 +1,11 @@
+name: is_shuffle_of
+title: Can a deck of cards be obtained as the shuffle of two?
+time_limit: 1.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+

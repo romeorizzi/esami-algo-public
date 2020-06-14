@@ -1,0 +1,5 @@
+memory_limit: 256
+name: rightwards
+time_limit: 1.0
+title: Procedi verso destra
+token_mode: infinite

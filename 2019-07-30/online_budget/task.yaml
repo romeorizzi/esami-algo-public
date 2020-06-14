@@ -1,0 +1,11 @@
+name: online_budget
+title: Histories of a budget mantained non-negative online
+time_limit: 2.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+

@@ -1,0 +1,90 @@
+\renewcommand{\nomebreve}{pacman\_game}
+\renewcommand{\titolo}{Un pacman contro due fantasmi}
+
+\introduzione{}
+\vspace{-1cm}
+
+Entro una griglia $M\times N$ un pacman 'P' cerca di raggiungere una qualche uscita 'E' sfuggendo a due fantasmi 'G' e portando con sè il maggior numero possibile di gemme. Nè i fantasmi nè pacman possono uscire dalla griglia nè porsi su una cella di muro '\#'.
+Tutte le altre celle riportano una cifra (da '0' a '9') che specifica quante gemme sono inizialmente riposte in quella cella. La prima volta che pacman transita sulla cella raccoglie tutte le gemme presenti in essa, accumulandole. I fantasmi non possono raccogliere le gemme, pur potendo transitare anche essi per la cella. Ad ogni turno di gioco, prima muove pacman e poi muovono i due fantasmi: con la loro mossa, tutti si spostano dalla cella attuale ad una delle massimo 4 celle adiacenti ad essa. Nessuno rimane dove era. Pacman perde se non raggiunge una delle uscite (celle marcate 'E') entro un numero di turni prefissato, oppure se finisce su un fantasma o se un fantasma finisce su di lui. Se invece pacman finisce su una delle uscite, allora egli è salvo, e assicura tutte le gemme che è riuscito a portare con sè. Tali gemme possono essere meno di quelle raccolte in quanto pacman, ad ogni sua mossa, può spendere 'B' delle gemme in sua mano per collocare muro ('\#') sulla cella che lascia.
+
+
+\hspace{0.8cm}
+\includegraphics[width=0.1\textwidth]{figures/pacman_big.png}
+\hfill
+\includegraphics[width=0.22\textwidth]{figures/pacman_field.jpeg}
+\hfill
+\includegraphics[width=0.22\textwidth]{figures/pacman_rage.png}
+
+Si richiede di individuare se pacman riesce a raggiunge l'uscita, e, in tale caso, quale sia il numero massimo di gemme che egli riesce a portare con sè.
+Adottiamo il criterio del caso peggiore, ossia assumiamo che i due fantasmi collaborino a giocare ottimamente, a far sì che pacman non raggiunga l'uscita o, quantomeno, a minimizzare il numero di gemme che egli riesce a portarsi ad un'uscita.
+Alcuni subtask prevedono che i fantasmi siano impossibilitati a muoversi, portando il problema da PSPACE ad NP, se non in P.
+
+\section*{Dati di input}
+
+L'input deve avvenire da stdin.
+La prima riga contiene i 4 numeri naturali $M$, $N$, $g\_move$, $B$, $T$,
+dove $M$ ed $N$ sono le dimensioni della scacchiera, $T$ il massimo numero di turni entro cui raggiungere l'uscita, $B$ il numero di gemme da spendere per ogni cella di muro rilasciata, e $g\_move \in \{0,1\}$.
+Nelle istanze con $g\_move = 0$ i fantasmi sono impossibilitati a muoversi.
+Le successive $M$ righe rappresentano la mappa: la $r$-esima di tali righe contiene una
+sequenza di $N$ caratteri nell'alfabeto $\{P,G,E,\#,1,2,3,4,5,6,7,8,9\}$, il cui significato è quello specificato più sopra (P=pacman,G=ghost,E=exit,\#=muro, e le cifre specificano il numero di gemme nella cella).
+Ovviamente, il $c$-esimo carattere di questa riga si riferisce alla cella $(r, c)$ della mappa. I caratteri NON sono separati da spazi.
+
+Tenete presente che ci saranno i caratteri di terminazione di riga. (Potete avvalervi del template di soluzione fornito in attachment alla pagina del problema per gestire in modo robusto queste piccole noie). 
+
+\section*{Dati di output}
+
+L'output deve avvenire su stdout, dove il vostro programma deve restituire una sola riga contenente un sono numero: -1 se pacman non riesce a raggiungere un'uscita entro $T$ sue mosse, il numero di gemme raccolte e non spese in caso contrario.
+
+
+% Esempi
+\section*{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse copie input/output utili a disambiguare possibili dubbi, tra cui le seguenti.
+
+\vspace{0.5cm}
+
+\esempio{4 4 1 2 9
+    
+G0\#E
+  
+\#304
+
+GP\#5
+
+\#\#55
+}{15}
+
+\esempio{4 4 0 2 6
+
+G2\#E
+  
+\#304
+
+GP\#5
+
+\#\#5E
+}{12}
+
+\esempio{4 4 1 2 9
+  
+G0\#4
+  
+\#304
+  
+2P\#5
+  
+\#GE5
+}{-1}
+
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [0 punti]:} casi di esempio (inclusi quelli in attachment).
+\item \textbf{Subtask 2 [20 punti]:} fantasmi congelati, nessuna gemma, $M,N \le 30$, $T \le 20$.
+\item \textbf{Subtask 3 [20 punti]:} fantasmi congelati, nessuna gemma, $M,N \le 10$, $T \le 100$.
+\item \textbf{Subtask 4 [20 punti]:} fantasmi congelati, al massimo 10 celle contengono gemme, $M,N \le 10$.
+\item \textbf{Subtask 5 [20 punti]:} nessuna gemma, $M,N,T \le 5$.
+\item \textbf{Subtask 6 [20 punti]:} $M,N \le 4$, $T\le 10$.
+\end{itemize}
+
+\end{document}
+

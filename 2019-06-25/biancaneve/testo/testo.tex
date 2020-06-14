@@ -1,0 +1,163 @@
+% Template per generare
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{sfmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{enumitem}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+  \noindent\begin{minipage}{\textwidth}
+    \begin{tabular}{|p{11cm}|p{5cm}|}
+      \hline
+      \textbf{File \file{input (da stdin)}} & \textbf{File \file{output (su stdout)}}\\
+      \hline
+      \tt \small #1 &
+      \tt \small #2 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{.}
+\newcommand{\nome}{Biancaneve al riordino dei nanetti}
+\newcommand{\nomebreve}{biancaneve}
+
+\begin{document}
+  
+  
+  % Intestazione
+  \noindent{\Large \gara}
+  \vspace{0.5cm}
+  
+  \noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+  \vspace{0.2cm}\\
+
+  \begin{flushright}
+      Questo problema \`e una rielaborazione del task SNJEGULJICA, COCI 2012/2013, $7^{th}$ round.
+  \end{flushright}
+  
+  % Descrizione del task
+  \section*{Descrizione del problema}
+    
+  \noindent
+  Biancaneve \`e dedita al riordino dei suoi $n$ nanetti da giardino.
+  I nanetti sono disposti in riga, nelle posizioni da $1$ ad $n$,
+  e questo le va bene.
+  Ci\`o che non le piace \`e che i nanetti sono tutti di altezza diversa
+  (ciascuna rappresentata con un diverso naturale da $1$ ad $n$)
+  e poi c'\`e che la fila non le risulta bene ordinata.
+  Procede pertanto al riordino della fila impartendo ordini di due possibili tipologie:
+  \begin{description}
+     \item[1 $p_1$ $p_2$] a seguito di questo comando i nani nelle posizioni $p_1$ e $p_2$ della fila si scambiano di posto; tutti gli altri nani mantengono la loro posizione. In sintesi: date due posizioni, scambiare di posto i nanetti che le occupano. 
+     \item[2 $h_1$ $h_2$] questo comando non altera la disposizione dei nani,
+       ma richiede di stabilire se i nani di altezze $h_1, h_1+1, \ldots, h_2$ sono raggruppati, ossia occupano un intervallo di posizioni contigue (anche se non necessariamente in quell'ordine).
+        In sintesi: dato un range di altezze, stabilire se i nanetti la cui altezza ricada in tale range occupino un intervallo di posizioni contigue.
+  \end{description}
+
+  Assistere i nani ad espletare gli ordini di Biancaneve e, contestualmente, a rispondere alle sue domande. 
+
+
+\section*{Dati di input}
+
+L'input deve avvenire da stdin.
+Come input leggete $2+m$ righe da stdin.
+
+La prima riga contiene gli interi positivi $n$ ed $m$
+($2\leq n \leq 100\,000$, $2\leq m \leq 100\,000$),
+il numero di nani ed il numero totale di richieste avanzate da Biancaneve.
+
+La riga seguente contiene una permutazione dei numeri da $1$ ad $n$
+intesa a specificare la disposizione iniziale dei nanetti:
+per ogni posizione si precisa chi la occupi, dove le altezze identificano univocamente i nani. 
+
+Ciascuna delle seguenti $m$ righe specifica un comando di Biancaneve,
+come nell'odine in cui questi vengono impartiti.
+Ciascuno di questi ordini viene specificato tramite una terna di numeri,
+dove il primo numero, che pu\`o essere $1$ oppure $2$, specifica la tipologia del comando, ed i successivi due numeri ne costituiscono i parametri come illustrato sopra. 
+
+
+\section*{Dati di output}
+  L'input deve avvenire su stdout.
+  Come output, dovete stampare su stdout una riga per ogni richiesta di tipo $2$
+  avanzata da Biancaneve. La riga contiene ``YES'' oppure ``NO'' come risposta
+  alla richiesta che le corrisponde.
+  
+\section*{Subtask}
+  Un totale di $100$ punti \`e ripartito sui seguenti subtask.
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i casi di esempio.
+    \item \textbf{Subtask 2 [20 punti]:} i nanetti non vengono mai spostati.
+    \item \textbf{Subtask 3 [20 punti]:} massimo 100 nanetti e massimo 1000 query.
+    \item \textbf{Subtask 4 [20 punti]:} massimo 100 nanetti e massimo 1000 spostamenti.
+    \item \textbf{Subtask 5 [20 punti]:} massimo 100\,000 nanetti, massimo 100\,000 spostamenti, e massimo 100\,000 query.
+    \item \textbf{Subtask 6 [2*10=20 punti]:} le 10 istanze originali a COCI danno $2$ punti ciascuna. A quella gara era dato sapere che in almeno metà delle istanze valeva che $h_2-h_1\leq 50$ per ogni richiesta di tipo~2. I nanetti erano massimo 200\,000 nanetti e le operazioni prescritte (query o spostamenti) erano massimo 200\,000 in tutto. 
+  \end{itemize}
+
+% Esempi
+\section*{Esempio di input/output}
+\setlength{\tabcolsep}{6pt}
+\esempio{
+5 3
+
+2 4 1 3 5
+
+2 2 5
+
+1 3 1
+
+2 2 5
+}{
+NO
+
+YES
+}
+  
+\esempio{
+7 7
+
+4 7 3 5 1 2 6
+
+2 1 7
+
+1 3 7
+
+2 4 6
+
+2 4 7
+
+2 1 4
+
+1 1 4
+
+2 1 4
+}{
+YES
+
+NO
+
+YES
+
+NO
+
+YES}
+  
+
+\end{document}
