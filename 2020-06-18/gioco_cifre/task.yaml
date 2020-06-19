@@ -1,0 +1,9 @@
+name: gioco_cifre
+title: Giochiamo a Sottrai 09
+memory_limit: 64
+time_limit: 1.0
+infile: ""
+outfile: ""
+token_mode: disabled
+public_testcases: all
+feedback_level: full
