@@ -6,7 +6,7 @@ Il gioco è così descritto:
 - In ogni turno il giocatore sceglie una cifra del numero attuale diversa da $0$ e ne sottrae il valore dal numero stesso.
 - Ha l'ultima parola e vince il giocatore che con la propria mossa dovesse riuscire a generare il numero $0$.
 
-### Esempio:
+### Esempio
 
 Ipotizziamo che dopo un numero finito di turni il numero sia 7083. Le uniche mosse valide sono:
 - Sottraggo 3, ottenendo 7080 
@@ -16,12 +16,12 @@ Ipotizziamo che dopo un numero finito di turni il numero sia 7083. Le uniche mos
 Martina inizia sempre per prima.
 Si vuole sapere se Martina, giocando ottimamente, potrà vincere.
 
-## Input:
+## Input
 
 Da `stdin`.
 Un unico numero intero $N$, che indica il numero iniziale.
 
-## Output:
+## Output
 
 Su `stdout` scrivi $1$ se Martina può vincere, $0$ altrimenti.
 Se hai risposto che Martina può vincere,
