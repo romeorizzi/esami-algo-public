@@ -2,8 +2,8 @@
 
 ## Descrizione del problema
 
-Poldo ha cominciato a frequentare la palestra ed ora si ritrova con due liste di numeri interi, della stessa lunghezza: $panino$ e $gym$, con gli indici che vanno da$~0$ a$~N-1$.
-Poldo analizza pazientemente tutte le possibili sottosequenze della sequenza $0, 1,\ldots,N-1$ che elenca questi indici nel loro ordine naturale. 
+Poldo ha cominciato a frequentare la palestra ed ora si ritrova con due liste di numeri interi, della stessa lunghezza: $panino$ e $gym$, con gli indici che vanno da $0$ a $N-1$.
+Poldo analizza pazientemente tutte le possibili sottosequenze della sequenza degli indici $0, 1,\ldots,N-1$. Ciascuna di esse elenca nel loro ordine naturale un sottoinsieme di tali indici.
 Tra queste, ritiene _ammissibili_ quelle sequenze $s=s(0),s(1),\ldots,s(k)$ tali da rispettare l'equazione fondamentale della riconversione della panza in muscoli:
 
 $panino[s(i)]\geq panino[s(i-1)]+\sum_{t=s(i-1)}^{s(i)-1} gym[t]$ 
@@ -20,7 +20,7 @@ Poldo intende produrre una sequenza ammissibile della massima lunghezza possibil
 
 ## File di input
 
-Il programma deve leggere da un file di nome `input.txt`.
+Il programma deve leggere da un file di nome `input.txt`.  
 Nella prima riga è presente un intero $N$, la lunghezza comune delle sequenze $panino$ e $gym$.
 Le successive $N$ righe contengono due numeri interi ciascuna, e più precisamente: l'$i$-esima di queste righe contiene i numeri interi $panino[i]$ e $gym[i]$, in questo ordine e separati da spazio.
 
@@ -70,6 +70,6 @@ La prima riga deve contenere un intero $M$, la massima lunghezza possibile per u
 
 ## Note
 Ci possono essere più sequenze corrette. Nel file di output specificatene una (e una sola) qualsiasi.
-Ad esempio, nella prima istanza sarebbero state accettate come ugualmente corrette anche le sequenze$0 3$ e$2 3$. Entrambe rispettano infatti l'equazione fondamentale della riconversione della panza in muscoli, e sono tutte della lunghezza massima possibile (ossia, propongono~$2$ elementi così come quella fornita nell'esempio.)  
+Ad esempio, nella prima istanza sarebbero state accettate come ugualmente corrette anche le sequenze $0,3$ e $2,3$. Entrambe rispettano infatti l'equazione fondamentale della riconversione della panza in muscoli, e sono tutte della lunghezza massima possibile (ossia, propongono $2$ elementi così come la sequenza $0,1$ fornita nell'esempio.)  
 
 

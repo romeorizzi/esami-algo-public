@@ -4,7 +4,7 @@ Martina e Luigi si sfidano al gioco "Sottrai la cifra".
 Il gioco è così descritto:
 - Inizialmente viene generato casualmente un numero intero positivo $N$. Esso rappresenta il numero con cui inzierà la partita.
 - In ogni turno il giocatore sceglie una cifra del numero attuale diversa da $0$ e ne sottrae il valore dal numero stesso.
-- Vince il giocatore che con la propria mossa dovesse riuscire a generare il numero$~0$.
+- Ha l'ultima parola e vince il giocatore che con la propria mossa dovesse riuscire a generare il numero $0$.
 
 ### Esempio:
 
@@ -28,17 +28,19 @@ Se hai risposto che Martina può vincere,
 nella seconda riga di `stdout` devi indicare il valore di una cifra che Martina possa andare a sottrarre dal numero senza compromettere il suo vantaggio.
 
 
-## Assunzioni:
+## Assunzioni
 - $1 \leq N \leq 10\,000\,000$
 - $0 \leq k \leq 9$
 - 
+
 ## Esempi
 
 | input from stdin | &nbsp;&nbsp;&nbsp;&nbsp; | output to stdout |
 | ---------------- | ------------------------ | ---------------- |
 | 16               | &nbsp;                   | 1 6              |
 
-### Subtask
+
+## Subtask
 
 - **Subtask 1 [ 0 punti]**: il tuo programma deve risolvere correttamente i casi d'esempio qui sopra.
 - **Subtask 2 [20 punti]**: $N \leq 10$
