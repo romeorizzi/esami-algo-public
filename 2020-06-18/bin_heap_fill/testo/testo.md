@@ -10,7 +10,7 @@ Dato un sottoinsieme $E$ di $\{1,\ldots,n-1\}$, un collocamento $A$ è detto $E$
 
 > __heap-property(__$E$__):__ $A[i] \geq A[(i-1)/2]\,$ per ogni $i \in E$.
 
-Nota: quando $E=\{1,\ldots,n-1\}$ la _heap-property_$(E)$ si traduce nella _classica proprietà di buon ordinamento di uno heap_ secondo cui il valore immagazzinato nel generico nodo $i$, $i>0$, non deve mai essere inferiore al valore immagazzinato nel rispettivo padre $((i-1)/2)$. (Questo garantisce che il valore collocato nella radice sia un minimo, cosa che viene sfruttata per reperire rapidamente la prossima cosa da fare in una Event Driven Simulation.)
+Nota: quando $E=\{1,\ldots,n-1\}$ la `heap-property`$(E)$ si traduce nella classica _proprietà di buon ordinamento dello heap_ secondo cui il valore immagazzinato nel generico nodo $i$, $i>0$, non deve mai essere inferiore al valore immagazzinato nel rispettivo padre $((i-1)/2)$. (Questo garantisce che il valore collocato nella radice sia un minimo, cosa che viene sfruttata per reperire rapidamente la prossima cosa da fare in una Event Driven Simulation.)
 
 Dato un collocamento iniziale $A$ ed un _insieme di posizioni fisse_ $F\subseteq \{0,1,\ldots,n-1\}$, un _ricollocamento $F$-stabile_ di $A$ è un collocamento $A'$ tale che $A'[i]=A[i]$ per ogni $i=0,1,\ldots,n-1$.
 
@@ -51,9 +51,9 @@ Il tuo programma deve scrivere su `stdout` quanto previsto a seconda dell'obiett
 
 ## Spiegazione casi d'esempio
 
-Nel primo caso, $n=7$ e $t=1$, quindi viene richiesto di controllare l'heap e potrei anche ignorare l'ultima riga (tutta di zeri). Il collocamento iniziale è quello che deve essere valutato. Esso ha posto il valore $1$ nel nodo $2$, e nel padre di questo, il nodo $0$, ha posto un valore più grande (un $2$). La risposta corretta è quindi $0$. Infatti _heap-property_$(\{2\})$ non è soddisfatta e $2\in E=\{1,\ldots,7\}$ come specificato nella seconda riga.  
+Nel primo caso, $n=7$ e $t=1$, quindi viene richiesto di controllare l'heap e potrei anche ignorare l'ultima riga (tutta di zeri). Il collocamento iniziale è quello che deve essere valutato. Esso ha posto il valore $1$ nel nodo $2$, e nel padre di questo, il nodo $0$, ha posto un valore più grande (un $2$). La risposta corretta è quindi $0$. Infatti `heap-property`$(\{2\})$ non è soddisfatta e $2\in E=\{1,\ldots,7\}$ come specificato nella seconda riga.  
 
-Il secondo caso è identico al primo, eccetto che ora il nodo $2$ non appartiene ad $E$. Visto che ogni altro nodo $i$ soddisfa la proprietà _heap-property_$(\{i\})$, la risposta corretta è $1$. Di fatto il collocamento iniziale $A$ assegnato funge esso stesso da ricollocamento $E$-buono.
+Il secondo caso è identico al primo, eccetto che ora il nodo $2$ non appartiene ad $E$. Visto che ogni altro nodo $i$ soddisfa la proprietà `heap-property`$(\{i\})$, la risposta corretta è $1$. Di fatto il collocamento iniziale $A$ assegnato funge esso stesso da ricollocamento $E$-buono.
 
 Il terzo caso è di nuovo identico al primo, eccetto che pone l'obiettivo di tipo $2$ (ora $t=2$, si veda il secondo numero della prima riga): si chiede ora se sia possibile riarrangiare gli elementi dello heap, mantenendo però fissi quelli nelle posizioni in $F$, in modo da ottenere un collocamento $E$-buono. Non avendo elementi in $F$ (si veda l'ultima riga interamente di zeri),  
 siamo liberi di riarrangiare gli elementi in qualunque modo, e semplicemente scambiando i valori contenuti nei nodi $2$ e $0$ otteniamo un collocamento $E$-buono. Perciò la risposta corretta è $1$.
