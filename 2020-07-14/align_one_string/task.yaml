@@ -1,0 +1,9 @@
+name: align_one_string
+title: Allineamento per pompaggio di una stringa ad una stringa target
+time_limit: 12.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+token_mode: disabled
+public_testcases: all

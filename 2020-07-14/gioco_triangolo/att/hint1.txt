@@ -1,0 +1,5 @@
+Sul principio vi sarete forse chiesti se il terzo caso di prova non sia sbagliato, e magari come contromossa vincente avreste invece proposto N 3 0 0.
+ok, posso confermare che N 3 0 0 sia una contromossa vincente ma non è mica detto in generale che in un gioco la mossa vincente debba essere necessariamente unica.
+Provate quindi a controllare se per caso anche T 2 1 0 non sia vincente, prima di concludere che ci sia qualche problema col testo.
+Questi controlli comporteranno tutti ragionamenti ed analisi utili per prendere dimestichezza col problema.
+Inoltre, se ho preferito proporre T 2 1 0 invece che la più ovvia N 3 0 0 potrebbe anche essere che N 3 0 0 poteva risutare troppo rilevatrice del modo generale per controbattere alla mossa del primo giocatore. Pertanto, se siete affezzionati a N 3 0 0 ne avete bone ragioni e forse le vostre intuizioni non sono troppo distanti dal problema.

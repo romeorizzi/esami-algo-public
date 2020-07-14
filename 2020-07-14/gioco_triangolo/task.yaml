@@ -1,0 +1,10 @@
+name: gioco_triangolo
+title: "analisi del gioco del triangolo"
+time_limit: 1.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+feedback_level: full
+public_testcases: all
+correttore: "check/checker.cpp"

@@ -1,0 +1,40 @@
+Dici che una contro-mossa vincente avrebbe potuto essere N 3 0 0 ? 
+Bravo. Non è mica sbagliato, ma questo non vuol dire che l'esempio del testo sia sbagliato.
+Vero: la tua mossa è vincente. Questo però non deve confonderti: in effetti è possibile che le mosse vincenti siano più di una.
+Abbiamo visto nell'hint2 che nel primissimo caso la contromossa vincente è solo una.
+A volte risposte diverse possone essere giuste.
+Consideriamo ora insieme il terzo caso di esempio, quello succintamente codificato come:
+
+1 3
+1 2 3
+T 3 1 1
+
+In questo caso, la configurazione iniziale è fatta da due tavoli:
+
+  tavolo Triangolo: 1, 2, 3
+  tavolo Nim: 1, 2, 3
+
+ e l'avversario gioca sul tavolo T, facendo la mossa T 3 1 1 che ci conduce alla configurazione:
+
+  tavolo Triangolo: 1, 1, 1, 2
+  tavolo Nim: 1, 2, 3
+
+E' facile vedere che avete ragione voi: N 3 0 0  è sicuramente una contromossa vincente in quanto restituisce la situazione:
+
+  tavolo Triangolo: 1, 1, 1, 2
+  tavolo Nim: 1, 2
+
+che, visto che quando le pile hanno massimo 2 stecchini il gioco Triangolo ed il gioco Nim somo in tutto equivalenti (non possono avere luogo mosse di tipo (b)) è equivalente alla posizione di Nim: 1,1,1,1,2, 2 che secondo quel copione di un Tweedledee è chiaramente una chi tocca perde.
+
+Ma il testo preferisce proporre una contromossa vincente meno scontata?
+E' la mossa T 2 1 0 sul tavolo T una mossa vincente?
+Armiamoci di partenza e controlliamo. Dobbiamo valutare la configurazione che essa restituisce:
+
+  tavolo Triangolo: 1, 1, 1, 1
+  tavolo Nim: 1, 2, 3
+
+possiamo dire che 1, 2, 3 è una chi tocca perde nel Nim? (Quanto su tavolo Triangolo è una chiara chi-tocca-perde, quindi rimuovere quel tavolo non cambia la sostanza della situazione)
+Possiamo provare a giocarcela oppure spendere l'aritmetica dei Nimbers per valutare il Grundy value:  01 ^ 10 ^ 11 = 00 = 0.
+Questa ultima cosa dell'aritmentica era solo per promuovere la bellezza dell'argomento ma era del tutto pretestuosa e rischiava solo di gettare sabbia negli occhi. Avrei potuto risparmiarmela, non saremmo stati comunque a corto di agomenti spendibili. Ne vedi altri?
+
+A volte risposte diverse possone essere giuste. Ma forse la tua era più "giusta" della mia e quì, di nuovo e più premeditatamente, potrei averti voluto sviare.

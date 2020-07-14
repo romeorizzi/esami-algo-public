@@ -1,0 +1,20 @@
+Nel primissimo caso d'esempio del testo la contromossa vincente è solo una, quindi potrebbe essere rivelatrice (anche se l'esempio è troppo piccolo per consegnarci segnali univoci).
+Se più oltre hai incontrato difficltà, vediamo di esplorare insieme anche cosa succede in questo primissimo caso che non vi ha dato problemi perchè forse un'analisi attenta vi inserisce meglio nel contesto:
+La configurazione iniziale è fatta da due tavoli:
+
+  tavolo Triangolo: 1, 2
+  tavolo Nim: 1, 2
+
+ e l'avversario gioca sul tavolo N, facendo la mossa N 2 0 0 che ci conduce alla configurazione:
+
+  tavolo Triangolo: 1, 2
+  tavolo Nim: 1
+
+Ora noi abbiamo una sola contromossa vincente: giocare sul tavolo  T con mossa  T 2 0 0  come descritto nel testo del problema, restituendo all'avversario la configurazione chi tocca perde:
+
+  tavolo Triangolo: 1
+  tavolo Nim: 1
+
+Non esistono altre mosse vincenti perchè T 2 1 0 restituisce all'avversario una vittoria obbligaa mentre non sciogliere l'unica pila da 2 significa lasciare determinare le sorti del gioco all'avversario.
+
+Sapresti analizzare con altrettanta attenzione il terzo caso d'esempio del testo? E' questo il tipo di pazienza e di ascolto da adottare per risolvere i problemi.

@@ -1,0 +1,7 @@
+Ci sono due modi per fare punti col problema triangolo: t=1 e t=2.
+
+t=1 è più impegnativo perchè ci chiede di dimostrare qualcosa.
+Il fatto che voi progettate un algoritmo che restituisce una contromossa vincente per ogni possibile prima mossa significa che quella configurazione è chi-tocca-perde. Dando l'algoritmo dimostrate quindi questo fatto, cosa che si sà significare l'equivalenta dei due giochi.
+Io nel testo non ho voluto dare la N 3 0 0 che certo offriva una risposa corretta più limpida e canonica perchè non volevo fosse troppo evidente come progettare il risponditore automatico alla prima mossa. Ma il fatto che l'avete vista potrebbe voler dire che siete sulla giusta strada, forse avete un'intuizione corretta.
+
+t=2 sono altrettanti punti, del tutto indipendenti da quelli per t=1.  Possono essere punti più facili perchè vi basta sfruttare l'equivalenza eventulmente fandola per scontata. La domanda è pertanto: quanto forti sono le implicazioni dell'equivalenza? Dandola per scontata riuscireste a ridurre il problema del computo di una mossa vincente di Triangolo al computo di una mossa vincente di Nim?
