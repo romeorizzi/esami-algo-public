@@ -1,0 +1,22 @@
+Come ottenere la stringa html per l'ancora mailto partendo dal template desiderato per la mail espresso in chiaro.
+
+SPAZIO = %20
+A_CAPO = %0D%0A
+, = %2c
+. = %2e
+- = %2d
+( = %28
+) = %29
+[ = %5b
+] = %5d
+{ = %7b
+} = %7d
+ulteriori simboli: https://www.bettiolo.com/tools/Utilit%C3%A0%20per%20il%20programmatore%20Web/URL%20Encoding%20-%20Lista%20caratteri.asp?Title=URL+Encoding+-+Lista+caratteri
+
+<a href="mailto:romeo.rizzi@univr.it?cc=andrea.cracco@studenti.univr.it&subject=Dimostrazione%20che%20T(M)+N(M)%20è%20persa.%20Problema%20gioco_triangolo%20in%20esame%20Algoritmi%202020-06-30&body=NOTA:%20SE%20VUOI%20CHE%20QUESTA%20MAIL%20CONTRIBUISCA%20AI%20TUOI%20PUNTI%20ESAME%20RICORDATI%20DI%20INVIARLA%20DA%20TUO%20INDIRIZZO%20UNIVR%20E%20SPECIFICA%20LA%20TUA%20MATRICOLA.%0D%0A%0D%0AMATRICOLA:%20VR???%0D%0A%0D%0ACome%20compongo%20la%20mia%20contromossa%20se%20l'avversario%20gioca%20la%20sua%20prima%20mossa%20sul%20tavolo%20del%20Nim:%0D%0A%0D%0ATO%20DO%20DESCRIZIONE%20COMPROMOSSA%0D%0A%0D%0ACome%20argomentare%20che%20la%20contromossa%20proposta%20è%20vincente:%0D%0A%0D%0ATO%20DO%20I%20TUOI%20ARGOMENTI%0D%0A%0D%0ACome%20compongo%20la%20mia%20contromossa%20se%20l'avversario%20gioca%20la%20sua%20prima%20mossa%20sul%20tavolo%20del%20Triangolo:%0D%0A%0D%0ATO%20DO%20DESCRIZIONE%20COMPROMOSSA%0D%0A%0D%0ACome%20argomentare%20che%20la%20contromossa%20proposta%20è%20vincente:%0D%0A%0D%0ATO%20DO%20I%20TUOI%20ARGOMENTI%0D%0A%0D%0A">scriverci%20una%20mail%20utilizzando%20questo%20template</a>
+
+
+
+
+
+

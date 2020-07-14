@@ -8,10 +8,12 @@ Il gioco è così descritto:
 
 ### Esempio
 
-Ipotizziamo che dopo un numero finito di turni il numero sia 7083. Le uniche mosse valide sono:
+Ipotizziamo che dopo un numero finito di turni il numero sia 7083. Le __uniche__ mosse valide sono:
 - Sottraggo 3, ottenendo 7080 
 - Sottraggo 8, ottenendo 7075
 - Sottraggo 7, ottenendo 7076
+
+Non potrei quindi sottrarre un 2 poichè non compare tra le cifre di 7083.
 
 Martina inizia sempre per prima.
 Si vuole sapere se Martina, giocando ottimamente, potrà vincere.
