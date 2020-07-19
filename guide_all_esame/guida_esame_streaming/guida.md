@@ -119,7 +119,35 @@ Potrebbe fare al caso vostro il filtro *"Noise suppression"*
 ##### - Selezionare *"Pin Video"*
 <img src ="figs/zoom1_pin_video.jpg"><br>
 
-### __Attenzione:__ non minimizzate la finestra di Zoom. Tenetela tranquillamente in secondo piano, ma non minimizzatela.
+### __Attenzione:__ non minimizzate la finestra di Zoom. Tenetela tranquillamente in secondo piano, ma non minimizzatela. Vi ricordiamo che siete tenuti a tenere attiva la webcam.
+
+## Telegram - Selezione dei soli contatti necessari ai fini dell'esame
+
+Sul tuo Desktop terrai attivi i soli servizi di messaggistica previsti da chi organizza l'esame.
+Nel nostro caso sono previsti Zoom e Telegram.
+Telegram in particolare è molto efficace per il mantenimento del contatto e di ogni coordinamento durante l'esame.
+In ogni caso, in modo analogo a quanto descritto quì per Telegram, ti chiediamo di configure il servizio limitandolo
+sia per ragioni di privacy (ogni tua interazione è registrata) che per rendere più facile la verifica che nessun abuso ha avuto luogo.
+
+E' un fatto che Telegram dovrete averlo aperto dato che è lo strumento con cui ci teniamo allineati. Però può certo disturbarvi che nella registrazione finiscano i vostri contacts e le loro notifiche (privacy). Inoltre, è bene semplificare il controllo che non facciate un uso improprio degli strumenti di comunicazione.
+Ecco quindi 3 regole. Situazioni particolari che richiedano la violazione di queste regole possono essere ammesse (magari dovete tenervi disponibili per un parente malato ... ) ma devono essere segnalate ed adeguatamente confinate come certo sarà possibile con l'intelligenza e collaborazione di tutti.
+
+Regola 1: come strumento di comunicazione, oltre al Zoom per l'esame, tenete aperto solo Telegram, e lo screencast OBS in uscita su YouTube. __Spegnete il cellulare__ (se dovete rimanere rintracciabili avete Telegram sul Desktop).
+
+Regola 2: dentro Telegram, silenziate eventuali notifiche per la durata dell'esame.
+
+Regola 3: dentro Telgram, createvi un chat Folder apposito per l'esame: in tale folder predisponente solo 3 contatti:
+1. il gruppo Algo2020 per le comunicazioni relative allo svolgimento dell'esame,
+2. il mio contatto/chat e quello dei tutor per richieste di aiuto individuali piuttosto che collettive.
+
+A livello di Telegram, cercate di rimanere entro tale chat folder per tutta la durata dell'esame.
+
+Per come gestire i chat Folder trovi ulteriori istruzioni quì:
+https://beebom.com/cool-telegram-messenger-tricks/
+
+Se non li conosci ancora, i chat Folders sono una feature di cui ti varrà comunque la pena appropiarti per tenere ben organizzato il tuo spazio Telegram.
+Per stare super tranquilli dovete anche disabilitare le eventuali notifiche desktop attive (Regola 2) altrimenti se su dei canali a notifica attiva vi arrivano dei messaggi durante l'esame, sullo schermo registrato compare la notifica con utente e preview del messaggio.
+Chat folders + disabilitazione notifiche isola perfettamente le chat ed è una soluzione di facile implementazione.
 
 
 ## <a name=”appendice-1”></a> Appendice 1: format della mail con il link per l'accesso al tuo streaming del tuo esame di Algoritmi dal tuo PC
