@@ -1,0 +1,10 @@
+name: chordal_lexBFS
+title: "Grafi Cordali: lexBFS, riconoscimento, Max Cliques e colorings"
+time_limit: 2.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+feedback_level: full
+public_testcases: all
+# correttore: "check/checker.cpp"

@@ -1,0 +1,10 @@
+name: gioco_parentesi
+title: "Giochiamo a Rimuovi Parentesi"
+time_limit: 5.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+feedback_level: full
+public_testcases: all
+correttore: "check/checker.cpp"
