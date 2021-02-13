@@ -1,0 +1,9 @@
+name: turni
+title: Turni di guardia
+time_limit: 3.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+public_testcases: all
+feedback_level: full

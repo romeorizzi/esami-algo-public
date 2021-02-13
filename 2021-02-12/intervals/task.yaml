@@ -1,0 +1,9 @@
+name: intervals
+title: Massimo numero di intervalli mutualmente disgiunti
+time_limit: 2.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+public_testcases: all
+feedback_level: full
