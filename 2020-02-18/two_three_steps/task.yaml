@@ -4,3 +4,5 @@ time_limit: 1.0
 title: Better two or three steps?
 token_mode: disabled
 public_testcases: all
+feedback_level: full
+

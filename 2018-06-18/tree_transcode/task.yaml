@@ -2,5 +2,7 @@ memory_limit: 256
 name: tree_transcode
 time_limit: 1.0
 title: Trascodifica di alberi ordinati riportando i figli o la discendenza
-token_mode: infinite
+token_mode: disabled
+public_testcases: all
+feedback_level: full
 

@@ -2,4 +2,7 @@ title: Chi si ferma e` perduto
 name: dontstop
 time_limit: 1.0
 memory_limit: 256
-token_mode: infinite
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

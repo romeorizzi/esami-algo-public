@@ -6,4 +6,5 @@ time_limit: 1.0
 title: Minimum spanning tree
 token_mode: disabled
 public_testcases: all
+feedback_level: full
 correttore: "cor/correttore"

@@ -2,4 +2,7 @@ memory_limit: 256
 name: tower_of_hanoi_pancakes
 time_limit: 1.0
 title: Hanoi tower with two-sided disks
-token_mode: infinite
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

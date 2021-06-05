@@ -2,4 +2,7 @@ memory_limit: 256
 name: collimator
 time_limit: 1.0
 title: Collimatore a foglia per radioterapia
-token_mode: infinite
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

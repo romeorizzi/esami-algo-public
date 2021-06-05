@@ -4,4 +4,7 @@ time_limit: 0.4
 title: Da n a zero in meno mosse possibili
 infile: ""
 outfile: ""
-token_mode: infinite
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

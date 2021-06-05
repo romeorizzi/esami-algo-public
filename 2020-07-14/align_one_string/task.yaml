@@ -6,4 +6,5 @@ infile: ""
 outfile: ""
 score_mode: max
 token_mode: disabled
+feedback_level: full
 public_testcases: all
