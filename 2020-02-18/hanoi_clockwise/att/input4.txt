@@ -1,2 +1,1 @@
-0 3
-BBB
+../gen/inputs_hardcoded/input4.txt

@@ -1,36 +1,42 @@
 # Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS verranno rinumerati da 0, ma non esternamente):
 #ST: 0
-#COPY: att/input1.txt
-#COPY: att/input2.txt
-#COPY: att/input3.txt
-#COPY: att/input4.txt
-#COPY: att/input5.txt
-#COPY: att/input6.txt
-#COPY: att/input7.txt
-#COPY: att/input8.txt
-#COPY: att/input9.txt
-#COPY: att/input10.txt
-#COPY: att/input11.txt
-#COPY: att/input12.txt
-#COPY: att/input13.txt
-#COPY: att/input14.txt
+#COPY: gen/inputs_hardcoded/input0.txt   
+#COPY: gen/inputs_hardcoded/input1.txt
+#COPY: gen/inputs_hardcoded/input2.txt
+#COPY: gen/inputs_hardcoded/input3.txt
+#COPY: gen/inputs_hardcoded/input4.txt
+#COPY: gen/inputs_hardcoded/input5.txt
+#COPY: gen/inputs_hardcoded/input6.txt
+#COPY: gen/inputs_hardcoded/input7.txt
+#COPY: gen/inputs_hardcoded/input8.txt
+#COPY: gen/inputs_hardcoded/input9.txt
+#COPY: gen/inputs_hardcoded/input10.txt
+#COPY: gen/inputs_hardcoded/input11.txt
+#COPY: gen/inputs_hardcoded/input12.txt
+#COPY: gen/inputs_hardcoded/input13.txt
 
 # generator parameters: 
 # t, N, nEff, nB, seed
-# dove N è il numero di dischi e n è il più grande disco con d[n] != 'B'
-# t indica il task type: t=0 devi solo dire il numero di mosse, t=1 devi listarle.
+# dove t indica il task type: t=0 devi solo dire il numero di mosse, t=1 devi listarle.
+# N è il numero totale di dischi, nEff è il più grande disco con d[n] != 'B', ed un intervallo di nB dischi partendo da questo sono delle B. 
+# NOTA:
+#   se nEff=nB allora la struttura è B^{nB}A^{N-nB}
+#   se nEff=nB=N allora la struttura è B^N
+# in pratica il generatore stampa la seguente configurazione finale:
+#    print(''.join([random.choice('ABC') for _ in range(nEff-nB)]) + 'B' * nB + 'A' * (N-nEff) )
 
 # Subtask 2 [20 punti]: t=1 (listare le mosse), N ≤ 7, la configurazione finale è B^n. Da input15 a input17:
 #ST: 10
-1  5  5  5  112
-1  6  6  6  113
-1  7  7  7  111
+# t, N, nEff, nB, seed
+  1  5    5    5  777
+  1  6    6    6  777
+  1  7    7    7  777
 
 # Subtask 3 [20 punti]: t=1 (listare le mosse), N ≤ 10, la configurazione finale è B^n. Da input18 a input20:
 #ST: 10
-1  8  8  8  112
-1  9  9  9  113
-1 10 10 10  113
+1  8  8  8  777
+1  9  9  9  777
+1 10 10 10  777
 
 # Subtask 4 [20 punti]: t=1 (listare le mosse), N ≤ 10000, numero mosse ≤ 100000. Da input21 a input23:
 #ST: 20

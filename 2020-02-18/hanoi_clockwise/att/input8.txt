@@ -1,2 +1,1 @@
-0 2
-CC
+../gen/inputs_hardcoded/input8.txt

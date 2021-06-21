@@ -1,4 +1,4 @@
-\renewcommand{\nomebreve}{hanoi\_equal\_disks}
+\renewcommand{\nomebreve}{hanoi\_clockwise}
 \renewcommand{\titolo}{The Hanoi puzzle with only clockwise moves}
 
 \introduzione{}
@@ -9,23 +9,24 @@ Studiamo una variante del puzzle della torre di Hanoi. Se non conosci la version
 \begin{center}
   \noindent \includegraphics[width=0.57\textwidth]{figures/220px-Tower_of_Hanoi.jpeg}
 \end{center}
-\caption{Configurazione iniziale del puzzle.}
+\caption{Configurazione iniziale del puzzle per $n=8$.}
 \end{figure}
 
-Ci sono tre pioli ('A','B' e 'C') su cui trovano collocazione $n$ dischi, numerati da $1$ ad $n$, come presi dal più piccolo al più grande. Le configurazioni valide sono quelle in cui nessun disco si trova collocato sopra un disco più piccolo.
-Viene richiesto di portarsi dalla configurazione in cui tutti i dischi risiedono sul piolo 'A' (detta \it{configurazione iniziale}) alla \it{configurazione finale} in cui tutti i dischi sono in 'B', spostando sempre un solo disco alla volta (mossa) e visitando solo configurazioni valide.
-\'E nota l'elegante soluzione ricorsiva che risolve il puzzle classico (Édouard Lucas, 1883) col minimo numero di mosse. La soluzione ottima è di fatto unica anche se trova diverse descrizioni/rappresentazioni/interpretazioni in forma iterativa.
+Ci sono tre pioli ('A','B' e 'C') su cui trovano collocazione $n$ dischi numerati da $1$ ad $n$ (dal più piccolo al più grande). Le \it{configurazioni valide} sono quelle in cui nessun disco si trova collocato sopra un disco più piccolo.
+La \it{configurazione iniziale} è l'unica valida in cui tutti i dischi sono collocati sul piolo 'A'.
 
-Anche nella nostra variante la soluzione ottima sarà unica, e le configurazioni valide sono precisamente le stesse. La variante è caratterizzata dal fatto che i pioli $A$, $B$, $C$ vanno pensati come disposti lungo l'orologio, all'ora esatta, ai 20, ed ai 40 rispettivamente.
-Ogni mossa sposta un singolo disco in senso orario, sempre rispettando il vincolo di generare configurazioni valide (nessun disco è disposto sopra un disco più piccolo). In pratica, rispetto al puzzle classico, sono proibiti i seguenti tre spostamenti: $A\not \mapsto C$, $B\not \mapsto A$, $C\not \mapsto B$.\\
 
-In alcuni dei subtask la configurazione finale che si chiede di raggiungere non è quella con tutti i dischi sul piolo $B$. Pertanto, ogni istanza fornisce esplicitamente la configurazione valida che dobbiamo ottenere, specificando il piolo su cui deve essere riposto ogni disco.\\ 
+Qualsiasi sia il numero di dischi $n$, il tuo obiettivo è quello di portarti dalla configurazione iniziale alla \it{configurazione finale standard} in cui tutti i dischi sono in 'B', spostando sempre un solo disco alla volta (mossa) e visitando solo configurazioni valide.
+\'E nota l'elegante soluzione ricorsiva che risolve il puzzle classico (Édouard Lucas, 1883) col minimo numero di mosse. La soluzione ottima è di fatto unica anche se trova diverse descrizioni/rappresentazioni/interpretazioni.
 
-In realtà vogliamo valutare diverse competenze. Nei subtask di tipo~$t=1$ ti chiediamo di listare tutte le mosse di una soluzione ottima, che impieghi il minor numero possibile di mosse.
+Anche nella nostra variante la soluzione ottima sarà unica, e le configurazioni valide sono precisamente le stesse. La variante è caratterizzata dal fatto che i pioli $A$, $B$, $C$ vanno pensati come disposti lungo l'orologio, all'ora esatta, ai 20', ed ai 40' rispettivamente.
+Ogni mossa sposta un singolo disco in senso orario, sempre rispettando il vincolo di visitare esclusivamente configurazioni valide (nessun disco viene mai posto sopra un disco più piccolo). In pratica, rispetto al puzzle classico, sono proibiti i seguenti tre spostamenti: $A\not \mapsto C$, $B\not \mapsto A$, $C\not \mapsto B$.\\
+
+In alcuni dei subtask la configurazione finale che si chiede di raggiungere non è quella con tutti i dischi sul piolo $B$. Pertanto, ogni istanza fornisce esplicitamente la configurazione valida che dobbiamo ottenere, specificando il piolo su cui deve infine risiedere ogni disco.\\ 
+
+In realtà vogliamo valutare e consentire l'esprssione di diverse competenze. Nei subtask di tipo~$t=1$ ti chiediamo di listare tutte le mosse di una soluzione ottima, che impieghi il minor numero possibile di mosse.
 Nei subtask di tipo~$t=0$ ti chiediamo solamente di computare tale numero di mosse, senza doverle generare, ma più velocemente.
-Nel primo caso l'approccio ricorsivo è fortemente consigliato anche nella stesura del codice.
-Consigliamo di affrontare prima i subtask di tipo~$t=1$,
-e di partire concentrandosi sul caso in cui la configurazione finale sia quella con tutti i dischi sul piolo $B$.
+Nel primo caso l'approccio ricorsivo è fortemente consigliato anche nella stesura del codice, e converrà affrontare prima questi subtask di tipo~$t=1$, concentrandosi inizialmente sul solo caso in cui la configurazione finale sia quella con tutti i dischi sul piolo $B$.
 
 
 \sezionetesto{Input ed Output}
@@ -33,13 +34,12 @@ e di partire concentrandosi sul caso in cui la configurazione finale sia quella 
 Per la gestione pulita di input ed output consigliamo di utilizzare il template di soluzione fornito tra gli attachmets alla pagina del problema.
 Input ed output avvengono da \verb'stdin'
 e da \verb'stdout' rispettivamente.
-La prima riga dell'input contiene i due numeri $t$ ed $n$, nell'ordine e separati da spazio. Questi indicano il tipo di richiesta (solo contare o proprio listare le mosse) ed in numero di dischi.
+La prima riga dell'input contiene i due numeri $t$ ed $n$, nell'ordine e separati da spazio. Questi indicano il tipo di richiesta: solo contare ($t=0$) o proprio listare una per una le mosse ($t=1$).
 La seconda riga contiene una stringa in $\{A,B,C\}^n$, il cui $i$-esimo carattere specifica il piolo del disco~$i$ nella configurazione finale.
-Nel caso in cui $t=0$, il vostro programma deve restituire su \verb'stdout' un unico numero naturale: il minimo numero di mosse che è necessario spendere per portare tutti i dischi sul piolo 'B'.
-(Ricodiamo che la configurazione iniziale vede gli $n$ dischi tutti impilati sul piolo 'A', ordinati per etichetta.
+Nel caso in cui $t=0$, il vostro programma deve restituire su \verb'stdout' un unico numero naturale: il minimo numero di mosse che è necessario spendere per portare il gioco nella configurazione finale.
 Altrimenti, nel caso in cui $t= 1$,
 allora il vostro programma deve riportare su \verb'stdout'
-la più breve sequenza di mosse che consente di portare tutti i dischi sul piolo 'B', come più precisamente illustrato negli esempi. 
+la più breve sequenza di mosse che consente di raggiungere la configurazione finale. Il formato corretto è illustrato negli esempi. 
 
 
 % Esempi
