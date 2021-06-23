@@ -1,0 +1,99 @@
+\renewcommand{\nomebreve}{hanoi\_with\_toddler}
+\renewcommand{\titolo}{Playing the Hanoi puzzle with a toddler\\}
+
+\introduzione{}
+
+Studiamo una variante del puzzle della torre di Hanoi. Se non conosci la versione classica o la descrizione quì sotto non basta, sei libero di cercare in internet e potresti provare a sperimentare col seguente applet:
+
+\begin{verbatim}
+https://www.mathsisfun.com/games/towerofhanoi.html
+\end{verbatim}
+
+Ci sono tre pioli ($A$,$B$ e $C$) su cui trovano collocazione $n$ dischi numerati da $1$ ad $n$ (dal più piccolo al più grande). Le \emph{configurazioni valide} sono quelle in cui nessun disco si trova collocato sopra un disco più piccolo.
+La \emph{configurazione iniziale} è l'unica valida in cui tutti i dischi sono collocati sul piolo $A$.
+
+\begin{figure}[h!]
+\begin{center}
+  \noindent \includegraphics[width=0.57\textwidth]{figures/220px-Tower_of_Hanoi.jpeg}
+\end{center}
+\caption{Configurazione iniziale $A^8$ del puzzle per $n=8$.}
+\end{figure}
+
+Qualsiasi sia il numero di dischi $n$, il tuo obiettivo è quello di portarti dalla configurazione iniziale alla \emph{configurazione finale standard} in cui tutti i dischi sono in $B$, spostando sempre un solo disco alla volta (mossa) e visitando solo configurazioni valide.
+\'E nota l'elegante soluzione ricorsiva che risolve il puzzle classico (Édouard Lucas, 1883) col minimo numero di mosse. La soluzione ottima è di fatto unica anche se trova diverse descrizioni/rappresentazioni/interpretazioni.
+
+Anche nella nostra variante la soluzione ottima sarà unica, e le configurazioni valide sono precisamente le stesse. In alcuni dei subtask di questo esercizio ti proporremo configurazioni finali da raggiungere diverse da quella con tutti i dischi in $B$, ma sempre scelte tra le configurazioni valide. La nostra variante è caratterizzata dal fatto che le tue mosse si alternano con quelle di un piccolo bambino che vuole giocare con tè: dopo ogni tua mossa, se il gioco non ha raggiunto la configurazione finale assegnata, lui effettua sempre una mossa valida, avendo cura di spostare un disco diverso da quello spostato da tè.\\
+
+In alcuni dei subtask la configurazione finale che si chiede di raggiungere non è quella con tutti i dischi sul piolo $B$. Pertanto, ogni istanza fornisce esplicitamente la configurazione valida che dobbiamo ottenere, specificando il piolo su cui deve infine risiedere ogni disco.\\ 
+
+In realtà vogliamo valutare e consentire l'esprssione di diverse competenze. Nei subtask di tipo~$t=1$ ti chiediamo di listare tutte le mosse di una soluzione ottima, che impieghi il minor numero possibile di mosse.
+Nei subtask di tipo~$t=0$ ti chiediamo solamente di computare tale numero di mosse, senza doverle generare, ma più velocemente.
+Nel primo caso l'approccio ricorsivo è fortemente consigliato anche nella stesura del codice, e probabilmente ti converrà affrontare prima questi subtask di tipo~$t=1$, concentrandosi inizialmente sul solo caso in cui la configurazione finale sia quella con tutti i dischi sul piolo $B$.
+
+
+\sezionetesto{Input ed Output}
+
+Per la gestione pulita di input ed output consigliamo di utilizzare il template di soluzione fornito tra gli attachments alla pagina del problema.
+Input ed output avvengono da \verb'stdin'
+e su \verb'stdout' rispettivamente.
+La prima riga dell'input contiene i due numeri $t$ ed $n$, nell'ordine e separati da spazio. Questi indicano il tipo di richiesta: solo contare ($t=0$) o proprio listare una per una le mosse ($t=1$).
+La seconda riga contiene una stringa in $\{A,B,C\}^n$, il cui $i$-esimo carattere specifica il piolo del disco~$i$ nella configurazione finale. Ad esempio, la stringa ``ABC'' codifica la configurazione in cui il disco~1 (quello piccolo) è sul piolo $A$, il disco~2 (quello medio) è sul piolo $B$, e il disco~3 (quello grande) è sul piolo $C$. 
+
+\indent
+Nel caso in cui $t=0$, il vostro programma deve restituire su \verb'stdout' un unico numero naturale: il minimo numero di mosse che è necessario spendere per portare il gioco nella configurazione finale; vanno conteggiate le mosse di entrambi i giocatori.
+
+\indent
+Nel caso in cui $t= 1$,
+allora il vostro programma deve riportare su \verb'stdout' tale sequenza di mosse che consente di raggiungere la configurazione finale. Il formato corretto è illustrato negli esempi.
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse copie input/output tra cui le seguenti.
+
+
+\vspace{0.5cm}
+\esempio{0 4
+  
+BBBB}{15}
+
+\vspace{0.5cm}
+\esempio{1 3
+  
+BBB
+}{daddy muove il disco 1 dal piolo A al piolo B
+
+toddler muove il disco 2 dal piolo A al piolo C
+
+daddy muove il disco 1 dal piolo B al piolo C
+
+toddler muove il disco 3 dal piolo A al piolo B
+
+daddy muove il disco 1 dal piolo C al piolo A
+
+toddler muove il disco 2 dal piolo C al piolo B
+
+daddy muove il disco 1 dal piolo A al piolo B
+}
+
+% Assunzioni
+%\sezionetesto{Assunzioni e note}
+%\begin{itemize}[nolistsep, noitemsep]
+%  \item $1 \le n \le 100\,000$.
+%\end{itemize}
+  
+\section*{Subtask}
+
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i due casi sopra.
+    \item \textbf{Subtask 2 [10 punti]:} $t=1$, $n \le 10$, la configurazione finale è $B^n$.
+    \item \textbf{Subtask 3 [10 punti]:} $t=1$, $n \le 15$, la configurazione finale è $B^n$.
+    \item \textbf{Subtask 4 [15 punti]:} $t=1$, $n \le 15$.
+    \item \textbf{Subtask 5 [17 punti]:} $t=1$, $n \le 10\,000$, le mosse necessarie sono al più $100\,000$.
+    \item \textbf{Subtask 6 [10 punti]:} $t=0$, $n \le 10$, la configurazione finale è $B^n$.
+    \item \textbf{Subtask 7 [10 punti]:} $t=0$, $n \le 10$.
+    \item \textbf{Subtask 8 [10 punti]:} $t=0$, $n \le 10\,000$, le mosse necessarie sono al più $1\,000\,000$.
+    \item \textbf{Subtask 9 [18 punti]:} $t=0$, $n \le 10\,000$, le mosse necessarie sono al più $10\,000\,000\,000$.
+  \end{itemize}
+  

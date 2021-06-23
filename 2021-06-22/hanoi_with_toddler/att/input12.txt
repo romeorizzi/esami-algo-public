@@ -1,0 +1,1 @@
+../gen/inputs_hardcoded/input12.txt
