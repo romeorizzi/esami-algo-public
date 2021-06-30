@@ -14,6 +14,7 @@
 #COPY: gen/inputs_hardcoded/input11.txt
 #COPY: gen/inputs_hardcoded/input12.txt
 #COPY: gen/inputs_hardcoded/input13.txt
+#COPY: gen/inputs_hardcoded/input14.txt
 
 # generator parameters: 
 # t, N, nEff, nB, seed
@@ -25,7 +26,7 @@
 # in pratica il generatore stampa la seguente configurazione finale:
 #    print(''.join([random.choice('ABC') for _ in range(nEff-nB)]) + 'B' * nB + 'A' * (N-nEff) )
 
-# Subtask 2 [10 punti]: t=1 (listare le mosse), N ≤ 10, la configurazione finale è B^n. Da input15 a input20:
+# Subtask 2 [10 punti]: t=1 (listare le mosse), N ≤ 10, la configurazione finale è B^n. Da input16 a input21:
 #ST: 10
 # t, N, nEff, nB, seed
   1  5    5    5  777
@@ -35,7 +36,7 @@
   1  9    9    9  777
   1 10   10   10  777
 
-# Subtask 3 [10 punti]: t=1 (listare le mosse), N ≤ 15, la configurazione finale è B^n. Da input21 a input25:
+# Subtask 3 [10 punti]: t=1 (listare le mosse), N ≤ 15, la configurazione finale è B^n. Da input22 a input26:
 #ST: 10
 1  11  11  11  777
 1  12  12  12  777
@@ -43,7 +44,7 @@
 1  14  14  14  777
 1  15  15  15  777
 
-# Subtask 4 [15 punti]: t=1 (listare le mosse), N ≤ 15. Da input26 a input30:
+# Subtask 4 [15 punti]: t=1 (listare le mosse), N ≤ 15. Da input27 a input31:
 #ST: 15
 1  11  11  0  1777
 1  12  12  0  2777
@@ -51,31 +52,31 @@
 1  14  14  0  4777
 1  15  15  0  5777
 
-# Subtask 5 [17 punti]: t=1 (listare le mosse), N ≤ 10000, numero mosse ≤ 100000. Da input31 a input33:
+# Subtask 5 [17 punti]: t=1 (listare le mosse), N ≤ 10000, numero mosse ≤ 100000. Da input32 a input34:
 #ST: 17
 1  1000 11  0  111
 1  5000 10  0  112
 1 10000  9  0  113
 
-# Subtask 6 [10 punti]: t=0 (contare le mosse), N ≤ 10, la configurazione finale è B^n. Da input34 a input36:
+# Subtask 6 [10 punti]: t=0 (contare le mosse), N ≤ 10, la configurazione finale è B^n. Da input35 a input37:
 #ST: 10
 0  8  8  8  111
 0  9  9  9  112
 0 10 10 10 113
 
-# Subtask 7 [10 punti]: t=1 (contare le mosse), N ≤ 10. Da input37 a input39:
+# Subtask 7 [10 punti]: t=1 (contare le mosse), N ≤ 10. Da input38 a input40:
 #ST: 10
 0  8  8  0  111
 0  9  9  0  112
 0 10 10  0  113
 
-# Subtask 8 [10 punti]: t=0 (contare le mosse), N ≤ 10000, numero mosse ≤ 1000000. Da input40 a input42:
+# Subtask 8 [10 punti]: t=0 (contare le mosse), N ≤ 10000, numero mosse ≤ 1000000. Da input41 a input43:
 #ST: 10
 0  1000 18  1  111
 0  5000 19  1  112
 0 10000 20  1  113
 
-# Subtask 9 [18 punti]: t=0 (contare le mosse), N ≤ 10000, numero mosse ≤ 1000000000. Da input42 a input45:
+# Subtask 9 [18 punti]: t=0 (contare le mosse), N ≤ 10000, numero mosse ≤ 1000000000. Da input44 a input46:
 #ST: 18
 0  1000 28  1  111
 0  5000 29  1  112
