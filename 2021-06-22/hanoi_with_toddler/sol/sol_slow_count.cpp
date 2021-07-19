@@ -1,6 +1,6 @@
 /**
- *  File: soluzione.cpp
- *  Soluzione slow di hanoi_with_toddler
+ *  File: sol_slow_count.cpp
+ *  Soluzione slow di hanoi_with_toddler col solo difetto di essere lenta quando si tratta di solo computare il minimo numero di mosse senza doverle eseguire.
  *
  *  Autore: Romeo Rizzi, 2021-06-20
  *
