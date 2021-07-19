@@ -1,5 +1,5 @@
 /**
- *  File: soluzione.cpp
+ *  File: sol_only_count.cpp
  *  Soluzione parziale di hanoi_with_toddler (solo casi di tipo t=0, ossia non specifica le mosse ma si limita a contarle)
  *
  *  Autore: Romeo Rizzi, 2021-06-20

@@ -64,7 +64,7 @@
 0  9  9  9  112
 0 10 10 10 113
 
-# Subtask 7 [10 punti]: t=1 (contare le mosse), N ≤ 10. Da input38 a input40:
+# Subtask 7 [10 punti]: t=0 (contare le mosse), N ≤ 10. Da input38 a input40:
 #ST: 10
 0  8  8  0  111
 0  9  9  0  112

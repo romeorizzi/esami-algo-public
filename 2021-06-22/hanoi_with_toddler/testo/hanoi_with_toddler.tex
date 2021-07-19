@@ -26,9 +26,9 @@ Anche nella nostra variante la soluzione ottima sarà unica, e le configurazioni
 
 In alcuni dei subtask la configurazione finale che si chiede di raggiungere non è quella con tutti i dischi sul piolo $B$. Pertanto, ogni istanza fornisce esplicitamente la configurazione valida che dobbiamo ottenere, specificando il piolo su cui deve infine risiedere ogni disco.\\ 
 
-In realtà vogliamo valutare e consentire l'esprssione di diverse competenze. Nei subtask di tipo~$t=1$ ti chiediamo di listare tutte le mosse di una soluzione ottima, che impieghi il minor numero possibile di mosse.
+In realtà vogliamo valutare e consentire l'espressione di diverse competenze. Nei subtask di tipo~$t=1$ ti chiediamo di listare tutte le mosse di una soluzione ottima, che impieghi il minor numero possibile di mosse.
 Nei subtask di tipo~$t=0$ ti chiediamo solamente di computare tale numero di mosse, senza doverle generare, ma più velocemente.
-Nel primo caso l'approccio ricorsivo è fortemente consigliato anche nella stesura del codice, e probabilmente ti converrà affrontare prima questi subtask di tipo~$t=1$, concentrandosi inizialmente sul solo caso in cui la configurazione finale sia quella con tutti i dischi sul piolo $B$.
+Nel primo caso l'approccio ricorsivo è fortemente consigliato anche nella stesura del codice, e probabilmente ti converrà affrontare prima questi subtask di tipo~$t=1$, concentrandoti inizialmente sul solo caso in cui la configurazione finale sia quella con tutti i dischi sul piolo $B$.
 
 
 \sezionetesto{Input ed Output}
@@ -40,11 +40,10 @@ La prima riga dell'input contiene i due numeri $t$ ed $n$, nell'ordine e separat
 La seconda riga contiene una stringa in $\{A,B,C\}^n$, il cui $i$-esimo carattere specifica il piolo del disco~$i$ nella configurazione finale. Ad esempio, la stringa ``ABC'' codifica la configurazione in cui il disco~1 (quello piccolo) è sul piolo $A$, il disco~2 (quello medio) è sul piolo $B$, e il disco~3 (quello grande) è sul piolo $C$. 
 
 \indent
-Nel caso in cui $t=0$, il vostro programma deve restituire su \verb'stdout' un unico numero naturale: il minimo numero di mosse che è necessario spendere per portare il gioco nella configurazione finale; vanno conteggiate le mosse di entrambi i giocatori.
+Nel caso in cui $t=0$ il vostro programma deve restituire su \verb'stdout' un unico numero naturale: il minimo numero di mosse che è necessario spendere per portare il gioco nella configurazione finale; vanno conteggiate le mosse di entrambi i giocatori.
 
 \indent
-Nel caso in cui $t= 1$,
-allora il vostro programma deve riportare su \verb'stdout' tale sequenza di mosse che consente di raggiungere la configurazione finale. Il formato corretto è illustrato negli esempi.
+Nel caso in cui $t= 1$ il vostro programma deve riportare su \verb'stdout' tale sequenza di mosse che consente di raggiungere la configurazione finale. Il formato corretto è illustrato negli esempi.
 
 
 % Esempi
