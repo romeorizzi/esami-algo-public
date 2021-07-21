@@ -2,6 +2,8 @@
 .inode
 **/input
 **/output
+**/.itime
+**/.import_error
 
 # backups
 *~

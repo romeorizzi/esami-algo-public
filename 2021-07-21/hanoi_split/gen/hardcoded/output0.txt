@@ -1,0 +1,5 @@
+sposta il disco 1 dal piolo A al piolo B
+sposta il disco 2 dal piolo A al piolo C
+sposta il disco 1 dal piolo B al piolo C
+sposta il disco 3 dal piolo A al piolo B
+sposta il disco 1 dal piolo C al piolo B

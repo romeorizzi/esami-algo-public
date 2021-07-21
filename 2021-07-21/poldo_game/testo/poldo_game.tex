@@ -1,0 +1,67 @@
+\renewcommand{\nomebreve}{poldo\_game}
+\renewcommand{\titolo}{Poldo vuol mangiare e il dottore rema contro}
+
+\introduzione{}
+
+\noindent
+Poldo ha seguito il consiglio del dottore di darsi una regola, adottando la seguente:
+
+\begin{quote}
+   sempre crescere (strettamente) nel quantitativo di colestrolo!
+\end{quote}
+
+Per premiarlo (e verificare la ligiosità di Poldo nel seguire la regola che si è dato) il dottore ha invitato Poldo a cena.
+
+Le portate sono collocate in bell'ordine su un nastro trasportatore come quelli dei ristoranti All-You-Can-Eat, e Poldo e il dottore si sono sfidati a mangiare entrambi un'intera porzione a testa di ogni portata che uno dei due avrà deciso di assaggiare. Nella scelta sul prendere o meno la prossima portata in transito sul nastro si alternano; la prima scelta spetta a Poldo sulla prima portata.
+Ovviamente una portata non può essere scelta se andrebbe ad infrangere la regola che Poldo si è dato.
+In tutta quest'orgia bulimica e conviviale, Poldo e il dottore hanno però obiettivi contrastanti, benchè chiari e trasparenti ad entrambi:
+Poldo è intenzionato a mangire il maggior numero di portate possibili mentre il dottore giocherà a minimizzare tale numero, considerato anche che sarà lui a pagare il conto.
+
+
+\sezionetesto{Input ed Output}
+
+Input ed output avvengono da \verb'stdin' e su \verb'stdout' rispettivamente.
+La prima riga dell'input contiene il numero di portate $n$.
+La seconda riga dell'input contiene $n$ numeri naturali separati da spazio, dove l'$i$-esimo di questi numeri esprime il quantitativo di colesterolo contenuto in una porzione della portata $i$-esima.\\
+
+L'output consiste di un sol numero: il numero di portate che Poldo mangerà.
+
+\sezionetesto{Nota}
+
+Anche il dottore dovrà attenersi alla regola di Poldo. Pertanto, se guardiamo ai contenuti di colesterolo per la sottosequenza di portate infine consumate, osserviamo una sequenza strettamente crescente di valori. 
+
+
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse copie input/output tra cui le seguenti.
+
+\vspace{0.5cm}
+\esempio{10
+
+6 4 1 2 2 3 4 4 5 9}{2}
+
+Spiegazione: Poldo si guarda bene dal prendere la prima portata perchè sà che altrimenti sarebbe anche l'ultima. Invece il dottore si butta con appetito sulla seconda portata (con contenuto di colesterolo 4) per evitare che le portate infine prese non diventino inevitabilmente 4. La prossima ed ultima portata ad essere presa sarà quella con contenuto di colesterolo 5 e verrà scelta da Poldo per evitare di mangiarsi un'unica portata.
+
+\vspace{0.5cm}
+\esempio{10
+
+2 4 1 2 3 3 4 4 5 9}{3}
+
+Spiegazione: Quì le portate infine prese saranno:\\
+\indent la prima (colestero 2, scelta da Poldo),
+\indent la seconda (colestero 4, scelta dal dottore),
+\indent la nona (colestero 5, scelta da Poldo).
+
+\section*{Subtask}
+
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i due casi sopra.
+    \item \textbf{Subtask 2 [10 punti]:} $n \le 10$.
+    \item \textbf{Subtask 3 [10 punti]:} $n \le 20$.
+    \item \textbf{Subtask 4 [10 punti]:} $n \le 50$.
+    \item \textbf{Subtask 5 [10 punti]:} $n \le 100$, tutte le porzioni hanno contenuto di colesterolo~$0$ o~$1$.
+    \item \textbf{Subtask 6 [20 punti]:} $n \le 100$, tutte le porzioni di indice dispari (dove la decisione spetta al dottore) hanno contenuto di colesterolo inferiore ad ogni porzione di indice pari.
+    \item \textbf{Subtask 7 [20 punti]:} $n \le 100$.
+    \item \textbf{Subtask 8 [20 punti]:} $n \le 200$.
+  \end{itemize}
+  

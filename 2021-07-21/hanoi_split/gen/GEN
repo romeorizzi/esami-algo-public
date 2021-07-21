@@ -1,0 +1,57 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
+#ST: 0
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+
+# generator parameters: 
+# t, N
+# Subtask 2 [16 punti]: t=1 (listare le mosse), N ≤ 8. Da input6 a input11:
+#ST: 16
+# t  N
+  1  5
+  1  6
+  1  7
+  1  8
+
+# Subtask 3 [16 punti]: t=1 (listare le mosse), N ≤ 15. Da input12 a input16:
+#ST: 16
+1  11
+1  12
+1  13
+1  14
+1  15
+
+# Subtask 4 [18 punti]: t=1 (listare le mosse), N ≤ 20. Da input17 a input21:
+#ST: 18
+1 16
+1 17
+1 18
+1 19
+1 20
+
+# Subtask 5 [16 punti]: t=0 (contare le mosse), N ≤ 10. Da input18 a input20:
+#ST: 16
+0  8
+0  9
+0 10
+
+# Subtask 6 [16 punti]: t=0 (contare le mosse), N ≤ 20. Da input21 a input25:
+#ST: 16
+0  16
+0  17
+0  18
+0  19
+0  20
+
+# Subtask 7 [18 punti]: t=0 (contare le mosse), N ≤ 30. Da input26 a input30:
+#ST: 18
+0  36
+0  37
+0  38
+0  39
+0  40
+

@@ -1,0 +1,12 @@
+name: hanoi_split
+title: Split even and odd disks of an Hanoi tower
+time_limit: 2.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+
