@@ -1,0 +1,142 @@
+\renewcommand{\nomebreve}{LIP}
+\renewcommand{\titolo}{Longest Increasing Path in a graph}
+
+\introduzione{}
+
+\noindent
+Ricevi in input un grafo non-diretto $G=(V,E)$ a ciascuno dei cui nodi $v\in V$ è associato un numero intero non negativo $val[v]$. Trova il più lungo cammino in $G$ con la proprietà che la sequenza dei numeri $val(v)$ osservati camminando lungo il cammino da un suo nodo di estremo all'altro è strettamente crescente.
+
+
+\sezionetesto{Input ed Output}
+
+Input ed output avvengono da \verb'stdin' e su \verb'stdout' rispettivamente.
+La prima riga dell'input contiene i numeri $n:=|V|$ ed $m:=|E|$, nell'ordine e separati da spazio. Per rappresentare $G$, i nodi in $V$ sono messi in corrispondenza biunivoca coi numeri naturali da~$0$ a~$n-1$.
+Segue una riga col vettore $val[]$, i cui valori sono separati da spazio.
+Seguono infine $m$ righe dove ciascuna riga codifica un diverso arco $e=uv\in E$ riportandone gli estremi. In pratica, dove assumiamo $u < v$, la riga contiene i due numeri $u$ e $v$, nell'ordine, e separati da spazio.
+Queste $m$ righe sono date in ordine lessicografico (si vedano gli esempi).\\
+
+L'output consiste di un sol numero: la massima lunghezza di una sequenza di nodi $v_1, \ldots, v_\ell$ tale che la sequenza di numeri $val[v_1], \ldots, val[v_\ell]$ sia strettamente crescente e con $v_iv_{i+1}\in E$ per ogni $i=1, \ldots, \ell-1$.
+
+
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse coppie input/output tra cui le seguenti.
+
+\vspace{0.5cm}
+\esempio{10 13
+
+4 10 13 17 8 6 5 3 5 1
+
+0 1
+  
+1 2
+
+1 3
+
+1 4
+
+1 5
+
+1 6
+
+2 3
+
+4 5
+
+5 6
+
+6 7
+
+7 8
+
+7 9
+
+8 9}{8}
+
+Spiegazione: il cammino strettamente crescente lungo 8 è costituito dalla sequenza di nodi 9,7,6,5,4,1,2,3. 
+
+\vspace{0.5cm}
+\esempio{10 13
+  
+1 10 2 3 8 6 5 5 7 9
+
+0 1
+  
+1 2
+
+1 3
+
+1 4
+
+1 5
+
+1 6
+
+2 3
+
+4 5
+
+5 6
+
+6 7
+
+7 8
+
+7 9
+
+8 9}{4}
+
+Spiegazione: il cammino strettamente crescente lungo 4 è costituito dalla sequenza di nodi 6,5,4,1. 
+
+\vspace{0.5cm}
+\esempio{8 12
+  
+9 8 2 5 3 6 6 1
+
+0 1
+
+0 3
+
+0 4
+
+1 2
+
+1 5
+
+2 3
+
+2 6
+
+3 7
+
+4 5
+
+4 7
+
+5 6
+
+6 7}{5}
+
+Spiegazione: il cammino strettamente crescente lungo 4 è costituito dalla sequenza di nodi 7,4,5,1,0. 
+
+\section*{Assunzioni}
+
+  \begin{itemize}
+    \item $1 \le n \le 50\,000$
+    \item $0 \le m \le 200\,000$
+  \end{itemize}
+
+
+\section*{Subtask}
+
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i due casi sopra.
+    \item \textbf{Subtask 2 [4 punti]:} il grafo è completo e i valori associati ai nodi sono tutti diversi.
+    \item \textbf{Subtask 3 [6 punti]:} il grafo è completo.
+    \item \textbf{Subtask 4 [15 punti]:} il grafo è un cammino.
+    \item \textbf{Subtask 5 [10 punti]:} il grafo è un ciclo.
+    \item \textbf{Subtask 6 [15 punti]:} $n \le 100$, $m \le 1000$.
+    \item \textbf{Subtask 7 [15 punti]:} $n \le 10\,000$, $m \le 100\,000$.
+    \item \textbf{Subtask 8 [35 punti]:} $n \le 50\,000$, $m \le 200\,000$.
+  \end{itemize}
+  

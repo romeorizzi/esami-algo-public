@@ -1,0 +1,143 @@
+# generator parameters: 
+# t, t1, N
+
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
+#ST: 0
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+#COPY: gen/hardcoded/input6.txt   
+#COPY: gen/hardcoded/input7.txt
+#COPY: gen/hardcoded/input8.txt
+#COPY: gen/hardcoded/input9.txt
+#COPY: gen/hardcoded/input10.txt
+#COPY: gen/hardcoded/input11.txt
+#COPY: gen/hardcoded/input12.txt
+#COPY: gen/hardcoded/input13.txt
+#COPY: gen/hardcoded/input14.txt
+#COPY: gen/hardcoded/input15.txt
+#COPY: gen/hardcoded/input16.txt
+#COPY: gen/hardcoded/input17.txt
+
+# Subtask 2 [5 punti]: t=0 (contare le mosse), t1=0 Hanoi standard, N ≤ 30. Da input18 a input27:
+#ST: 5
+# t  t1  N
+  0   0  7
+  0   0  8
+  0   0  11
+  0   0  12
+  0   0  15
+  0   0  22
+  0   0  27
+  0   0  28
+  0   0  29
+  0   0  30
+
+# Subtask 3 [5 punti]: t=1 (listare le mosse), t1=0 Hanoi standard, N ≤ 15. Da input29 a input32:
+#ST: 5
+# t  t1  N
+  1   0  7
+  1   0  8
+  1   0  11
+  1   0  12
+  1   0  15
+
+# Subtask 4 [12 punti]: t=0 (contare le mosse), t1=1 Hanoi with balanced split/merge, N ≤ 30. Da input33 a input40:
+#ST: 12
+# t  t1  N
+  0   1  11
+  0   1  12
+  0   1  15
+  0   1  22
+  0   1  27
+  0   1  28
+  0   1  29
+  0   1  30
+
+# Subtask 5 [12 punti]: t=1 (listare le mosse), t1=1 Hanoi with balanced split/merge, N ≤ 15. Da input41 a input46:
+#ST: 12
+# t  t1  N
+  1   1  7
+  1   1  8
+  1   1  10
+  1   1  11
+  1   1  12
+  1   1  15
+
+# Subtask 6 [13 punti]: t=0 (contare le mosse), t1=1 Hanoi with balanced split/merge, N ≤ 100. Da input47 a input55:
+#ST: 13
+# t  t1  N
+  0   1  21
+  0   1  33
+  0   1  34
+  0   1  50
+  0   1  51
+  0   1  77
+  0   1  78
+  0   1  99
+  0   1  100
+
+# Subtask 7 [13 punti]: t=1 (listare le mosse), t1=1 Hanoi with balanced split/merge, N ≤ 100. Da input56 a input64:
+#ST: 13
+# t  t1  N
+  1   1  21
+  1   1  33
+  1   1  34
+  1   1  50
+  1   1  51
+  1   1  77
+  1   1  78
+  1   1  99
+  1   1  100
+
+# Subtask 8 [10 punti]: t=0 (contare le mosse), t1=2 Hanoi with all split/merge, N ≤ 30. Da input65 a input72:
+#ST: 10
+# t  t1  N
+  0   2  11
+  0   2  12
+  0   2  15
+  0   2  22
+  0   2  27
+  0   2  28
+  0   2  29
+  0   2  30
+
+# Subtask 9 [10 punti]: t=1 (listare le mosse), t1=2 Hanoi with all split/merge, N ≤ 15. Da input72 a input77:
+#ST: 10
+# t  t1  N
+  1   2  7
+  1   2  8
+  1   2  10
+  1   2  11
+  1   2  12
+  1   2  15
+
+# Subtask 10 [10 punti]: t=0 (contare le mosse), t1=2 Hanoi with all split/merge, N ≤ 100. Da input78 a input86:
+#ST: 10
+# t  t1  N
+  0   2  21
+  0   2  33
+  0   2  34
+  0   2  50
+  0   2  51
+  0   2  77
+  0   2  78
+  0   2  99
+  0   2  100
+
+# Subtask 11 [10 punti]: t=1 (listare le mosse), t1=2 Hanoi with all split/merge, N ≤ 100. Da input87 a input95:
+#ST: 10
+# t  t1  N
+  1   2  21
+  1   2  33
+  1   2  34
+  1   2  50
+  1   2  51
+  1   2  77
+  1   2  78
+  1   2  99
+  1   2  100
+

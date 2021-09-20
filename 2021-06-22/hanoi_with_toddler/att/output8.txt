@@ -1,1 +1,1 @@
-../output/output8.txt
+../gen/hardcoded/output8.txt

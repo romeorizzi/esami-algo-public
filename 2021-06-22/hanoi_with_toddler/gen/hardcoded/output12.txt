@@ -1,0 +1,5 @@
+daddy muove il disco 1 dal piolo A al piolo C
+toddler muove il disco 2 dal piolo A al piolo B
+daddy muove il disco 1 dal piolo C al piolo B
+toddler muove il disco 3 dal piolo A al piolo C
+daddy muove il disco 1 dal piolo B al piolo A

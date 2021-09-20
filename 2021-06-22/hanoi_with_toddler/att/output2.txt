@@ -1,1 +1,1 @@
-../output/output2.txt
+../gen/hardcoded/output2.txt

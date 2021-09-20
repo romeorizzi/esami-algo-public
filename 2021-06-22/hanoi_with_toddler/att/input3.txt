@@ -1,1 +1,1 @@
-../gen/inputs_hardcoded/input3.txt
+../gen/hardcoded/input3.txt

@@ -1,20 +1,20 @@
 # Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
 #ST: 0
-#COPY: gen/inputs_hardcoded/input0.txt   
-#COPY: gen/inputs_hardcoded/input1.txt
-#COPY: gen/inputs_hardcoded/input2.txt
-#COPY: gen/inputs_hardcoded/input3.txt
-#COPY: gen/inputs_hardcoded/input4.txt
-#COPY: gen/inputs_hardcoded/input5.txt
-#COPY: gen/inputs_hardcoded/input6.txt
-#COPY: gen/inputs_hardcoded/input7.txt
-#COPY: gen/inputs_hardcoded/input8.txt
-#COPY: gen/inputs_hardcoded/input9.txt
-#COPY: gen/inputs_hardcoded/input10.txt
-#COPY: gen/inputs_hardcoded/input11.txt
-#COPY: gen/inputs_hardcoded/input12.txt
-#COPY: gen/inputs_hardcoded/input13.txt
-#COPY: gen/inputs_hardcoded/input14.txt
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+#COPY: gen/hardcoded/input6.txt
+#COPY: gen/hardcoded/input7.txt
+#COPY: gen/hardcoded/input8.txt
+#COPY: gen/hardcoded/input9.txt
+#COPY: gen/hardcoded/input10.txt
+#COPY: gen/hardcoded/input11.txt
+#COPY: gen/hardcoded/input12.txt
+#COPY: gen/hardcoded/input13.txt
+#COPY: gen/hardcoded/input14.txt
 
 # generator parameters: 
 # t, N, nEff, nB, seed

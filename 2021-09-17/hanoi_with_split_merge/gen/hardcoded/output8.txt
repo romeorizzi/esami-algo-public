@@ -1,0 +1,5 @@
+split il piolo A, dal disco 4, sui pioli C e B
+merge sul piolo A, dal disco 2 del piolo C e dal piolo B
+sposta il disco 3 dal piolo B al piolo C
+split il piolo A, dal disco 2, sui pioli C e B
+sposta il disco 1 dal piolo B al piolo C
