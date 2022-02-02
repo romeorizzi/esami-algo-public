@@ -1,0 +1,154 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
+#ST: 0
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+#COPY: gen/hardcoded/input6.txt
+#COPY: gen/hardcoded/input7.txt
+#COPY: gen/hardcoded/input8.txt
+#COPY: gen/hardcoded/input9.txt
+#COPY: gen/hardcoded/input10.txt
+#COPY: gen/hardcoded/input11.txt
+#COPY: gen/hardcoded/input12.txt
+#COPY: gen/hardcoded/input13.txt
+#COPY: gen/hardcoded/input14.txt
+
+# generator parameters: 
+# t, m, n, b, seed
+# dove t indica il task type: t=1 i blocchi principali (quelli sulla diagonale) devono essere quadrati, t=2 blocchi principlai possono essere rettangolari, t=3 righe e colonne possono essere permutate.
+# m è il numero di righe
+# n è il numero di colonne
+# b è l'ottimo (massimo numero di blocchi)
+
+# Subtask 2 [11 punti]: t=1, m=n ≤ 10. Da input15 a input25:
+#ST: 11
+# t,  n,   m,   b, seed
+  1   5    5    2  7763
+  1   6    6    1  7764
+  1   7    7    3  7765
+  1   8    8    2  7766
+  1   9    9    4  7773
+  1  10   10    1  7771
+  1  10   10    1  7772
+  1  10   10    2  7773
+  1  10   10    3  7774
+  1  10   10    4  7775
+  1  10   10    5  7776
+
+# Subtask 3 [10 punti]: t=1, m=n ≤ 80. Da input26 a input35:
+#ST: 10
+# t,  n,   m,   b, seed
+  1  12   12    3  7763
+  1  15   15    5  7764
+  1  17   17    4  7765
+  1  20   20    6  7773
+  1  30   30    7  7771
+  1  40   40   13  7772
+  1  50   50   21  7773
+  1  60   60   33  7774
+  1  70   70   47  7775
+  1  80   80   15  7776
+
+# Subtask 4 [10 punti]: t=1, m=n ≤ 300. Da input36 a input45:
+#ST: 10
+# t,   n,   m,   b, seed
+  1   81   81   13  7763
+  1   90   90   15  7764
+  1  100  100   24  7765
+  1  150  150   31  7773
+  1  200  200   71  7771
+  1  250  250  113  7772
+  1  290  290   91  7773
+  1  298  298  133  7774
+  1  299  299   47  7775
+  1  300  300  115  7776
+
+# Subtask 5 [12 punti]: t=2, m ≤ 10, n ≤ 10. Da input46 a input55:
+#ST: 12
+# t,  n,   m,   b, seed
+  2   5    5    2  7763
+  2   4    6    1  7764
+  2   7    7    3  7765
+  2   6    8    2  7766
+  2   8    8    4  7773
+  2   7    9    2  7771
+  2   9    9    1  7772
+  2   9   10    2  7773
+  2  10    9    3  7774
+  2  10   10    3  7775
+  2  10   10    5  7776
+
+# Subtask 6 [11 punti]: t=2, m ≤ 80, n ≤ 80. Da input56 a input65:
+#ST: 11
+# t,  n,   m,   b, seed
+  2  12   15    3  7763
+  2  16   19    5  7764
+  2  17   17    4  7765
+  2  20   25    6  7773
+  2  32   30    7  7771
+  2  40   40   13  7772
+  2  50   51   21  7773
+  2  62   60   33  7774
+  2  70   73   47  7775
+  2  80   80   15  7776
+
+# Subtask 7 [11 punti]: t=2, m ≤ 300, n ≤ 300. Da input66 a input75:
+#ST: 11
+# t,   n,   m,   b, seed
+  2  120   40   13  7763
+  2   40  120   15  7764
+  2  100  100   24  7765
+  2  100  200   31  7773
+  2  200  100   71  7771
+  2  250  250  113  7772
+  2  290  290   91  7773
+  2  300  290  133  7774
+  2  290  300   47  7775
+  2  300  300  115  7776
+
+# Subtask 8 [11 punti]: t=3, m ≤ 10, n ≤ 10. Da input76 a input85:
+#ST: 11
+# t,  n,   m,   b, seed
+  3   5    5    2  7763
+  3   4    6    1  7764
+  3   7    7    3  7765
+  3   6    8    2  7766
+  3   8    8    4  7773
+  3   7    9    2  7771
+  3   9    9    1  7772
+  3   9   10    2  7773
+  3  10    9    3  7774
+  3  10   10    3  7775
+  3  10   10    5  7776
+
+# Subtask 9 [12 punti]: t=3, m ≤ 80, n ≤ 80. Da input86 a input95:
+#ST: 12
+# t,  n,   m,   b, seed
+  3  12   15    3  7763
+  3  16   19    5  7764
+  3  17   17    4  7765
+  3  20   25    6  7773
+  3  32   30    7  7771
+  3  40   40   13  7772
+  3  50   51   21  7773
+  3  62   60   33  7774
+  3  70   73   47  7775
+  3  80   80   15  7776
+
+# Subtask 10 [12 punti]: t=3, m ≤ 300, n ≤ 300. Da input96 a input105:
+#ST: 12
+# t,   n,   m,   b, seed
+  3  120   40   13  7763
+  3   40  120   15  7764
+  3  100  100   24  7765
+  3  100  200   31  7773
+  3  200  100   71  7771
+  3  250  250  113  7772
+  3  290  290   91  7773
+  3  300  290  133  7774
+  3  290  300   47  7775
+  3  300  300  115  7776
+
