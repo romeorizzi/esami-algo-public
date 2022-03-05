@@ -32,8 +32,15 @@ int main() {
         assert(x > 0 && (y1 + y2) < x);
         if(tavolo == 'N') { // copio la mossa sull'altro tavolo
             cout << "T" << " " << x << " " << y1 << " " << y2 << endl;
+	    //ossia: se l'avversario (primo a giocare), gioca sul tavolo Nim (quindi y2=0 ) e rimpiazza un numero x con un numero x' < x  allora io (secondo a giocare) gioco sul tavolo Triangolo dove (dato che rispondiamo ad una singola mossa) posso assumere sia presente x, e lo sostituisco col valore y1)
+	    // Ho così ripristinato che le liste dei tue tavoli abbiano lo stesso Nim value (di fatto le liste sui due tavoli sono la stessa) e posso applicare induzione. 
         } else { //faccio una mossa equivalente sull'altro tavolo
             cout << "N" << " " << x << " " << 0 << " " << (y1 ^ y2) << endl;
+	    //ossia: se l'avversario (primo a giocare), gioca sul tavolo Triangolo e rimpiazza un numero x con due numeri y1 e y2 (con y1 + y2) < x allora io (secondo a giocare) gioco sul tavolo Nim dove (dato che rispondiamo ad una singola mossa) posso assumere sia presente x, e lo sostituisco col valore bitwiseXOR(y1,y2)
+	    // Ho così ripristinato che le liste dei tue tavoli abbiano lo stesso Nim value e posso applicare induzione (anche se le liste sui due tavoli non sono la stessa, nell'eventuale proseguio del gioco vale comunque l'invariante che le liste dei tue tavoli hanno lo stesso Nim value).
+
+	    // per gestire l'intera partita, dobbiamo poggiare sull'ipotesi induttiva che i Nim value delle due liste siano lo stesso, e osservare che:
+	    // se due liste L1 e L2 hanno lo stesso Nim value, allora, comunque uno abbia Nim mosso (x2=0) o Triangle mosso x -> x1, x2 (con x1+x2<x) comportando che il Nim value sia passato da 0 a bitwiseXOR(x,x1,x2), deve essere tuttavia presente o in L1 o in L2 un altro valore y >= max_power_o_2_in(x) e quindi ci basterà abbassare y a bitwiseXOR(x,x1,x2) per riportare il Nim value a zero. (Il face-value di y può anche essere lo stesso di x, volevamo solo essere chiari sul fatto che è un altro elemento). 
         }
 
     } else { //Solo Triangolo.
