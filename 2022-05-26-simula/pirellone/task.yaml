@@ -1,0 +1,11 @@
+name: pirellone
+title: Luci al Pirellone 
+time_limit: 1.0
+memory_limit: 256
+# infile: ""   (questo problema si basa su un correttore)
+# outfile: ""   (questo problema si basa su un correttore)
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
