@@ -1,0 +1,1 @@
+../gen/hardcoded/output6.txt

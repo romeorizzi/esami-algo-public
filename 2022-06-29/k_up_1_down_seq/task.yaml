@@ -1,0 +1,12 @@
+name: k_up_1_down_seq
+title: Count the possible sequences with uprisings of size k and downfalls of 1
+time_limit: 5.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

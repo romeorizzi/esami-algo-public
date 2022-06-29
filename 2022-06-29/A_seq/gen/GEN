@@ -1,0 +1,110 @@
+# generator parameters: 
+# g, n
+
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
+#ST: 0
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+#COPY: gen/hardcoded/input6.txt   
+#COPY: gen/hardcoded/input7.txt
+#COPY: gen/hardcoded/input8.txt
+
+
+# Subtask 2 [13 punti]: g=1, n ≤ 20. Da input9 a input14:
+#ST: 13
+# g    n  minW  maxW   seed
+  1   11    10    99   1231
+  1   12    10    99   1232
+  1   13    10    99   1233
+  1   16    10    99   1234
+  1   18    10    99   1235
+  1   20    10    99   1236
+  
+# Subtask 3 [10 punti]: g=1, n ≤ 100. Da input15 a input20:
+#ST: 10
+# g    n  minW  maxW   seed
+  1   70   100   999   2231
+  1   80   100   999   2232
+  1   90   100   999   2233
+  1   98   100   999   2234
+  1   99   100   999   2235
+  1  100   100   999   2236
+  
+# Subtask 4 [10 punti]: g=1, n ≤ 1000. Da input21 a input29:
+#ST: 10
+# g     n  minW  maxW   seed
+  1   700  1000  9999   2230
+  1   800  1000  9999   2231
+  1   900  1000  9999   2232
+  1   950  1000  9999   2233
+  1   980  1000  9999   2234
+  1   990  1000  9999   2235
+  1   998  1000  9999   2236
+  1   999  1000  9999   2237
+  1  1000  1000  9999   2238
+  
+# Subtask 5 [15 punti]: g=1, n ≤ 10000. Da input30 a input38:
+#ST: 15
+# g      n    minW   maxW   seed
+  1   5000   10000  99999   2230
+  1   7000   10000  99999   2231
+  1   8000   10000  99999   2232
+  1   9000   10000  99999   2233
+  1   9800   10000  99999   2234
+  1   9900   10000  99999   2235
+  1   9998   10000  99999   2236
+  1   9999   10000  99999   2237
+  1  10000   10000  99999   2238
+
+# ----- g=2 ------------ now g=2 ----------- g=2 -----------
+
+
+# Subtask 6 [10 punti]: g=2, n ≤ 20. Da input39 a input44:
+#ST: 10
+# g    n  minW  maxW   seed
+  2   11    10    99   1231
+  2   12    10    99   1232
+  2   13    10    99   1233
+  2   16    10    99   1234
+  2   18    10    99   1235
+  2   20    10    99   1236
+  
+# Subtask 7 [15 punti]: g=2, n ≤ 100. Da input45 a input50:
+#ST: 15
+# g    n  minW  maxW   seed
+  2   70   100   999   2231
+  2   80   100   999   2232
+  2   90   100   999   2233
+  2   98   100   999   2234
+  2   99   100   999   2235
+  2  100   100   999   2236
+  
+# Subtask 8 [15 punti]: g=2, n ≤ 1000. Da input51 a input59:
+#ST: 15
+# g     n  minW  maxW   seed
+  2   700  1000  9999   2230
+  2   800  1000  9999   2231
+  2   900  1000  9999   2232
+  2   950  1000  9999   2233
+  2   980  1000  9999   2234
+  2   990  1000  9999   2235
+  2   998  1000  9999   2236
+  2   999  1000  9999   2237
+  2  1000  1000  9999   2238
+  
+# Subtask 9 [12 punti]: g=2, n ≤ 10000. Da input60 a input68:
+#ST: 12
+# g      n    minW   maxW   seed
+  2   5000   10000  99999   2230
+  2   7000   10000  99999   2231
+  2   8000   10000  99999   2232
+  2   9000   10000  99999   2233
+  2   9800   10000  99999   2234
+  2   9900   10000  99999   2235
+  2   9998   10000  99999   2236
+  2   9999   10000  99999   2237
+  2  10000   10000  99999   2238

@@ -1,0 +1,159 @@
+\renewcommand{\nomebreve}{k\_up\_1\_down\_seq}
+\renewcommand{\titolo}{Count the possible sequences with uprisings of size k and downfalls of 1\\}
+
+\introduzione{}
+
+Per via di nostre analisi sui mercati finanziari, siamo interessati nelle $n,k$\emph{-sequenze}, ossia in quelle sequenze di numeri naturali $x_1, x_2, \ldots, x_n$
+con $x_1=x_n=0$ e dove, per ogni $i=2,\ldots, n$, si abbia $x_i \geq 0$
+e $x_i \in \{x_{i-1}, x_{i-1}-1, x_{i-1}+k\}$.
+In altre parole, ogni elemento della sequenza è un numero naturale pari al precedente, oppure al precedente ridotto di $1$, oppure al precedente incrementato di $k$.\\ 
+
+Indichiamo con $f(n,k)$ il numero di $n,k$-sequenze, per un certo $n\geq 1$ e per un certo $k\geq 1$. Per $n=5$, le seguenti tabelle riportanto tutte le possibili $5,k$-sequenze per $k=1$ e per $k=2$, disposte in \emph{ordine lessicografico}.
+
+\begin{table}[!h]
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \begin{tabular}{l|r}
+      \textbf{sequence} & \textbf{rank} \\
+      \hline
+      0 0 0 0 0 & 0 \\
+      0 0 0 1 0 & 1 \\
+      0 0 1 0 0 & 2 \\
+      0 0 1 1 0 & 3 \\
+      0 1 0 0 0 & 4 \\
+      0 1 0 1 0 & 5 \\
+      0 1 1 0 0 & 6 \\
+      0 1 1 1 0 & 7 \\
+      0 1 2 1 0 & 8 \\
+    \end{tabular}
+    \caption{lista delle $5,1$-sequenze}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \begin{tabular}{l|r}
+      \textbf{sequence} & \textbf{rank} \\
+      \hline
+      0 0 0 0 0 & 0 \\
+      0 0 2 1 0 & 1 \\
+      0 2 1 0 0 & 2 \\
+      0 2 1 1 0 & 3 \\
+      0 2 2 1 0 & 4 \\
+    \end{tabular}
+    \caption{lista delle $5,2$-sequenze}
+    \end{minipage}
+%}      
+\end{table}
+
+Proponiamo di ideare e realizzare procedure che attengano i seguenti goal:
+
+\begin{description}
+  \item[goal~1] dati $n$ e $k$, calcolare il valore $f(n,k) \% 1\,000\,000\,007$, ossia il resto della divisione di $f(n,k)$ per il numero $1\,000\,000\,007$
+  
+  \item[goal~2] dati in ingresso $n$, $k$, $r$, produrre la $n,k$-sequenza di rango $r$. (Assegneremo valori di $n$, $k$ tali da assicurare che le $n,k$-sequenze siano meno di $1\,000\,000\,007$.)
+  
+  \item[goal~3] data in ingresso una $n,k$-sequenza, calcolare il rango della sequenza data, ossia la sua posizione (partendo da $0$) nella lista delle $n,k$-sequenze disposte secondo l'ordinamento lessicografico. (Si calcoli il rango modulo $1\,000\,000\,007$; esso è univocamente definito anche ove le $n,k$-sequenze siano oltre questo tetto.)
+  
+  \item[goal~4] dati in ingresso $n$, $k$, listare una per riga, ed in ordine lessicografico, tutte le $n,k$-sequenze
+    
+\end{description}
+
+
+\sezionetesto{Input ed Output}
+
+Input ed output avvengono da \verb'stdin' e su \verb'stdout' rispettivamente.
+La prima riga dell'input contiene i tre numeri naturali $g$, $n$ e $k$, nell'ordine e separati da spazio. Il parametro $g\in \{1,2,3,4\}$ specifica il goal. Il parametro $n$ indica la lunghezza delle sequenze di interesse, ossia il loro numero di elementi. Il parametro $k$ indica l'entità di quanto possa eventualmente crescere un elemento rispetto a quello che lo precede immediatamente nella sequenza.
+Se $g=1$ o $g=4$ l'input consta di questa sola riga.
+Se $g=2$ segue una riga contenente il solo numero intero $r$.
+Se $g=3$ segue una riga contenente $n$ numeri naturali separati da spazio, quelli di una $n,k$-sequenza di cui si chiede di calcolare il rango.
+
+\sezionetesto{Organizzazione del lavoro}
+
+Suggerimento 1: questo problema è un esercizio sull'approccio ricorsivo alla soluzione dei problemi, come alla programmazione.
+
+Suggerimento 2: il goal~1 è da affrontare per primo e propedeutico ai goal~2,3. I goal~2,3 sono tra di loro complementari oltre che l'inverso uno dell'altro. Per il goal~4 potrai avvalerti della procedura realizzata per il goal~2.
+
+Suggerimento 3: per non limitarsi a risolvere solo casi minuscoli, della ricorsione individuata andrà data un'implementazione all'insegna dell'efficienza.
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse coppie input/output tra cui le seguenti.
+
+\vspace{0.5cm}
+\esempio{1 5 1}{9}
+
+\vspace{0.5cm}
+\esempio{1 5 2}{5}
+
+\vspace{0.5cm}
+\esempio{2 5 2
+
+3}{0 2 1 1 0}
+
+\vspace{0.5cm}
+\esempio{3 5 2
+  
+0 2 1 1 0}{3}
+
+\vspace{0.5cm}
+\esempio{4 5 2}{0 0 0 0 0
+
+0 0 2 1 0
+
+0 2 1 0 0
+
+0 2 1 1 0
+
+0 2 2 1 0}
+
+\newpage
+
+\section*{Subtask}
+
+  \begin{itemize}
+  \item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i 5 casi sopra.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+    \item \textbf{Subtask 2 [7 punti]:} $g=1$, $k=1$, $n \le 16$.
+    \item \textbf{Subtask 3 [7 punti]:} $g=1$, $n \le 16$.
+    \item \textbf{Subtask 4 [5 punti]:} $g=1$, $k=1$, $n \le 100$.
+    \item \textbf{Subtask 5 [5 punti]:} $g=1$, $n \le 100$.
+    \item \textbf{Subtask 6 [3 punti]:} $g=1$, $k=1$, $n \le 1000$.
+    \item \textbf{Subtask 7 [3 punti]:} $g=1$, $n \le 1000$.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+
+    \item \textbf{Subtask 8 [7 punti]:} $g=2$, $k=1$, $n \le 16$.
+    \item \textbf{Subtask 9 [7 punti]:} $g=2$, $n \le 16$.
+    \item \textbf{Subtask 10 [5 punti]:} $g=2$, $k=1$, $n \le 23$. (Dove le $n,k$-sequenze sono meno di $1\,000\,000\,007$.)
+    \item \textbf{Subtask 11 [5 punti]:} $g=2$, $k>1$, $n \le 25$. (Dove le $n,k$-sequenze sono meno di $1\,000\,000\,007$.)
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+
+    \item \textbf{Subtask 12 [5 punti]:} $g=3$, $k=1$, $n \le 16$.
+    \item \textbf{Subtask 13 [5 punti]:} $g=3$, $n \le 16$.
+    \item \textbf{Subtask 14 [5 punti]:} $g=3$, $k=1$, $n \le 100$.
+    \item \textbf{Subtask 15 [5 punti]:} $g=3$, $n \le 100$.
+    \item \textbf{Subtask 16 [3 punti]:} $g=3$, $k=1$, $n \le 1000$.
+    \item \textbf{Subtask 17 [3 punti]:} $g=3$, $n \le 1000$.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+
+    \item \textbf{Subtask 18 [10 punti]:} $g=4$, $k=1$, $n \le 16$.
+    \item \textbf{Subtask 19 [10 punti]:} $g=4$, $n \le 16$.
+      
+  \end{itemize}
+  

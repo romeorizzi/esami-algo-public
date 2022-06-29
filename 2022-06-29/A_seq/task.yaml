@@ -1,0 +1,12 @@
+name: A_seq
+title: A-sequenze di lunghezza massima
+time_limit: 1.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+
