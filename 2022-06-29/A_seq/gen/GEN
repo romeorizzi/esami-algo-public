@@ -12,9 +12,13 @@
 #COPY: gen/hardcoded/input6.txt   
 #COPY: gen/hardcoded/input7.txt
 #COPY: gen/hardcoded/input8.txt
+#COPY: gen/hardcoded/input9.txt
+#COPY: gen/hardcoded/input10.txt
+#COPY: gen/hardcoded/input11.txt   
+#COPY: gen/hardcoded/input12.txt
 
 
-# Subtask 2 [13 punti]: g=1, n ≤ 20. Da input9 a input14:
+# Subtask 2 [13 punti]: g=1, n ≤ 20. Da input13 a input18:
 #ST: 13
 # g    n  minW  maxW   seed
   1   11    10    99   1231
@@ -24,7 +28,7 @@
   1   18    10    99   1235
   1   20    10    99   1236
   
-# Subtask 3 [10 punti]: g=1, n ≤ 100. Da input15 a input20:
+# Subtask 3 [10 punti]: g=1, n ≤ 100. Da input19 a input24:
 #ST: 10
 # g    n  minW  maxW   seed
   1   70   100   999   2231
@@ -34,7 +38,7 @@
   1   99   100   999   2235
   1  100   100   999   2236
   
-# Subtask 4 [10 punti]: g=1, n ≤ 1000. Da input21 a input29:
+# Subtask 4 [10 punti]: g=1, n ≤ 1000. Da input25 a input33:
 #ST: 10
 # g     n  minW  maxW   seed
   1   700  1000  9999   2230
@@ -47,7 +51,7 @@
   1   999  1000  9999   2237
   1  1000  1000  9999   2238
   
-# Subtask 5 [15 punti]: g=1, n ≤ 10000. Da input30 a input38:
+# Subtask 5 [15 punti]: g=1, n ≤ 10000. Da input34 a input42:
 #ST: 15
 # g      n    minW   maxW   seed
   1   5000   10000  99999   2230
@@ -63,7 +67,7 @@
 # ----- g=2 ------------ now g=2 ----------- g=2 -----------
 
 
-# Subtask 6 [10 punti]: g=2, n ≤ 20. Da input39 a input44:
+# Subtask 6 [10 punti]: g=2, n ≤ 20. Da input43 a input48:
 #ST: 10
 # g    n  minW  maxW   seed
   2   11    10    99   1231
@@ -73,7 +77,7 @@
   2   18    10    99   1235
   2   20    10    99   1236
   
-# Subtask 7 [15 punti]: g=2, n ≤ 100. Da input45 a input50:
+# Subtask 7 [15 punti]: g=2, n ≤ 100. Da input49 a input54:
 #ST: 15
 # g    n  minW  maxW   seed
   2   70   100   999   2231
@@ -83,7 +87,7 @@
   2   99   100   999   2235
   2  100   100   999   2236
   
-# Subtask 8 [15 punti]: g=2, n ≤ 1000. Da input51 a input59:
+# Subtask 8 [15 punti]: g=2, n ≤ 1000. Da input55 a input63:
 #ST: 15
 # g     n  minW  maxW   seed
   2   700  1000  9999   2230
@@ -96,7 +100,7 @@
   2   999  1000  9999   2237
   2  1000  1000  9999   2238
   
-# Subtask 9 [12 punti]: g=2, n ≤ 10000. Da input60 a input68:
+# Subtask 9 [12 punti]: g=2, n ≤ 10000. Da input64 a input72:
 #ST: 12
 # g      n    minW   maxW   seed
   2   5000   10000  99999   2230
