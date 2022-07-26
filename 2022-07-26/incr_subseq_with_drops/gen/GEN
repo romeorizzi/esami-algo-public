@@ -1,0 +1,125 @@
+# Subtask 1 [0 punti]: i casi di esempio forniti in attachment alla pagina del problema, essi includono i casi del testo  (internamente al CMS sono numerati da 0, ma esternamente da 1):
+#ST: 0
+#COPY: gen/hardcoded/input0.txt   
+#COPY: gen/hardcoded/input1.txt
+#COPY: gen/hardcoded/input2.txt
+#COPY: gen/hardcoded/input3.txt
+#COPY: gen/hardcoded/input4.txt
+#COPY: gen/hardcoded/input5.txt
+#COPY: gen/hardcoded/input6.txt   
+#COPY: gen/hardcoded/input7.txt
+#COPY: gen/hardcoded/input8.txt
+#COPY: gen/hardcoded/input9.txt
+#COPY: gen/hardcoded/input10.txt   
+#COPY: gen/hardcoded/input11.txt
+#COPY: gen/hardcoded/input12.txt
+#COPY: gen/hardcoded/input13.txt
+#COPY: gen/hardcoded/input14.txt
+#COPY: gen/hardcoded/input15.txt
+
+# generator parameters: 
+# g, N, k, maxVAL, seed
+# dove:
+# g è il goal/tipo di richiesta (g=1 valore dell'ottimo, g=2 numero soluzioni ottime)
+# N è la lunghezza della sequenza in input
+# k il numero di croli concessi
+# tutti i numeri nella sequenza in input saranno ricompresi nell'intervallo [1,maxVAL]
+# seed è il seme per la pseudo-random generation
+
+# Subtask 2 [10 punti]: t=0, k=0, n ≤ 100. Da input16 a input20:
+#ST: 10
+#  g    n  k  maxVal seed
+   1  100  0     100 7771
+   1  100  0     100 7772
+   1  100  0     300 7773
+   1  100  0     400 7774
+   1  100  0     500 7775
+
+# Subtask 3 [10 punti]: t=0, k=1, n ≤ 100. Da input21 a input25:
+#ST: 10
+#  g    n  k  maxVal seed
+   1  100  1     100 7771
+   1  100  1     100 7772
+   1  100  1     300 7773
+   1  100  1     400 7774
+   1  100  1     500 7775
+
+# Subtask 4 [10 punti]: t=0, k=2, n ≤ 100. Da input26 a input30:
+#ST: 10
+#  g    n  k  maxVal seed
+   1  100  2     100 6771
+   1  100  2     100 6772
+   1  100  2     300 6773
+   1  100  2     400 6774
+   1  100  2     500 6775
+
+# Subtask 5 [10 punti]: t=0, n ≤ 16. Da input31 a input38:
+#ST: 10
+#  g   n    k  maxVal seed
+   1  16    0     100 5771
+   1  16    1     100 5772
+   1  16    2     300 5773
+   1  16    3     400 5774
+   1  16    4     500 5775
+   1  16    5     300 5776
+   1  16    6     400 5777
+   1  16    7     500 5778
+
+# Subtask 6 [10 punti]: t=0, n ≤ 100. Da input39 a input43:
+#ST: 10
+#  g    n    k  maxVal seed
+   1  100    3     100 4771
+   1  100    5     100 4772
+   1  100   20     300 4773
+   1  100  100     400 4774
+   1  100  100     500 4775
+
+# Subtask 7 [10 punti]: t=1, k=0, n ≤ 100. Da input44 a input48:
+#ST: 10
+#  g    n  k  maxVal seed
+   2  100  0     100 7771
+   2  100  0     100 7772
+   2  100  0     300 7773
+   2  100  0     400 7774
+   2  100  0     500 7775
+
+# Subtask 8 [10 punti]: t=1, k=1, n ≤ 100. Da input49 a input52:
+#ST: 10
+#  g    n  k  maxVal seed
+   2  100  1     100 7771
+   2  100  1     100 7772
+   2  100  1     300 7773
+   2  100  1     400 7774
+   2  100  1     500 7775
+
+# Subtask 9 [10 punti]: t=1, k=2, n ≤ 100. Da input53 a input58:
+#ST: 10
+#  g    n  k  maxVal seed
+   2  100  2     100 6771
+   2  100  2     100 6772
+   2  100  2     300 6773
+   2  100  2     400 6774
+   2  100  2     500 6775
+
+# Subtask 10 [10 punti]: t=1, n ≤ 16. Da input59 a input66:
+#ST: 10
+#  g    n    k  maxVal seed
+   2   16    0     100 5771
+   2   16    1     100 5772
+   2   16    2     300 5773
+   2   16    3     400 5774
+   2   16    4     500 5775
+   2   16    5     300 5776
+   2   16    6     400 5777
+   2   16    7     500 5778
+
+# Subtask 11 [10 punti]: t=1, n ≤ 100. Da input67 a input71:
+#ST: 10
+#  g    n    k  maxVal seed
+   2  100    3     100 4771
+   2  100    5     100 4772
+   2  100   20     300 4773
+   2  100  100     400 4774
+   2  100  100     500 4775
+
+

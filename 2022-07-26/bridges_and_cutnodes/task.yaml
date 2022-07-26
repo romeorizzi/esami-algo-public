@@ -1,0 +1,12 @@
+name: bridges_and_cutnodes
+title: Ponti e nodi di articolazione in grafi non diretti
+time_limit: 4.0
+memory_limit: 256
+infile: ""
+outfile: ""
+score_mode: max
+# score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

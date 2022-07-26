@@ -1,0 +1,88 @@
+\renewcommand{\nomebreve}{incr\_subseq\_with\_drops}
+\renewcommand{\titolo}{Massima sottosequenza crescente con crolli}
+
+\introduzione{}
+
+\noindent
+Una sequenza $s_1, ..., s_n$ è detta \emph{crescente con al più $k$ crolli} se gli indici $i<n$ per cui $s_i\geq s_{i+1}$ è al più $k$.
+
+Riceverai in input una sequenza $S=s_1,s_2, \ldots, s_n$ di $n$ numeri naturali. Un sottoinsieme $I$ dell'insieme degli indici $\{1,2, \ldots, n\}$ definisce la \emph{sottosequenza} di $S$ ottenuta da $s$ per rimozione di quegli elementi i cui indici non compaiono in $I$.
+Ad esempio, quando $n\geq 8$ e con $I=\{3,5,8\}$, otteniamo la sottosequenza $S[I]=s_3,s_5,s_8$, che possiamo indicare anche con $S[3,5,8]$.
+
+Proponiamo di ideare e realizzare procedure che attengano i seguenti goal:
+
+\begin{description}
+  \item[goal~1] data in input una sequenza $S$ ed un numero naturale $k$, calcolare la massima lunghezza di una sottosequenza di $S$ che sia crescente con al più $k$ crolli.
+  
+  \item[goal~2] data in input una sequenza $S=s_1,s_2, \ldots, s_n$ ed un numero naturale $k$, sia $f(S,k)$ il numero di quegli insiemi $I\subseteq \{1,2, \ldots, n\}$ di massima cardinalità tali che $s[I]$ è una sequenza con al più $k$ crolli. Calcolare il valore $f(S,k) \% 1\,000\,000\,007$, ossia il resto della divisione di $f(S,k)$ per il numero $1\,000\,000\,007$.
+\end{description}
+
+\sezionetesto{Input ed Output}
+
+Input ed output avvengono da \verb'stdin' e su \verb'stdout' rispettivamente.
+La prima riga dell'input contiene i tre numeri naturali $g$, $n$ e $k$, nell'ordine e separati da spazio. Il parametro $g\in \{1,2\}$ specifica il goal. Il parametro $n$ indica la lunghezza della sequenza $S$, ossia il numero dei suoi elementi. Il parametro $k$ specifica il numero di crolli consentiti nelle sottosequenze di interesse.
+La seconda e ultima riga dell'input offre gli $n$ elementi di $S$, nel loro ordine e separati da spazi.\\
+
+L'output consiste di un sol numero, e più precisamente:
+\begin{description}
+  \item[se $g=1$] andrà restituita la massima lunghezza di una sottosequenza di $S$ che sia crescente con al più $k$ crolli
+  \item[se $g=2$] allora, dove $f(S,k)$ è il numero di soluzioni ottime, ossia il numero di sottosequenze di $S$ crescenti con al più $k$ crolli e di massima lunghezza tra queste, andrà restituito il valore $f(S,k)\%1.000.000.007$ (ossia il resto della divisione di $f(S,k)$ per $1.000.000.007$). Quì due sottosequenze vengono considerate diverse se corrispondono a sottoinsiemi diversi di $I=\{1,2, \ldots, n\}$   
+\end{description}
+
+\sezionetesto{Esempio di input/output}
+
+In attachment alla pagina del problema trovate diverse coppie input/output tra cui le seguenti.
+
+\vspace{0.5cm}
+\esempio{1 10 0
+
+6 4 1 2 2 3 4 4 5 9}{6}
+
+\vspace{0.5cm}
+\esempio{2 10 0
+
+6 4 1 2 2 3 4 4 5 9}{4}
+
+Spiegazione di Esempi~$1$ e~$2$: 1,2,3,4,5,9 è sottosequenza crescente di $S$ con $0$ crolli. In questo caso le sottosequenze crescenti di massima lunghezza sono 4 poichè abbiamo la scelta su quale 2 prendere e su quale 4 dopo di lui prendere. Queste due scelte indipendenti si compongono a prodotto Cartesiano per un totale di 4 soluzioni ottime. 
+
+\vspace{0.5cm}
+\esempio{1 10 1
+
+6 4 1 2 2 3 4 4 5 9}{7}
+
+\vspace{0.5cm}
+\esempio{2 10 1
+
+6 4 1 2 2 3 4 4 5 9}{12}
+
+Spiegazione di Esempi~$3$ e~$4$: 1,2,2,3,4,5,9 è sottosequenza crescente di $S$ con $1$ crollo. In questo caso le sottosequenze crescenti (con al più un crollo) di massima lunghezza sono~$12$: 2 prendono entrambi i 2 e scelgono quale dei due 4 prendere alla loro destra, altre 2 prendono entrambi questi due 4 e si differenziano per quale 2 prendere, altre 4 prendono il 6 e, infine, le ultime 4 prendono il primo 4 della sequenza in input.
+
+\vspace{0.5cm}
+\esempio{1 10 8
+
+6 4 1 2 2 3 4 4 5 9}{10}
+
+\vspace{0.5cm}
+\esempio{2 10 8
+
+6 4 1 2 2 3 4 4 5 9}{1}
+
+Spiegazione di Esempi~$5$ e~$6$: in questo caso la sottosequenza crescente (con al più 8 crolli) di massima lunghezza era unica: l'intera sequenza $S$ fornita in input.
+
+\section*{Subtask}
+
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i 6 casi sopra.
+    \item \textbf{Subtask 2 [10 punti]:} $g=1$, $k=0, n \le 100$.
+    \item \textbf{Subtask 3 [10 punti]:} $g=1$, $k=1, n \le 100$.
+    \item \textbf{Subtask 4 [10 punti]:} $g=1$, $k=2, n \le 100$.
+    \item \textbf{Subtask 5 [10 punti]:} $g=1$, $n \le 16$.
+    \item \textbf{Subtask 6 [10 punti]:} $g=1$, $n \le 100$.
+    \item \textbf{Subtask 7 [10 punti]:} $g=2$, $k=0, n \le 100$.
+    \item \textbf{Subtask 8 [10 punti]:} $g=2$, $k=1, n \le 100$.
+    \item \textbf{Subtask 9 [10 punti]:} $g=2$, $k=2, n \le 100$.
+    \item \textbf{Subtask 10 [10 punti]:} $g=2$, $n \le 16$.
+    \item \textbf{Subtask 11 [10 punti]:} $g=2$, $n \le 100$.
+  \end{itemize}
+  
+{\bf Nota:} $n\leq 100$ in tutti i subtask. Sfrutta questo fatto per mantenere semplici le tue soluzioni.
