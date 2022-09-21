@@ -1,0 +1,14 @@
+nome_breve: "convoglio"
+nome: "La battaglia del convoglio"
+time_limit: 3.0
+memory_limit: 256
+correttore: "cor/correttore"
+token_mode: infinite
+infile: ""
+outfile: ""
+score_mode: max
+# NON FUNZIA: score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

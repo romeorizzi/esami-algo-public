@@ -1,0 +1,17 @@
+# General info
+name: linear_diff_constraints
+title: Mal Comune Mezzo Gaudio
+
+# Technical info
+memory_limit: 256
+time_limit: 7
+infile: ""
+outfile: ""
+
+# Other stuff
+score_mode: max
+# NON FUNZIA: score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

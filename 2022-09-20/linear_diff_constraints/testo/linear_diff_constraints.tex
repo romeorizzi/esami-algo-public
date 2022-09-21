@@ -1,0 +1,175 @@
+\renewcommand{\nomebreve}{linear\_diff\_constraints}
+\renewcommand{\titolo}{Mal Comune Mezzo Gaudio - {\large ripreso dalle OII 2019}\\}
+
+\introduzione{}
+
+Al fine di abbellire la nostra città, le $N$ famiglie più potenti della stessa costruiranno ciascuna una diversa torre, che dimostri la magnificenza sia del borgo che del casato. Poichè non ovunque il terreno è stabile, per ogni torre $i$, con $i\in [0,N)$, è stata prescritta un'altezza massima $H[i]$. Ciò nonostante tutti hanno ambizione, se non a costruire la torre più alta, quantomeno a non sfigurare rispetto ad altri in modo impropio.
+Sulle altezze effettive $h$ delle varie torri si sono così consolidati $M$ ulteriori vincoli della forma $h[i_1] \geq h[i_2] - \delta$, con $\delta \in  \mathbf{N}$. Più precisamente, per ogni $j=0,\ldots,M-1$, si avrà il vincolo:
+\[
+   h[B_j] \leq h[A_j] + C_j 
+\]
+dove $A_j, B_j$ ed anche $C_j$ sono sempre numeri interi non-negativi, e con $A_j, B_j < N$.
+
+Calcola il massimo valore di $\sum_{i=0}^{N-1} h[i]$ su tutti i possibili piani regolatori $h:[0,N)\mapsto \mathbf{N}$ che non violino nè i tetti sulle altezze massime (ossia con $h\leq H$)  nè alcuno degli $M$ vincoli di confronto. 
+
+
+\sezionetesto{Input ed Output}
+
+Per sgravarti dalla scrittura di codice per l'input e l'output trovi dei grader e dei template tra gli attachment del problema (quella che contiene il testo del problema e che offre alcune istanze tra i suoi attachments). L'utilizzo dei grader è esemplificato dai template scaricabili. Per risolvere il problema puoi limitarti ad integrare il teplate per il linguaggio scelto e sottometterlo. Sono supportati tutti e tre i linguaggi \verb'C', \verb'c++' e \verb'python3'.
+Internamente ai grader, input ed output avvengono da \verb'stdin' e su \verb'stdout' rispettivamente. Alcune coppie input/output corrette, salvate su file, sono fornite sempre alla pagina del problema.
+Grazie ai grader, nella scrittura del codice potrai concentrarti sulla sola parte di soluzione del problema. Ad esempio, nel caso di \verb'C', \verb'c++' dovrai implementare la seguente funzione:
+
+\begin{center}\begin{tabularx}{\textwidth}{|c|X|}
+\hline
+C  & \verb|long long costruisci(int N, int M, long long* H, int* A, int* B, int* C);|\\
+C++ & \verb|long long costruisci(int N, int M, vector<long long>& H, vector<int>& A,|\\
+& \hspace{4.25cm}\verb|vector<int>& B, vector<int>& C);|\\
+\hline
+\end{tabularx}\end{center}
+
+\begin{itemize}[nolistsep]
+	\item L'intero $N$ che rappresenta il numero di torri da costruire.
+	\item L'intero $M$ che rappresenta il numero di vincoli imposti dai
+	      costruttori.
+	\item Il vettore $H$, indicizzato da $0$ a $N-1$, che contiene le altezze
+	      massime di ciascun grattacielo.
+	\item I vettori $A$, $B$ e $C$, indicizzati da $0$ a $M-1$, che contengono i
+	      vincoli dei costruttori.
+\end{itemize}
+
+\medskip
+
+La funzione \texttt{costruisci} deve restituire la massima altezza totale delle torri che è possibile ottenere rispettando tutti i vincoli.
+
+Anche nel caso di \verb'python' puoi limitarti a modificare solo il template, inserendo la soluzione dove segnalato, dando per scontato che le variabili $N$, $M$, $H$, $A$, $B$ e $C$ siano già state inizializzate correttamente. Il tuo compito sarà caricare la risposta nella variabile `\verb'answer'`. Nel caso di python ti resta la libertà di scrivere un codice che gestisca lui anche gli standard input e standard output, dato che quì è il codice da tè sottomesso a chiamare il grader invece che il contrario come in \verb'C', \verb'c++'.
+
+
+\newpage
+\sezionetesto{Formati dei file Input e Output}
+
+Il file di input è composto $M+2$ righe, contenenti:
+\begin{itemize}[nolistsep,itemsep=2mm]
+\item Riga $1$: gli interi $N$ e $M$.
+\item Riga $2$: gli $N$ interi $H_0, \dots, H_{N-1}$.
+\item Righe $3, \dots, M+2$: i tre interi $A_j$, $B_j$ e $C_j$ che rappresentano il $j$-esimo vincolo.
+\end{itemize}
+
+Il file di output consiste di una sola riga contenente il valore numerico corretto per la massima possibile somma delle altezze.
+
+
+
+
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+
+In attachment alla pagina del problema trovate diverse coppie input/output tra cui le seguenti.
+
+
+\vspace{0.5cm}
+\esempio{4 5
+
+2 3 6 3
+
+0 1 4
+
+1 2 1
+
+2 0 1
+
+0 3 0
+
+3 2 2}{11}
+
+In questo primo esempio abbiamo $4$ torri le cui altezze possiamo indicare con $h[0], h[1], h[2], h[3]$. Su queste altezze vengono forniti $5$ vincoli lineari alle differenze, che sono:\\
+\indent 1) riga~3: {\tt 0 1 4} $\rightarrow$ $h[1] \leq h[0] + 4$\\ 
+\indent 2) riga~4: {\tt 1 2 1} $\rightarrow$ $h[2] \leq h[1] + 1$\\
+\indent 3) riga~5: {\tt 2 0 1} $\rightarrow$ $h[0] \leq h[2] + 1$\\
+\indent 4) riga~6: {\tt 0 3 0} $\rightarrow$ $h[3] \leq h[0] + 0$\\
+\indent 5) riga~7: {\tt 3 2 2} $\rightarrow$ $h[2] \leq h[3] + 2$\\
+La seconda riga codifica invece le limitazioni superiori:
+\[
+h[0] \leq 2, \quad h[1] \leq 3, \quad h[2] \leq 6, \quad h[3] \leq 3
+\]
+La risposta corretta $11 = 2+3+4+2$ è il valore di una soluzione ottima del problema di ottimizzazione $\max h[0]+h[1]+h[2]+h[3]$ soggetto alle limitazioni superiori e ai 5 vincoli riportati sopra. Dal vincolo~2 $h[2] \leq h[1] + 1$ e dal tetto $h[1] \leq 3$ possiamo infatti dedurre $h[2] \leq 4$.
+Similmente, dal vincolo~4 $h[3] \leq h[0] + 0$ e dal tetto $h[0] \leq 2$ segue $h[3] \leq 2$.
+
+
+
+\vspace{0.5cm}
+\esempio{4 6
+  
+2 4 10 7
+  
+0 1 1
+
+1 2 3
+
+1 3 2
+
+3 2 2
+
+3 0 0
+
+0 3 4}{16}
+
+No comment.
+
+
+
+\vspace{0.5cm}
+\esempio{10 9
+
+  3 8 9 6 9 1 6 7 7 9
+
+3 4 1
+
+0 1 2
+
+4 0 4
+
+5 0 1
+
+8 0 0
+
+8 2 1
+
+1 8 2
+
+7 9 1
+
+6 7 2}{54}
+
+Dove $54$ è il valore di $h=[2, 4, 7, 6, 7, 1, 6, 7, 6, 8]$.
+
+
+\section*{Limitazioni}
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+	\item $1 \le N, M \le 100\,000$.
+	\item $1 \le H_i \le 10^{12}$.
+	\item $0 \leq C_j \le 10^9$ per ogni $j$.
+	\item $0 \leq A_j, B_j \leq N - 1$ per ogni $j$.
+	\item Non ci sono vincoli duplicati (non esistono $j$, $k$ distinti tali che
+	      $A_j = A_k$ e $B_j = B_k$).
+	\item Non ci sono vincoli di un costruttore verso se stesso (tali che $A_j =
+	      B_j$).
+\end{itemize}
+
+\section*{Subtask}
+
+  \begin{itemize}
+  \item \textbf{Subtask 1 [\phantom{1}0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i 3 casi sopra.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+    \item \textbf{Subtask 2 [\phantom{1}4 punti]:} $N \leq 5$ e le altezze massime sono tutte $\leq 5$.
+    \item \textbf{Subtask 3 [\phantom{1}8 punti]:} $M = N - 1$ e $B_j = A_j + 1$ per ogni $j$.
+    \item \textbf{Subtask 4 [\phantom{1}8 punti]:} $B_j > A_j$.
+    \item \textbf{Subtask 5 [20 punti]:} $N \leq 300$.
+    \item \textbf{Subtask 6 [16 punti]:} $C_j$ vale $0$ o $1$, per ogni $j$.
+    \item \textbf{Subtask 7 [24 punti]:} $N \leq 2000, M \leq 10000$.
+    \item \textbf{Subtask 8 [20 punti]:} Nessuna limitazione specifica.
+  \end{itemize}

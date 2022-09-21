@@ -1,0 +1,1 @@
+../testo/without_grader.input0.txt
