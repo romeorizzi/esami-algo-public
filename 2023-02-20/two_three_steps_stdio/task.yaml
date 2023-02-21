@@ -1,0 +1,17 @@
+# General info
+name: two_three_steps_stdio
+title: Better two or three steps?
+
+# Technical info
+time_limit: 2.0
+memory_limit: 256
+infile: ""
+outfile: ""
+
+# Other stuff
+score_mode: max
+# NON FUNZIA: score_mode: max_by_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

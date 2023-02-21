@@ -1,0 +1,8 @@
+memory_limit: 256
+name: two_three_steps
+time_limit: 2.0
+title: Better two or three steps?
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

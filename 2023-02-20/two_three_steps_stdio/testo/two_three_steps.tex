@@ -1,0 +1,51 @@
+\renewcommand{\nomebreve}{two\_three\_steps}
+\renewcommand{\titolo}{Better two or three steps?}
+
+\introduzione{}
+
+Nella nostra passeggiata lungo il corridoio del reparto geriatria,
+facciamo pausa ogni 2 oppure 3 piastrelle, e lì ripeschiamo un ricordo felice dalla nostra memoria, aiutati dalle foto di paesaggi appese per nascondere la realtà delle misere pareti.
+E però il valore di quel ricordo ci ostiniamo a voler credere sia dettato dai luoghi nel poster, non da noi stessi e nel nostro vissuto, e potremmo essere indotti a ritenere di voler programmare le nostre pause in un corridoio rappresentabile come un array di numeri naturali, che noi si percorre avanzando di due o tre posizioni per volta, e aggiungendo il numero ivi riscontrato, ad ogni sosta, al senso ultimo della nostra vita di follia.
+
+
+  Si massimizzi il senso di tutto questo.\\
+
+
+\sezionetesto{Dati di input}
+L'input avviene da \verb'stdin'. La prima riga contiene un numero intero e positivo $n$, il numero di poster appesi lungo il corridoio.
+La seconda riga offre una sequenza di $n$ numeri naturali separati da spazio:
+l'$i$-esimo di questi numeri, $GGG_i$, esprime la qualità del sogno ispiratomi da quella fotografia. E ovviamente i numeri sono sommabili, no?
+
+\sezionetesto{Dati di output}
+L'input avviene su \verb'stdout'. Nella prima ed unica riga si scriva il massimo valore per la somma delle qualità dei sogni di cui fruirò.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+6
+
+0 1 3 3 0 0
+}{3}
+\esempio{
+6
+
+0 0 2 3 1 1
+}{4}
+
+{\bf spiegazione.} In entrambi i casi il poster da cui si parte, ossia quella disposta a inizio corridoio, vale~$0$ e non offre pertanto alcun contributo alla somma.
+Nel primo caso il secondo poster su cui si sosta vale~$3$, che ci si sposti di due o di tre posizioni. In entrambi i casi stazioneremo poi di fronte ad un terzo ed ultimo poster, che comunque sia non aggiungerà alcun valore.
+Nel secondo caso il secondo poster su cui si sosta vale o~$2$ o~$3$, e il terzo vale poi comunque 1.
+In entrambi i casi il numero di poster visionati sarà sempre~3, comunque si gestisca la camminata lungo il corridoio di geriatria.
+
+
+\section*{Subtask}
+
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [25 punti]:} $n \leq 10$.
+    \item \textbf{Subtask 3 [25 punti]:} $n \leq 100$.
+    \item \textbf{Subtask 4 [30 punti]:} $n \leq 1\,000$.
+    \item \textbf{Subtask 5 [20 punti]:} $n \leq 1\,000\,000$.
+  \end{itemize}
+  

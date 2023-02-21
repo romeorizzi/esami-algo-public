@@ -1,0 +1,142 @@
+\renewcommand{\nomebreve}{odd\_walks}
+\renewcommand{\titolo}{Passeggiate Particolari}
+
+\introduzione{}
+
+Ricevi in input un grafo $G=(V,A)$ i cui $N$ nodi sono numerati da~$0$ a~$N-1$, ossia $V=\{0,1,\ldots, N-1\}$. Ogni arco $a\in A$ è una coppia ordinata $(u,v) \in V\times V$ dove $u=t(a)$ è la coda dell'arco e $v=h(a)$ è la sua testa; l'arco è a senso unico ossia può essere percorso solamente portandosi dal nodo~$u$ al nodo~$v$ (si tratta cioè di un grafo diretto). L'insieme degli archi $A$ può contenere sia loops, ossia archi $a$ con $h(a)=t(a)$, che archi paralleli, ossia $\{t(a),h(a)\}=\{t(a'),h(a')\}$ non implica $a=a'$. A ciascun arco $a$ è associato un numero naturale positivo $c(a)$ che ne esprime il costo.
+Una passeggiata (walk) da $u$ a $v$ è una qualunque sequenza di archi $a_1,a_2,\ldots, a_t$ tale che:
+\begin{itemize}
+  \item[(1)] $t(a_1)=u$;
+  \item[(2)] $h(a_t)=v$;
+  \item[(3)] $t(a_{i+1}) = h(a_i)$ per ogni $i=1,2,\ldots, t-1$.
+\end{itemize}
+Il costo del walk è dato da $\sum_{i=1}^t c(a_i)$ mentre la sua lunghezza è data dal numero $t$ di archi che esso attraversa (contando più volte un arco che fosse attraversato più volte).
+
+Per ogni nodo $v\in V$ il tuo programma deve calcolare il minimo valore di costo con parità data (come precisata specificamente per il costo) di un walk dal nodo~0 al nodo~$v$ la cui lunghezza abbia parità anch'essa data (come precisata specificamente per la lunghezza).
+Il valore corretto da ritornare sarà~$-1$ per ogni nodo~$v$ per il quale non esista un walk che abbia sia la parità specificata per la lunghezza che la parità specificata per il costo.
+
+\sezionetesto{Formati di Input e Output}
+
+Il file di input è composto $M+2$ righe, contenenti:
+\begin{description}[nolistsep,itemsep=2mm]
+\item [Riga $1$:] gli interi $N$, $M$, $PL$, $PC$, dove
+
+\begin{itemize}[nolistsep]
+	\item L'intero $N$ è il numero di nodi.
+	\item L'intero $M$ è il numero di archi.
+	\item L'intero $PL\in \{0,1,2\}$ esprime la parità richiesta sulla lunghezza dei walk (il valore $2$ dice di non limitarsi ai soli walk di lunghezza pari ($0$) nè ai soli walk di lunghezza dispari ($1$), ossia senza vincolo di parità sulle lunghezze).
+	\item L'intero $PC\in \{0,1,2\}$ esprime la parità richiesta sul costo dei walk (i valori $0$, $1$, $2$ vanno interpretati come per il paramentro precedente, ossia $0$ filtra sul pari, $1$ filtra sul dispari, e $2$ significa che il minimo va preso su tutti senza vincolo di parità per i valori di costo).
+\end{itemize}
+\item [Righe $2, \dots, M+1$:] i tre interi $t_j$, $h_j$ e $c_j$ che, rispettivamente, rappresentano la coda, la testa, e il peso del $j$-esimo arco del grafo.
+\end{description}
+
+\medskip
+
+Il file di output consiste di una sola riga contenente gli $N$ numeri interi richiesti. L'$i$-esimo di questi numeri si riferisce al nodo $i$, per $i=0,1,\ldots, N-1$, ed è definito come il minimo numero naturale $w$ che sia costo di un qualche walk $W$ dal nodo~$0$ al nodo~$i$ e tale che:
+\begin{itemize}
+  \item[(1)] se $PC \in \{0,1\}$, allora $w$ e $PC$ hanno la stessa parità;
+  \item[(2)] se $PL \in \{0,1\}$, allora la lunghezza di $W$ e $PL$ hanno la stessa parità.
+\end{itemize}
+Il valore di tale vettore dovrà essere~$-1$ per tutti quei nodi~$v$ per i quali l'insieme delle coppie $(w,W)$ valide sia vuoto.
+
+
+
+\newpage
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+
+In attachment alla pagina del problema trovate diverse coppie input/output tra cui le seguenti.
+
+
+\vspace{0.5cm}
+\esempio{4 6 1 0
+
+0 1 3
+
+0 3 1
+
+0 2 4
+
+2 3 2
+
+1 3 1
+
+3 0 2}{6 6 4 4}
+
+In questo primo esempio abbiamo $N=4$ nodi e $M=6$ archi, con $PL=1$ e $PC=0$. Tra i walk di costo pari quelli di costo minimo sono:\\
+\indent al nodo~0: {\tt 6}  $\leftarrow$ $(0,1),(1,3),(3,0)$\\ 
+\indent al nodo~1: {\tt 6}  $\leftarrow$ $(0,3),(3,0),(0,1)$\\ 
+\indent al nodo~2: {\tt 4}  $\leftarrow$ $(0,2)$\\ 
+\indent al nodo~3: {\tt 4}  $\leftarrow$ $(0,1),(1,3)$\\ 
+
+\vspace{0.5cm}
+\esempio{4 4 0 2
+
+0 1 2
+
+0 2 4
+
+2 3 3
+
+1 3 6}{0 -1 -1 7}
+
+In questo secondo esempio abbiamo $N=4$ nodi e $M=5$ archi, con $PL=0$ e $PC=2$. Tra i walk di lunghezza pari quelli di costo minimo sono:\\
+\indent al nodo~0: {\tt 0}  $\leftarrow$ walk vuoto (con $t=0$)\\ 
+\indent al nodo~1: {\tt -1}  $\leftrightarrow$ (nessun walk da~$0$ a~$1$ ha lunghezza pari)\\
+\indent al nodo~2: {\tt -1}  $\leftrightarrow$ (nessun walk da~$0$ a~$2$ ha lunghezza pari)\\ 
+\indent al nodo~3: {\tt 7}  $\leftarrow$ $(0,2),(2,3)$\\ 
+
+\vspace{0.5cm}
+\esempio{4 4 1 2
+
+0 1 2
+
+0 2 4
+
+2 3 3
+
+1 3 6}{-1 2 4 -1}
+
+In questo terzo esempio abbiamo $N=4$ nodi e $M=5$ archi, con $PL=1$ e $PC=2$. Tra i walk di lunghezza dispari quelli di costo minimo sono:\\
+\indent al nodo~0: {\tt -1}  $\leftrightarrow$ (nessun walk da~$0$ a~$0$ ha lunghezza dispari)\\ 
+\indent al nodo~1: {\tt 2} $\leftarrow$ $(0,1)$\\ 
+\indent al nodo~2: {\tt 4}  $\leftarrow$ $(0,2)$\\ 
+\indent al nodo~3: {\tt -1}  $\leftrightarrow$ (nessun walk da~$0$ a~$3$ ha lunghezza dispari)\\ 
+
+
+
+\section*{Limitazioni}
+
+\begin{itemize}[nolistsep, itemsep=2mm]
+	\item $1 \le N, M \le 100\,000$.
+	\item $0 \leq c_j \le 10^6$ per ogni $j=0,1,\ldots,M-1$.
+\end{itemize}
+
+\section*{Subtask}
+
+  \begin{itemize}
+  \item \textbf{Subtask 1 [\phantom{1}0 punti]:} i casi di esempio forniti alla pagina del problema, essi includono i 3 casi sopra.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+    \item \textbf{Subtask 2 [10 punti]:} $N,M \leq 100$, $PL=PC=2$.
+    \item \textbf{Subtask 3 [\phantom{1}5 punti]:} $N,M \leq 100$, $PC=2$, $PL=1$, grafo bipartito.
+    \item \textbf{Subtask 4 [\phantom{1}5 punti]:} $N,M \leq 100$, $PC=2$, $PL=0$, grafo bipartito.
+    \item \textbf{Subtask 5 [\phantom{1}5 punti]:} $N,M \leq 100$, $PC=2$.
+    \item \textbf{Subtask 6 [10 punti]:} $N,M \leq 100$, $PL=2$.
+    \item \textbf{Subtask 7 [15 punti]:} $N,M \leq 100$.
+      \vspace{-0.6cm}
+       \begin{center}
+      \rule{0.5\textwidth}{0.4pt} \hfill  \hfill \hfill
+       \end{center}
+      \vspace{-0.6cm}      
+    \item \textbf{Subtask 8 [10 punti]:} $N,M \leq 100\,000$, $PL=PC=2$.
+    \item \textbf{Subtask 9 [\phantom{1}5 punti]:} $N,M \leq 100\,000$, $PC=2$, $PL=1$, grafo bipartito.
+    \item \textbf{Subtask 10 [\phantom{1}5 punti]:} $N,M \leq 100\,000$, $PC=2$, $PL=0$, grafo bipartito.
+    \item \textbf{Subtask 11 [\phantom{1}5 punti]:} $N,M \leq 100\,000$, $PC=2$.
+    \item \textbf{Subtask 12 [10 punti]:} $N,M \leq 100\,000$, $PL=2$.
+    \item \textbf{Subtask 13 [15 punti]:} $N,M \leq 100\,000$.
+  \end{itemize}
