@@ -1,0 +1,24 @@
+Step iniziali:
+- Scaricare il binario rtal dal repo https://github.com/romeorizzi/TALight
+- Renderlo eseguibile con `chmod +x rtal`
+- Renderlo disponibile nella cartella di lavoro copiandocelo (o spostandocelo,
+  symlinkandolo, inserendo la sua locazione nella variabile di ambiente PATH)
+
+L'URL per l'esame è `wss://ta.di.univr.it/esame` mentre per le
+esercitazioni è `wss://ta.di.univr.it/algo`
+
+Comando per vedere quali sono i problemi sul Serve a quell'URL:
+`./rtal -s URL list`
+
+Comando per scaricare gli allegati di un problema:
+`./rtal -s URL get nomeproblema`
+
+Comando per estrarre un archivio tar:
+`tar xfv nomearchivio.tar`
+
+Comando per sottoporre tua soluzione ad un problema:
+`./rtal -s URL connect -x token -f source=nomesorgente.cpp nomeproblema -- ./nomeeseguibile`
+
+Flag utili del comando connect (da mettere dopo connect e prima del nomeproblema):
+- `-a size=nomesubtask` per eseguire il programma solo su un sottoinsieme dei subtask
+- `-e` per vedere l'interazione tra il server ed il client
